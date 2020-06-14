@@ -1,10 +1,19 @@
 dist: bionic
 
-language: generic
+language:
+  - generic
+  - android
+
+node_js:
+- '8'
+
+android:
+  components:
+    - build-tools-26.0.2
+    - android-26
+    - extra
 
 before_install:
-  - sudo apt-get install curl
-  - curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
   - echo $JAVA_HOME
   - which java
   - sudo rm -rf /usr/local/lib/jvm/
@@ -13,7 +22,17 @@ before_install:
   - which java
   - java -version
   - $JAVA_HOME/bin/java -version
-  - sudo apt-get install nodejs
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.npm
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+    - $HOME/.m2
+    - $HOME/.android/build-cache
 
 script:
   - date
