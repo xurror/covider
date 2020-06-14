@@ -13,15 +13,15 @@ Node.js: We use Node to run a development web server and build the project. Depe
 either from source or as a pre-packaged bundle. 
 After installing Node, you should be able to run the following command to install development tools. You will only need to run this
 command when dependencies change in package.json. 
-    `cd webapp`
-    `npm install`
+1. `cd webapp`
+1. `npm install`
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.8. and [spring framework](spring.io)
 
 Run the following commands in another two separate terminals to create a blissful development experience where your browser auto
 refreshes when files change on your hard drive. 
-    `./gradlew bootrun`
-    `npm start`
+1. `./gradlew bootrun`
+1. `npm start`
 
 ## Mobile Client
 
