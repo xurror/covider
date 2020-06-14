@@ -1,23 +1,14 @@
 dist: bionic
 
-language:
-  - generic
-  - android
+language: generic
 
 node_js:
-- '8'
+  - '8'
 
-android:
-  components:
-    - tools
-    - extra-android-support
-    - extra-google-google_play_services
-    - extra-android-m2repository
-    - extra-google-m2repository
-    - build-tools-28.0.3
-    - android-28
-    - android-22
-    - sys-img-armeabi-v7a-android-22
+#env:
+  #global:
+  # for updates check developer.android.com/studio#downloads (current 26.1.1)
+  #- ANDROID_SDK_TOOLS=sdk-tools-linux-4333796.zip
 
 before_install:
   - echo $JAVA_HOME
@@ -28,10 +19,28 @@ before_install:
   - which java
   - java -version
   - $JAVA_HOME/bin/java -version
-  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
-  - emulator -avd test -no-skin -no-audio -no-window &
-  - android-wait-for-emulator
-  - adb shell input keyevent 82 &
+
+  # download and unzip Android SDK command line tools
+  #- wget -nv https://dl.google.com/android/repository/$ANDROID_SDK_TOOLS
+  #- unzip -q $ANDROID_SDK_TOOLS -d $HOME/sdk
+  # set SDK tools path variable and ANDROID_HOME
+  #- export PATH=$PATH:$HOME/sdk/tools/bin
+  #- export ANDROID_HOME=$HOME/sdk
+  # create empty cfg file to prevent sdkmanager warning message
+  #- mkdir -p $HOME/.android && touch $HOME/.android/repositories.cfg
+  #- export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
+
+#install:
+  # accept licenses for all available packages that have not already been accepted
+  #- yes | sdkmanager --licenses
+
+#before_script:
+  # create dir for gradle settings
+  #- mkdir -p $HOME/.gradle
+  # disable gradle daemon for current user
+  #- echo "org.gradle.daemon=false" >> $HOME/.gradle/gradle.properties
+  # set gradle log format to plain
+  #- echo "org.gradle.console=plain" >> $HOME/.gradle/gradle.properties
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -42,15 +51,15 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
     - $HOME/.m2
-    - $HOME/.android/build-cache
+    #- $HOME/.android/build-cache
 
 script:
   - date
-  - cd mobile-client
+  #- cd mobile-client
+  #- chmod +x gradlew
+  #- ./gradlew build connectedCheck
+  - cd webapp
   - chmod +x gradlew
-  - ./gradlew --console=plain build connectedCheck
-  - cd .. && cd webapp
-  - chmod +x gradlew
-  - ./gradlew --console=plain check && ./gradlew --console=plain build && ./gradlew --console=plain test
+  - ./gradlew check build && ./gradlew test
   - npm install && npm run build
   
