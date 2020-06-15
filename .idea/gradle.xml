@@ -11,6 +11,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+<<<<<<< HEAD:.idea/gradle.xml
+=======
+            <option value="$PROJECT_DIR$/app" />
+>>>>>>> 480f63b... mobile skeleton for distribution module:mobile-client/.idea/gradle.xml
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
