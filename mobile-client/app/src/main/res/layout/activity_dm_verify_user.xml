@@ -12,8 +12,7 @@
         android:orientation="vertical"
         android:layout_margin="20dp"
         android:layout_gravity="center"
-        android:gravity="center"
-        >
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/logo"
@@ -32,8 +31,7 @@
             android:textSize="30sp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
 
         <EditText
@@ -82,8 +80,7 @@
             android:background="@drawable/button"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:elevation="20pt"
-            />
+            android:elevation="20pt" />
 
     </LinearLayout>
 
