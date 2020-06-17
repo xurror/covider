@@ -13,8 +13,12 @@
     <string name="id_placeholder">ID Card number</string>
     <string name="login_text">Login</string>
     <string name="verify">Verify</string>
+    <string name="set">Set</string>
     <string name="found">Found</string>
     <string name="submit">Submit</string>
     <string name="location_text">Upload your home location</string>
     <string name="country_region_city">Country, Region, City</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_dmser_locaton_map">Map</string>
+    <string name="title_activity_dm_user_location">Map</string>
 </resources>

@@ -27,7 +27,7 @@
             android:textStyle="bold"
             />
 
-        <EditText
+        <TextView
             android:id="@+id/to_p"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,7 +65,7 @@
             android:textSize="20sp"
             android:background="@drawable/button"
             android:layout_gravity="center"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="20dp"
             android:elevation="20pt"
             />
     </LinearLayout>
