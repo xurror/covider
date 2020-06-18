@@ -11,6 +11,8 @@ dependencyManagement {
     }
 }
 
+project.ext.mysqlUser = "root"
+project.ext.mysqlPassword = "mysql"
 group = 'cm.ubuea.covider'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = JavaVersion.VERSION_11
@@ -21,6 +23,13 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	// implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.eclipse.persistence:org.eclipse.persistence.jpa:2.7.7'
+	runtimeOnly 'mysql:mysql-connector-java'
+	implementation ('org.springframework.boot:spring-boot-starter-data-jpa') {
+        exclude group: "org.hibernate"
+    }
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
@@ -28,4 +37,48 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+import groovy.sql.Sql
+
+configurations {
+    driver.extendsFrom runtimeOnly
+    weaver.extendsFrom implementation
+}
+
+task weaveJpaEntities(type: JavaExec, dependsOn: [compileJava, processResources]) {
+    main = 'org.eclipse.persistence.tools.weaving.jpa.StaticWeave'
+    classpath configurations.weaver
+    args '-persistenceinfo'
+    args processResources.destinationDir.absolutePath
+    args '-classpath'
+    args configurations.compile.incoming.files.asPath
+    args '-loglevel'
+    args 'FINE' // logging level at "FINE" shows alot of output to console.
+    args sourceSets.main.java.outputDir.absolutePath
+    args sourceSets.main.java.outputDir.absolutePath
+
+    inputs.files fileTree(processResources.destinationDir).matching({pattern -> pattern.include('**/META-INF/persistence.xml')})
+}
+classes.dependsOn weaveJpaEntities
+
+URLClassLoader loader = GroovyObject.class.classLoader
+configurations.driver.each {File file ->
+    loader.addURL(file.toURL())
+}
+
+task createDB {
+    description= "Creates the Database. Needs database name to be passed (like: -PdbName=someDBname)"
+    doLast {
+        def sql = Sql.newInstance( 'jdbc:mysql://localhost:3306/?serverTimezone=UTC', mysqlUser, mysqlPassword, 'com.mysql.jdbc.Driver')
+        sql.execute( 'create database '+"`$dbName`" )
+    }
+}
+
+task dropDB {
+    description= "Drops the specified database. The database name has to be passed (like: -PdbName=someDBname)"
+    doLast {
+        def sql = Sql.newInstance( 'jdbc:mysql://localhost:3306/?serverTimezone=UTC', mysqlUser, mysqlPassword, 'com.mysql.jdbc.Driver')
+        sql.execute( 'DROP DATABASE '+"`$dbName`")
+    }
 }
