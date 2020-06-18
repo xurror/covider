@@ -39,6 +39,7 @@ repositories {
 }
 
 dependencies {
+<<<<<<< HEAD
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-security'
@@ -77,6 +78,19 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+=======
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	// implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.eclipse.persistence:org.eclipse.persistence.jpa:2.7.7'
+	runtimeOnly 'mysql:mysql-connector-java'
+	implementation ('org.springframework.boot:spring-boot-starter-data-jpa') {
+        exclude group: "org.hibernate"
+    }
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+>>>>>>> setup datasource and mysql DB
 }
 
 // task integrationTest(type:Test) {
@@ -106,6 +120,16 @@ configurations {
     weaver.extendsFrom implementation
 }
 
+<<<<<<< HEAD
+=======
+import groovy.sql.Sql
+
+configurations {
+    driver.extendsFrom runtimeOnly
+    weaver.extendsFrom implementation
+}
+
+>>>>>>> setup datasource and mysql DB
 task weaveJpaEntities(type: JavaExec, dependsOn: [compileJava, processResources]) {
     main = 'org.eclipse.persistence.tools.weaving.jpa.StaticWeave'
     classpath configurations.weaver
@@ -114,7 +138,11 @@ task weaveJpaEntities(type: JavaExec, dependsOn: [compileJava, processResources]
     args '-classpath'
     args configurations.compile.incoming.files.asPath
     args '-loglevel'
+<<<<<<< HEAD
     args 'INFO' // logging level at "FINE" shows alot of output to console.
+=======
+    args 'FINE' // logging level at "FINE" shows alot of output to console.
+>>>>>>> setup datasource and mysql DB
     args sourceSets.main.java.outputDir.absolutePath
     args sourceSets.main.java.outputDir.absolutePath
 
@@ -142,6 +170,7 @@ task dropDB {
         sql.execute( 'DROP DATABASE '+"`$dbName`")
     }
 }
+<<<<<<< HEAD
 
 gitProperties {
     failOnNoGitDirectory = false
@@ -149,3 +178,5 @@ gitProperties {
 }
 
 compileJava.dependsOn processResources
+=======
+>>>>>>> setup datasource and mysql DB
