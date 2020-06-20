@@ -44,7 +44,7 @@
 
     <!-- HikariConfig config that is fed to above dataSource -->
     <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
         <property name="jdbcUrl" value="jdbc:mysql://sql3.freemysqlhosting.net:3306/sql3349346?serverTimezone=UTC" />
         <property name="username" value="sql3349346" />
         <property name="password" value="2wzPFAEZ3e" />

@@ -1,6 +1,11 @@
 plugins {
 	id 'org.springframework.boot' version '2.3.1.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id "com.gorylenko.gradle-git-properties"
+    id "com.github.node-gradle.node"
+    id "net.ltgt.apt-eclipse"
+    id "net.ltgt.apt-idea"
+    id "jacoco"
 	id 'java'
 }
 
@@ -17,6 +22,12 @@ group = 'cm.ubuea.covider'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = JavaVersion.VERSION_11
 
+defaultTasks "bootRun"
+
+springBoot {
+    mainClassName = "cm.ubuea.covider.ServerApplication"
+}
+
 repositories {
 	mavenCentral()
 }
@@ -24,12 +35,20 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	// implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.eclipse.persistence:org.eclipse.persistence.jpa:2.7.7'
-	runtimeOnly 'mysql:mysql-connector-java'
-	implementation ('org.springframework.boot:spring-boot-starter-data-jpa') {
-        exclude group: "org.hibernate"
+    implementation 'org.apache.commons:commons-lang3:3.10'
+    implementation 'io.jsonwebtoken:jjwt-api:0.10.5'
+    implementation ('org.springframework.boot:spring-boot-starter-data-jpa') {
+        exclude group: 'org.hibernate', module: 'hibernate-entitymanager'
     }
+
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.10.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.10.5'
+	runtimeOnly 'mysql:mysql-connector-java'
+	
+    testImplementation 'com.h2database:h2:1.4.200'
+    testImplementation 'org.springframework.security:spring-security-test'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
@@ -82,3 +101,17 @@ task dropDB {
         sql.execute( 'DROP DATABASE '+"`$dbName`")
     }
 }
+
+gitProperties {
+    failOnNoGitDirectory = false
+    keys = ["git.branch", "git.commit.id.abbrev", "git.commit.id.describe"]
+}
+
+checkstyle {
+    toolVersion '${checkstyle_version}'
+    configFile file("checkstyle.xml")
+    checkstyleTest.enabled = false
+}
+
+compileJava.dependsOn processResources
+processResources.dependsOn bootBuildInfo
