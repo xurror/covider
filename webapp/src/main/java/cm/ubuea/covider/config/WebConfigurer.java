@@ -1,5 +1,6 @@
 package cm.ubuea.covider.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import io.github.jhipster.config.JHipsterProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +20,10 @@ import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
+
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.info.License;
 
 import static java.net.URLDecoder.decode;
 
@@ -115,6 +120,19 @@ public class WebConfigurer implements ServletContextInitializer, WebServerFactor
             source.registerCorsConfiguration("/v2/api-docs", config);
         }
         return new CorsFilter(source);
+    }
+
+    @Bean
+    public OpenAPI customOpenAPI(@Value("${spring.application.description}") String appDesciption,
+            @Value("${spring.application.version}") String appVersion) {
+     return new OpenAPI()
+          .info(new Info()
+          .title("Covider application API")
+          .version(appVersion)
+          .description(appDesciption)
+          .termsOfService("http://swagger.io/terms/")
+          .license(new License().name("N/A").url("N/A")));
+        //   .license(new License().name("Apache 2.0").url("http://springdoc.org")));
     }
 
     /**
