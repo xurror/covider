@@ -78,6 +78,22 @@ dependencies {
 	}
 }
 
+// task integrationTest(type:Test) {
+//     description = "Execute integration tests."
+//     include "**/*IT*", "**/*IntTest*"
+//     dependsOn cargoStartLocal
+//     finalizedBy cargoStopLocal
+// }
+
+// integrationTest {
+//     useJUnitPlatform()
+//     testLogging { // FINERACT-927
+//         events "skipped", "failed"
+//         showStandardStreams = false
+//         exceptionFormat "full"
+//     }
+// }
+
 test {
 	useJUnitPlatform()
 }
