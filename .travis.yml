@@ -60,6 +60,6 @@ script:
   #- ./gradlew build connectedCheck
   - cd webapp
   - chmod +x gradlew
-  - ./gradlew check build && ./gradlew test
+  - ./gradlew check build # && ./gradlew test
   - npm install && npm run build
   
