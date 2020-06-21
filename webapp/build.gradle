@@ -1,10 +1,17 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spring.io/plugins-release" }
+    }
+}
+
 plugins {
 	id 'org.springframework.boot' version '2.3.1.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
-    id "com.gorylenko.gradle-git-properties"
-    id "com.github.node-gradle.node"
-    id "net.ltgt.apt-eclipse"
-    id "net.ltgt.apt-idea"
+    id "com.gorylenko.gradle-git-properties" version '2.2.2'
+    id "net.ltgt.apt-eclipse" version '0.21'
+    id "net.ltgt.apt-idea" version '0.21'
+    id 'checkstyle'
     id "jacoco"
 	id 'java'
 }
@@ -36,11 +43,28 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation "org.springframework.boot:spring-boot-starter-cache"
+    implementation "org.springframework.boot:spring-boot-starter-aop"
+    implementation "org.springframework.boot:spring-boot-starter-logging"
+    implementation "org.springframework.security:spring-security-config"
+    implementation "org.springframework.security:spring-security-data"
+    implementation "org.springframework.security:spring-security-web"
+    implementation "org.springframework.boot:spring-boot-starter-mail"
+    implementation "org.springframework.boot:spring-boot-starter-thymeleaf"
+    implementation "org.zalando:problem-spring-web:0.25.2"
+    implementation 'io.github.jhipster:jhipster-framework:3.8.0'
+    implementation "com.fasterxml.jackson.core:jackson-annotations"
+    implementation "com.fasterxml.jackson.core:jackson-databind"
 	implementation 'org.eclipse.persistence:org.eclipse.persistence.jpa:2.7.7'
+    implementation "javax.annotation:javax.annotation-api"
+    implementation "javax.transaction:javax.transaction-api"
+    implementation "javax.cache:cache-api"
+    implementation "org.ehcache:ehcache"
     implementation 'org.apache.commons:commons-lang3:3.10'
     implementation 'io.jsonwebtoken:jjwt-api:0.10.5'
+    implementation "org.hibernate.validator:hibernate-validator"
     implementation ('org.springframework.boot:spring-boot-starter-data-jpa') {
-        exclude group: 'org.hibernate', module: 'hibernate-entitymanager'
+        exclude group: 'org.hibernate'
     }
 
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.10.5'
@@ -73,7 +97,7 @@ task weaveJpaEntities(type: JavaExec, dependsOn: [compileJava, processResources]
     args '-classpath'
     args configurations.compile.incoming.files.asPath
     args '-loglevel'
-    args 'FINE' // logging level at "FINE" shows alot of output to console.
+    args 'INFO' // logging level at "FINE" shows alot of output to console.
     args sourceSets.main.java.outputDir.absolutePath
     args sourceSets.main.java.outputDir.absolutePath
 
@@ -108,10 +132,9 @@ gitProperties {
 }
 
 checkstyle {
-    toolVersion '${checkstyle_version}'
+    toolVersion '8.32'
     configFile file("checkstyle.xml")
     checkstyleTest.enabled = false
 }
 
 compileJava.dependsOn processResources
-processResources.dependsOn bootBuildInfo
