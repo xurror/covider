@@ -60,3 +60,4 @@ Thumbs.db
 .gradle/
 build/
 bin/
+.vscode
