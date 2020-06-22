@@ -4,94 +4,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#542F5A"
+    android:background="#FFFFFF"
     tools:context=".dmLogin">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:padding="10dp"
             android:layout_margin="4dp"
             android:orientation="vertical"
-            >
+            android:padding="10dp">
+
                 <ImageView
                     android:id="@+id/logo"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
-                    android:src="@drawable/logo"
                     android:layout_gravity="center"
                     android:paddingTop="10dp"
-                    />
+                    android:src="@drawable/logo" />
+
+
                 <TextView
                     android:id="@+id/app_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/app_name"
-                    android:textColor="#fff"
-                    android:textSize="30sp"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
-                    android:textStyle="bold"
-                    />
-
+                    android:text="@string/app_name"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/name_p"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:hint="@string/name_placeholder"
-                    android:textColor="#fff"
-                    android:textColorHint="#fff"
-                    android:textSize="20sp"
-                    android:paddingLeft="5dp"
                     android:layout_gravity="center"
+                    android:layout_margin="20dp"
                     android:drawableLeft="@drawable/ic_person"
                     android:drawablePadding="5dp"
+                    android:hint="@string/name_placeholder"
+                    android:inputType="text"
                     android:padding="20dp"
-                    android:layout_margin="20dp"
-                    />
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/design_default_color_on_secondary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:textSize="18sp" />
+
                 <EditText
                     android:id="@+id/id_p"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:hint="@string/id_placeholder"
-                    android:textColor="#fff"
-                    android:textColorHint="#fff"
-                    android:textSize="20sp"
-                    android:paddingLeft="5dp"
                     android:layout_gravity="center"
+                    android:layout_margin="20dp"
                     android:drawableLeft="@drawable/ic_card"
                     android:drawablePadding="5dp"
+                    android:hint="@string/id_placeholder"
+                    android:inputType="text"
                     android:padding="20dp"
-                    android:layout_margin="20dp"
-                    />
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/design_default_color_on_secondary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:textSize="18sp" />
+
                 <Button
                     android:id="@+id/location_button"
-                    android:layout_width="wrap_content"
+                    android:layout_width="325dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/location_text"
-                    android:textColor="#542F5A"
-                    android:textSize="20sp"
-                    android:background="@drawable/button"
                     android:layout_gravity="center"
+                    android:background="@drawable/button"
                     android:drawableLeft="@drawable/ic_location"
-                    android:padding="5dp"
                     android:drawablePadding="3dp"
-                    />
+                    android:padding="5dp"
+                    android:text="@string/location_text"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/login_button"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/login_text"
-                    android:textColor="#542F5A"
-                    android:textSize="20sp"
-                    android:background="@drawable/button"
                     android:layout_gravity="center"
                     android:layout_marginTop="50dp"
+                    android:background="@drawable/button"
                     android:elevation="20pt"
-                    />
+                    android:text="@string/login_text"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
         </LinearLayout>
 </ScrollView>
