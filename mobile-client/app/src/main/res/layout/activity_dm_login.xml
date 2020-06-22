@@ -14,6 +14,7 @@
             android:orientation="vertical"
             android:padding="10dp">
 
+
                 <ImageView
                     android:id="@+id/logo"
                     android:layout_width="130dp"
@@ -65,19 +66,22 @@
                     android:textColor="@color/design_default_color_on_secondary"
                     android:textColorHint="@color/colorPrimary"
                     android:textSize="18sp" />
-
-                <Button
-                    android:id="@+id/location_button"
-                    android:layout_width="325dp"
+                <EditText
+                    android:id="@+id/id_token"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@drawable/button"
-                    android:drawableLeft="@drawable/ic_location"
-                    android:drawablePadding="3dp"
-                    android:padding="5dp"
-                    android:text="@string/location_text"
-                    android:textColor="#FFFFFF"
+                    android:layout_margin="20dp"
+                    android:drawableLeft="@drawable/ic_eye"
+                    android:drawablePadding="5dp"
+                    android:hint="@string/enter_token"
+                    android:inputType="numberDecimal"
+                    android:padding="20dp"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/design_default_color_on_secondary"
+                    android:textColorHint="@color/colorPrimary"
                     android:textSize="18sp" />
+
 
                 <Button
                     android:id="@+id/login_button"
