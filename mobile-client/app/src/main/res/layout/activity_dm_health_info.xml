@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,136 +8,139 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="match_parent"
+        android:padding="10dp"
         android:layout_margin="4dp"
         android:orientation="vertical"
-        android:padding="10dp">
-
+        >
         <TextView
             android:id="@+id/health_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:text="Health Information"
+            android:text="@string/health_information"
             android:textColor="@color/colorPrimary"
             android:textSize="30sp"
-            android:textStyle="bold" />
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
 
         <TextView
             android:id="@+id/place_p"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:hint="3 places you lastly visited"
-            android:inputType="text"
-            android:padding="20dp"
-            android:paddingLeft="5dp"
-            android:textColorHint="@color/design_default_color_on_secondary"
+            android:hint="@string/_3_places_you_lastly_visited"
+            android:textColorHint="@color/colorPrimary"
             android:textSize="25sp"
-            android:textStyle="bold" />
-
+            android:paddingStart="5dp"
+            android:layout_gravity="center"
+            android:padding="20dp"
+            android:textStyle="bold"
+            tools:ignore="RtlSymmetry" />
         <EditText
             android:id="@+id/place1_p"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:drawableLeft="@drawable/ic_health_location"
-            android:drawablePadding="4dp"
-            android:hint="@string/country_region_city"
             android:inputType="text"
-            android:padding="20dp"
-            android:paddingLeft="5dp"
-            android:textColor="@color/design_default_color_on_secondary"
+            android:hint="@string/country_region_city"
             android:textColorHint="@color/colorPrimary"
-            android:textSize="20sp" />
-
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:paddingStart="5dp"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/ic_health_location"
+            android:drawablePadding="4dp"
+            android:padding="20dp"
+            tools:ignore="RtlSymmetry"
+            android:autofillHints="@string/fill_hints" />
         <EditText
             android:id="@+id/place2_p"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:drawableLeft="@drawable/ic_health_location"
-            android:drawablePadding="4dp"
-            android:hint="@string/country_region_city"
             android:inputType="text"
-            android:padding="20dp"
-            android:paddingLeft="5dp"
-            android:textColor="@color/design_default_color_on_secondary"
+            android:hint="@string/country_region_city"
             android:textColorHint="@color/colorPrimary"
-            android:textSize="20sp" />
-
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:paddingStart="5dp"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/ic_health_location"
+            android:drawablePadding="4dp"
+            android:padding="20dp"
+            tools:ignore="RtlSymmetry"
+            android:autofillHints="@string/fill_hints"/>
         <EditText
             android:id="@+id/place3_p"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:drawableLeft="@drawable/ic_health_location"
-            android:drawablePadding="4dp"
-            android:hint="@string/country_region_city"
             android:inputType="text"
-            android:padding="20dp"
-            android:paddingLeft="5dp"
-            android:textColor="@color/design_default_color_on_secondary"
+            android:hint="@string/country_region_city"
             android:textColorHint="@color/colorPrimary"
-            android:textSize="20sp" />
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:paddingStart="5dp"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/ic_health_location"
+            android:drawablePadding="4dp"
+            android:padding="20dp"
+            tools:ignore="RtlSymmetry"
+            android:autofillHints="@string/fill_hints"/>
 
         <TextView
             android:id="@+id/sign"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/signs_and_symptoms"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="25sp"
+            android:paddingStart="5dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:hint="Signs and symtoms"
-            android:inputType="text"
-            android:paddingLeft="5dp"
-            android:textColorHint="#000000"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
+            android:textStyle="bold"
+            tools:ignore="RtlSymmetry" />
         <Switch
             android:id="@+id/fever_s"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Fever"
-            android:textAppearance="?android:textAppearanceSmall"
+            android:text="@string/fever"
+            android:textSize="20sp"
             android:textColor="@color/colorPrimary"
-            android:textSize="20sp" />
-
+            android:textAppearance="?android:textAppearanceSmall"
+            android:layout_margin="10dp"
+            />
         <Switch
             android:id="@+id/cough_s"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Dry Cough"
-            android:textAppearance="?android:textAppearanceSmall"
+            android:text="@string/dry_cough"
+            android:textSize="20sp"
             android:textColor="@color/colorPrimary"
-            android:textSize="20sp" />
-
+            android:textAppearance="?android:textAppearanceSmall"
+            android:layout_margin="10dp"
+            />
         <Switch
             android:id="@+id/tiredness_s"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Tiredness"
-            android:textAppearance="?android:textAppearanceSmall"
+            android:text="@string/tiredness"
+            android:textSize="20sp"
             android:textColor="@color/colorPrimary"
-            android:textSize="20sp" />
+            android:textAppearance="?android:textAppearanceSmall"
+            android:layout_margin="10dp"
+            />
 
         <Button
             android:id="@+id/submit_button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button"
-            android:elevation="20pt"
             android:text="@string/submit"
-            android:textColor="@color/color"
-            android:textSize="20sp" />
+            android:textColor="#542F5A"
+            android:textSize="20sp"
+            android:background="@drawable/button"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:elevation="20pt"
+            />
 
     </LinearLayout>
-
-
 </ScrollView>
