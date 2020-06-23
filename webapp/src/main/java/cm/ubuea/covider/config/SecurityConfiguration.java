@@ -1,6 +1,6 @@
 package cm.ubuea.covider.config;
 
-import cm.ubuea.covider.security.*;
+import cm.ubuea.covider.security.AuthoritiesConstants;
 import cm.ubuea.covider.security.jwt.*;
 
 import org.springframework.context.annotation.Bean;

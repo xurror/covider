@@ -16,12 +16,14 @@ command when dependencies change in package.json.
 - `cd webapp`
 - `npm install`
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.8. and [spring framework](spring.io)
-
 Run the following commands in another two separate terminals to create a blissful development experience where your browser auto
 refreshes when files change on your hard drive. 
 - `./gradlew bootrun`
 - `npm start`
+
+## API DOCs
+You can access api docs for more infos about the API here:
+- `http://localhost:8443/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config`
 
 ## Mobile Client
 

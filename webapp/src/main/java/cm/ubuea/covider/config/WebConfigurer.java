@@ -1,8 +1,7 @@
 package cm.ubuea.covider.config;
 
-import io.github.jhipster.config.JHipsterConstants;
+import org.springframework.beans.factory.annotation.Value;
 import io.github.jhipster.config.JHipsterProperties;
-import io.github.jhipster.config.h2.H2ConfigurationHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.server.*;
@@ -11,7 +10,6 @@ import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerF
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
-import org.springframework.core.env.Profiles;
 import org.springframework.http.MediaType;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -22,6 +20,10 @@ import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
+
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.info.License;
 
 import static java.net.URLDecoder.decode;
 
@@ -67,9 +69,7 @@ public class WebConfigurer implements ServletContextInitializer, WebServerFactor
     private void setMimeMappings(WebServerFactory server) {
         if (server instanceof ConfigurableServletWebServerFactory) {
             MimeMappings mappings = new MimeMappings(MimeMappings.DEFAULT);
-            // IE issue, see https://github.com/jhipster/generator-jhipster/pull/711
             mappings.add("html", MediaType.TEXT_HTML_VALUE + ";charset=" + StandardCharsets.UTF_8.name().toLowerCase());
-            // CloudFoundry issue, see https://github.com/cloudfoundry/gorouter/issues/64
             mappings.add("json", MediaType.TEXT_HTML_VALUE + ";charset=" + StandardCharsets.UTF_8.name().toLowerCase());
             ConfigurableServletWebServerFactory servletWebServer = (ConfigurableServletWebServerFactory) server;
             servletWebServer.setMimeMappings(mappings);
@@ -120,6 +120,19 @@ public class WebConfigurer implements ServletContextInitializer, WebServerFactor
             source.registerCorsConfiguration("/v2/api-docs", config);
         }
         return new CorsFilter(source);
+    }
+
+    @Bean
+    public OpenAPI customOpenAPI(@Value("${spring.application.description}") String appDesciption,
+            @Value("${spring.application.version}") String appVersion) {
+     return new OpenAPI()
+          .info(new Info()
+          .title("Covider application API")
+          .version(appVersion)
+          .description(appDesciption)
+          .termsOfService("http://swagger.io/terms/")
+          .license(new License().name("N/A").url("N/A")));
+        //   .license(new License().name("Apache 2.0").url("http://springdoc.org")));
     }
 
     /**

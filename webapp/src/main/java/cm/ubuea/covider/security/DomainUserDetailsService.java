@@ -14,7 +14,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Authenticate a user from the database.
@@ -51,9 +50,10 @@ public class DomainUserDetailsService implements UserDetailsService {
         if (!user.getActivated()) {
             throw new UserNotActivatedException("User " + login + " was not activated");
         }
-        List<GrantedAuthority> grantedAuthorities = user.getAuthorities().stream()
-            .map(authority -> new SimpleGrantedAuthority(authority.getName()))
-            .collect(Collectors.toList());
+        List<GrantedAuthority> grantedAuthorities = new ArrayList<GrantedAuthority>();
+        for (String authority: user.getAuthorities()) {
+            grantedAuthorities.add(new SimpleGrantedAuthority(authority));
+        }
         return new org.springframework.security.core.userdetails.User(user.getIdNumber(),
             user.getPassword(), grantedAuthorities);
     }
