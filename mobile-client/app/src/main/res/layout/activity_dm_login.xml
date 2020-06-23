@@ -41,7 +41,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="20dp"
-
                     android:drawablePadding="5dp"
                     android:hint="@string/name_placeholder"
                     android:inputType="text"
@@ -69,7 +68,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="20dp"
-
                     android:drawablePadding="5dp"
                     android:hint="@string/id_placeholder"
                     android:inputType="text"
