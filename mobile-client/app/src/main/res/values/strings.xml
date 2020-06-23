@@ -33,4 +33,5 @@
     <string name="to_">To: Covider</string>
     <string name="message">Message</string>
     <string name="list_view_to_contain_username_user_location_longitude_and_latitude">List view to contain username, user location: longitude and latitude</string>
+    <string name="signs_and_syntoms">Signs and syntoms</string>
 </resources>
