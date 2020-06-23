@@ -40,9 +40,15 @@ repositories {
 
 dependencies {
 <<<<<<< HEAD
+<<<<<<< HEAD
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-security'
+=======
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+>>>>>>> Pulling from upstream/distrubuted_module
     implementation "org.springframework.boot:spring-boot-starter-cache"
     implementation "org.springframework.boot:spring-boot-starter-aop"
     implementation "org.springframework.boot:spring-boot-starter-logging"
@@ -75,12 +81,15 @@ dependencies {
 
     testImplementation 'com.h2database:h2:1.4.200'
     testImplementation 'org.springframework.security:spring-security-test'
+<<<<<<< HEAD
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
 =======
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+=======
+>>>>>>> Pulling from upstream/distrubuted_module
 	// implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.eclipse.persistence:org.eclipse.persistence.jpa:2.7.7'
 	runtimeOnly 'mysql:mysql-connector-java'
@@ -138,11 +147,11 @@ task weaveJpaEntities(type: JavaExec, dependsOn: [compileJava, processResources]
     args '-classpath'
     args configurations.compile.incoming.files.asPath
     args '-loglevel'
-<<<<<<< HEAD
-    args 'INFO' // logging level at "FINE" shows alot of output to console.
-=======
     args 'FINE' // logging level at "FINE" shows alot of output to console.
+<<<<<<< HEAD
 >>>>>>> setup datasource and mysql DB
+=======
+>>>>>>> Pulling from upstream/distrubuted_module
     args sourceSets.main.java.outputDir.absolutePath
     args sourceSets.main.java.outputDir.absolutePath
 
@@ -170,7 +179,6 @@ task dropDB {
         sql.execute( 'DROP DATABASE '+"`$dbName`")
     }
 }
-<<<<<<< HEAD
 
 gitProperties {
     failOnNoGitDirectory = false
@@ -178,5 +186,8 @@ gitProperties {
 }
 
 compileJava.dependsOn processResources
+<<<<<<< HEAD
 =======
 >>>>>>> setup datasource and mysql DB
+=======
+>>>>>>> Pulling from upstream/distrubuted_module
