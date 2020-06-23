@@ -6,7 +6,6 @@
     android:background="#FFFFFF"
     tools:context=".dmLogin">
 
-  
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
@@ -94,7 +93,6 @@
                     android:textSize="18sp"
                     android:importantForAutofill="no"
                     tools:ignore="RtlSymmetry" />
-
 
                 <Button
                     android:id="@+id/login_button"
