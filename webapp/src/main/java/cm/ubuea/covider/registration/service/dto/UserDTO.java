@@ -1,13 +1,14 @@
 package cm.ubuea.covider.registration.service.dto;
 
+import cm.ubuea.covider.registration.domain.Role;
 import cm.ubuea.covider.registration.domain.User;
 import javax.validation.constraints.*;
-
 import java.time.LocalDateTime;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
- * A DTO representing a user, with his authorities.
+ * A DTO representing a user, with his roles.
  */
 public class UserDTO {
 
@@ -37,7 +38,7 @@ public class UserDTO {
 
     private LocalDateTime lastModifiedDate;
 
-    private Set<String> authorities;
+    private Set<String> roles;
 
     public UserDTO() {
         // Empty constructor needed for Jackson.
@@ -54,7 +55,9 @@ public class UserDTO {
         this.createdDate = user.getCreatedDate();
         this.lastModifiedBy = user.getLastModifiedBy();
         this.lastModifiedDate = user.getLastModifiedDate();
-        this.authorities = user.getAuthorities();
+        this.roles = user.getRoles().stream()
+            .map(Role::getName)
+            .collect(Collectors.toSet());
     }
 
     public Long getId() {
@@ -137,12 +140,12 @@ public class UserDTO {
         this.lastModifiedDate = lastModifiedDate;
     }
 
-    public Set<String> getAuthorities() {
-        return this.authorities;
+    public Set<String> getRoles() {
+        return this.roles;
     }
 
-    public void setAuthorities(Set<String> authorities) {
-        this.authorities = authorities;
+    public void setRoles(Set<String> roles) {
+        this.roles = roles;
     }
 
     // prettier-ignore
@@ -158,7 +161,7 @@ public class UserDTO {
             ", createdDate=" + createdDate +
             ", lastModifiedBy='" + lastModifiedBy + '\'' +
             ", lastModifiedDate=" + lastModifiedDate +
-            ", authorities=" + authorities +
+            ", roles=" + roles +
             "}";
     }
 }

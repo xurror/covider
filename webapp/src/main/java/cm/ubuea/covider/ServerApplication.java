@@ -89,7 +89,8 @@ public class ServerApplication {
                 "Application '{}' is running! Access URLs:\n\t" +
                 "Local: \t\t{}://localhost:{}{}\n\t" +
                 "External: \t{}://{}:{}{}\n\t" +
-                "Profile(s): \t{}\n----------------------------------------------------------",
+                "Swagger-UI: \t{}://localhost:{}{}swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config\n\t" +
+                "\n----------------------------------------------------------",
             env.getProperty("spring.application.name"),
             protocol,
             serverPort,
@@ -98,7 +99,9 @@ public class ServerApplication {
             hostAddress,
             serverPort,
             contextPath,
-            env.getActiveProfiles());
+            protocol,
+            serverPort,
+            contextPath);
     }
 
 }
