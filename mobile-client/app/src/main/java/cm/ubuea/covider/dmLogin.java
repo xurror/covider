@@ -15,7 +15,6 @@ public class dmLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dm_login);
 
-<<<<<<< HEAD
         Button location_button = findViewById(R.id.location_button);
         location_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,17 +24,6 @@ public class dmLogin extends AppCompatActivity {
                 startActivity(gotoUserLocation);
             }
         });
-=======
-        /*Button location_button = findViewById(R.id.location_button);
-        location_button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // Toast.makeText(getApplicationContext(), "Message sent, will be in touch", Toast.LENGTH_LONG).show();
-                    Intent gotoUserLocation = new Intent(getApplicationContext(), dmUserLocation.class);
-                    startActivity(gotoUserLocation);
-                }
-        });*/
->>>>>>> 8d7a999... Added one page
 
 
         Button login_button = findViewById(R.id.login_button);
@@ -43,11 +31,7 @@ public class dmLogin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Toast.makeText(getApplicationContext(), "Message sent, will be in touch", Toast.LENGTH_LONG).show();
-<<<<<<< HEAD
                 Intent gotoDisTracking = new Intent(getApplicationContext(), dmDisTrack.class);
-=======
-                Intent gotoDisTracking = new Intent(getApplicationContext(), dmList.class);
->>>>>>> 8d7a999... Added one page
                 startActivity(gotoDisTracking);
             }
         });

@@ -55,12 +55,13 @@
             android:id="@+id/rendezvous_button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:text="@string/submit"
+            android:textColor="#542F5A"
+            android:textSize="20sp"
+            android:background="@drawable/button"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:background="@drawable/button"
             android:elevation="20pt"
-            android:text="@string/submit"
-            android:textColor="@color/color"
-            android:textSize="18sp" />
+            />
     </LinearLayout>
 </ScrollView>
