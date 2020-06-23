@@ -41,7 +41,7 @@ public class UserMapperTest {
     }
 
     @Test
-    public void usersToUserDTOsShouldMapOnlyNonNullUsers() {
+    public void testUsersToUserDTOsShouldMapOnlyNonNullUsers() {
         List<User> users = new ArrayList<>();
         users.add(user);
         users.add(null);
@@ -53,7 +53,7 @@ public class UserMapperTest {
     }
 
     @Test
-    public void userDTOsToUsersShouldMapOnlyNonNullUsers() {
+    public void testUserDTOsToUsersShouldMapOnlyNonNullUsers() {
         List<UserDTO> usersDto = new ArrayList<>();
         usersDto.add(userDto);
         usersDto.add(null);
@@ -65,10 +65,10 @@ public class UserMapperTest {
     }
 
     @Test
-    public void userDTOsToUsersWithAuthoritiesStringShouldMapToUsersWithAuthoritiesDomain() {
-        Set<String> authoritiesAsString = new HashSet<>();
-        authoritiesAsString.add("ADMIN");
-        userDto.setAuthorities(authoritiesAsString);
+    public void testUserDTOsToUsersWithRolesStringShouldMapToUsersWithRolesDomain() {
+        Set<String> rolesAsString = new HashSet<>();
+        rolesAsString.add("ADMIN");
+        userDto.setRoles(rolesAsString);
 
         List<UserDTO> usersDto = new ArrayList<>();
         usersDto.add(userDto);
@@ -77,14 +77,14 @@ public class UserMapperTest {
 
         assertThat(users).isNotEmpty();
         assertThat(users).size().isEqualTo(1);
-        assertThat(users.get(0).getAuthorities()).isNotNull();
-        assertThat(users.get(0).getAuthorities()).isNotEmpty();
-        assertThat(users.get(0).getAuthorities().iterator().next()).isEqualTo("ADMIN");
+        assertThat(users.get(0).getRoles()).isNotNull();
+        assertThat(users.get(0).getRoles()).isNotEmpty();
+        assertThat(users.get(0).getRoles().iterator().next()).isEqualTo("ADMIN");
     }
 
     @Test
-    public void userDTOsToUsersMapWithNullAuthoritiesStringShouldReturnUserWithEmptyAuthorities() {
-        userDto.setAuthorities(null);
+    public void testUserDTOsToUsersMapWithNullRolesStringShouldReturnUserWithEmptyRoles() {
+        userDto.setRoles(null);
 
         List<UserDTO> usersDto = new ArrayList<>();
         usersDto.add(userDto);
@@ -93,37 +93,37 @@ public class UserMapperTest {
 
         assertThat(users).isNotEmpty();
         assertThat(users).size().isEqualTo(1);
-        assertThat(users.get(0).getAuthorities()).isNotNull();
-        assertThat(users.get(0).getAuthorities()).isEmpty();
+        assertThat(users.get(0).getRoles()).isNotNull();
+        assertThat(users.get(0).getRoles()).isEmpty();
     }
 
     @Test
-    public void userDTOToUserMapWithAuthoritiesStringShouldReturnUserWithAuthorities() {
-        Set<String> authoritiesAsString = new HashSet<>();
-        authoritiesAsString.add("ADMIN");
-        userDto.setAuthorities(authoritiesAsString);
+    public void testUserDTOToUserMapWithRolesStringShouldReturnUserWithRoles() {
+        Set<String> rolesAsString = new HashSet<>();
+        rolesAsString.add("ADMIN");
+        userDto.setRoles(rolesAsString);
 
         User user = userMapper.userDTOToUser(userDto);
 
         assertThat(user).isNotNull();
-        assertThat(user.getAuthorities()).isNotNull();
-        assertThat(user.getAuthorities()).isNotEmpty();
-        assertThat(user.getAuthorities().iterator().next()).isEqualTo("ADMIN");
+        assertThat(user.getRoles()).isNotNull();
+        assertThat(user.getRoles()).isNotEmpty();
+        assertThat(user.getRoles().iterator().next()).isEqualTo("ADMIN");
     }
 
     @Test
-    public void userDTOToUserMapWithNullAuthoritiesStringShouldReturnUserWithEmptyAuthorities() {
-        userDto.setAuthorities(null);
+    public void testUserDTOToUserMapWithNullRolesStringShouldReturnUserWithEmptyRoles() {
+        userDto.setRoles(null);
 
         User user = userMapper.userDTOToUser(userDto);
 
         assertThat(user).isNotNull();
-        assertThat(user.getAuthorities()).isNotNull();
-        assertThat(user.getAuthorities()).isEmpty();
+        assertThat(user.getRoles()).isNotNull();
+        assertThat(user.getRoles()).isEmpty();
     }
 
     @Test
-    public void userDTOToUserMapWithNullUserShouldReturnNull() {
+    public void testUserDTOToUserMapWithNullUserShouldReturnNull() {
         assertThat(userMapper.userDTOToUser(null)).isNull();
     }
 

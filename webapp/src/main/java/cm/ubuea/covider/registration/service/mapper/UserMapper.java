@@ -2,6 +2,7 @@ package cm.ubuea.covider.registration.service.mapper;
 
 import org.springframework.stereotype.Service;
 
+import cm.ubuea.covider.registration.domain.Role;
 import cm.ubuea.covider.registration.domain.User;
 import cm.ubuea.covider.registration.service.dto.UserDTO;
 
@@ -46,24 +47,26 @@ public class UserMapper {
             user.setEmail(userDTO.getEmail());
             user.setActivated(userDTO.isActivated());
             user.setLangKey(userDTO.getLangKey());
-            // Set<Authority> authorities = this.authoritiesFromStrings(userDTO.getAuthorities());
-            user.setAuthorities(userDTO.getAuthorities());
+            Set<Role> roles = this.rolesFromStrings(userDTO.getRoles());
+            user.setRoles(roles);
             return user;
         }
     }
 
 
-    // private Set<Authority> authoritiesFromStrings(Set<String> authoritiesAsString) {
-    //     Set<Authority> authorities = new HashSet<>();
+    private Set<Role> rolesFromStrings(Set<String> rolesAsString) {
+        Set<Role> authorities = new HashSet<>();
 
-    //     if (authoritiesAsString != null) {
-    //         for (String authority: authoritiesAsString) {
-    //             authorities.add(Authority.valueOf(authority));
-    //         }
-    //         return authorities;
-    //     }
-    //     return authorities;
-    // }
+        if (rolesAsString != null) {
+            authorities = rolesAsString.stream().map(string -> {
+                Role auth = new Role();
+                auth.setName(string);
+                return auth;
+            }).collect(Collectors.toSet());
+        }
+
+        return authorities;
+    }
 
     public User userFromId(Long id) {
         if (id == null) {

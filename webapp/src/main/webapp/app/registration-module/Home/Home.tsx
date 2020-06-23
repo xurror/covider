@@ -3,7 +3,8 @@ import './Home.css';
 import { Card } from 'react-bootstrap';
 import Register from '../registration/Register';
 import Login from '../login/Login';
-import SidebarCounter from '../component/SidebarCounter/SidebarCounter';
+import RegisterSidebarCounter from '../component/RegisterSidebarCounter/RegisterSidebarCounter';
+import LoginSidebarCounter from '../component/LoginSidebarCounter/LoginSidebarCounter';
 
 class Home extends Component {
   constructor() {
@@ -11,7 +12,8 @@ class Home extends Component {
     this.state = {
       route: 'home',
       stage: 1,
-      role: 'agent'
+      role: 'agent',
+      isfirstTime: false,
     }
   }
 
@@ -30,14 +32,19 @@ class Home extends Component {
       )
     } else {
       return (
-        <Login />
+        <Login
+          changeRoute={(route) => this.setState({route})}
+          changeStage={(stage) => this.setState({ stage })}
+          setFirstTime={(isfirstTime) => this.setState({ isfirstTime })}
+        />
       )
     }
   }
 
   renderSideBar() {
-    const { stage, role } = this.state;
-    if (stage === 1) {
+    const { stage, role, route, isfirstTime } = this.state;
+    console.log(isfirstTime)
+    if (stage === 1 && route === 'home') {
       return (
         <div>
           <Card.Subtitle>
@@ -48,14 +55,16 @@ class Home extends Component {
             Lorem ipsum dolor sit amet et
                   delectus</Card.Text>
           <div className="button" onClick={() => this.setState({ route: 'login' })} >
-            <p  className='link dim underline pointer'
-            style={{ color: "#faebd7", textDecoration: "underline" }}>Have an Account ? <strong>Login</strong></p>
+            <p className='link dim underline pointer'
+              style={{ color: "#faebd7", textDecoration: "underline" }}>Have an Account ? <strong>Login</strong></p>
           </div>
         </div>
       )
+    } else if (route !== 'home') {
+      return <LoginSidebarCounter stage={stage} isfirstTime={isfirstTime} />
     } else {
       return (
-        <SidebarCounter stage={stage} role={role} />
+        <RegisterSidebarCounter stage={stage} role={role} route={route} />
       )
     }
   }
@@ -65,27 +74,15 @@ class Home extends Component {
       <div className="app">
 
         <Card>
-          <div className="cardstyle shadow">
+          <div className="cardstyle shadow ct">
             <Card.Body>
               <div>
                 <h4 className="text-center" style={{ marginTop: ".5rem", color: 'antiquewhite', fontSize: "2rem" }}>Covider</h4>
               </div>
-              {
-                this.state.route === 'home' ?
-                  <div>
-                    {this.renderSideBar()}
-                  </div>
-                  :
-                  <div>
-                    <Card.Subtitle>
-                      <h6 className="mb-2 text-center" style={{ marginTop: "4rem", color: "antiquewhite" }}>
-                        Login to continue</h6>
-                    </Card.Subtitle>
-                    <Card.Text className="text-center" style={{ marginTop: "2rem", fontSize: ".8rem", color: "antiquewhite" }}>
-                      Lorem ipsum dolor sit amet et
-                  delectus</Card.Text>
-                  </div>
-              }
+
+              <div>
+                {this.renderSideBar()}
+              </div>
 
             </Card.Body>
           </div>
