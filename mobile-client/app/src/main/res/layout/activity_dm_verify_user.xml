@@ -12,6 +12,7 @@
         android:layout_margin="20dp"
         android:layout_gravity="center"
         android:layout_margin="20dp"
+        android:layout_gravity="center"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -19,6 +20,7 @@
             android:id="@+id/logo"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:src="@drawable/logo"
             android:layout_gravity="center"
             android:paddingTop="10dp"
             android:contentDescription="@string/logo_icon" />
@@ -34,7 +36,10 @@
             android:text="@string/app_name"
             android:textColor="@color/colorPrimary"
             android:textSize="30sp"
-            android:textStyle="bold" />
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            />
 
         <EditText
             android:id="@+id/name_p"
@@ -49,8 +54,6 @@
             android:layout_gravity="center"
             android:layout_margin="20dp"
             android:drawablePadding="5dp"
-            android:hint="@string/name_placeholder"
-            android:inputType="text"
             android:padding="20dp"
             tools:ignore="RtlSymmetry"
             android:importantForAutofill="no" />
@@ -68,8 +71,6 @@
             android:layout_gravity="center"
             android:layout_margin="20dp"
             android:drawablePadding="5dp"
-            android:hint="@string/id_placeholder"
-            android:inputType="text"
             android:padding="20dp"
             tools:ignore="RtlSymmetry"
             android:importantForAutofill="no" />
@@ -77,6 +78,10 @@
             android:id="@+id/verify_button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:text="@string/verify"
+            android:textColor="#542F5A"
+            android:textSize="20sp"
+            android:background="@drawable/button"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:elevation="20pt" />

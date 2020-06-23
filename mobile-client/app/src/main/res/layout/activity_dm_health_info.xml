@@ -11,8 +11,7 @@
         android:layout_height="match_parent"
         android:layout_margin="4dp"
         android:orientation="vertical"
-        android:padding="10dp">
-
+        >
         <TextView
             android:id="@+id/health_info"
             android:layout_width="match_parent"
@@ -34,8 +33,6 @@
             android:textSize="25sp"
             android:paddingStart="5dp"
             android:layout_gravity="center"
-            android:hint="3 places you lastly visited"
-            android:inputType="text"
             android:padding="20dp"
             android:textStyle="bold"
             tools:ignore="RtlSymmetry" />
@@ -51,8 +48,6 @@
             android:paddingStart="5dp"
             android:layout_gravity="center"
             android:drawablePadding="4dp"
-            android:hint="@string/country_region_city"
-            android:inputType="text"
             android:padding="20dp"
             tools:ignore="RtlSymmetry"
             android:autofillHints="@string/fill_hints" />
@@ -68,8 +63,6 @@
             android:paddingStart="5dp"
             android:layout_gravity="center"
             android:drawablePadding="4dp"
-            android:hint="@string/country_region_city"
-            android:inputType="text"
             android:padding="20dp"
             tools:ignore="ExtraText,RtlSymmetry"
             android:autofillHints="@string/fill_hints"/>
@@ -77,11 +70,15 @@
             android:id="@+id/place3_p"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="@string/country_region_city"
+            android:textColorHint="@color/colorPrimary"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:paddingStart="5dp"
             android:layout_gravity="center"
             android:autofillHints="@string/fill_hints"
             android:drawablePadding="4dp"
-            android:hint="@string/country_region_city"
-            android:inputType="text"
             android:padding="20dp"
             android:paddingStart="5dp"
             android:textColor="@color/colorPrimary"
@@ -138,9 +135,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:elevation="20pt"
-            android:text="@string/submit"
-            android:textColor="@color/color"
-            android:textSize="20sp" />
+            />
 
     </LinearLayout>
 </ScrollView>
