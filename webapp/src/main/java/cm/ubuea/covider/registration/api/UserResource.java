@@ -8,7 +8,7 @@ import cm.ubuea.covider.registration.repository.UserRepository;
 import cm.ubuea.covider.registration.service.MailService;
 import cm.ubuea.covider.registration.service.UserService;
 import cm.ubuea.covider.registration.service.dto.UserDTO;
-import cm.ubuea.covider.security.RolesConstants;
+import cm.ubuea.covider.security.AuthoritiesConstants;
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -33,21 +33,21 @@ import java.util.*;
 /**
  * REST controller for managing users.
  * <p>
- * This class accesses the {@link User} entity, and needs to fetch its collection of roles.
+ * This class accesses the {@link User} entity, and needs to fetch its collection of authorities.
  * <p>
- * For a normal use-case, it would be better to have an eager relationship between User and Role,
+ * For a normal use-case, it would be better to have an eager relationship between User and Authority,
  * and send everything to the client side: there would be no View Model and DTO, a lot less code, and an outer-join
  * which would be good for performance.
  * <p>
  * We use a View Model and a DTO for 3 reasons:
  * <ul>
- * <li>We want to keep a lazy association between the user and the roles, because people will
- * quite often do relationships with the user, and we don't want them to get the roles all
+ * <li>We want to keep a lazy association between the user and the authorities, because people will
+ * quite often do relationships with the user, and we don't want them to get the authorities all
  * the time for nothing (for performance reasons). This is the #1 goal: we should not impact our users'
  * application because of this use-case.</li>
  * <li> Not having an outer join causes n+1 requests to the database. This is not a real issue as
  * we have by default a second-level cache. This means on the first HTTP call we do the n+1 requests,
- * but then all roles come from the cache, so in fact it's much better than doing an outer join
+ * but then all authorities come from the cache, so in fact it's much better than doing an outer join
  * (which will get lots of data from the database, for each HTTP call).</li>
  * <li> As this manages users, for security reasons, we'd rather have a DTO layer.</li>
  * </ul>
@@ -88,7 +88,7 @@ public class UserResource {
      * @throws BadRequestAlertException {@code 400 (Bad Request)} if the idNumber or email is already in use.
      */
     @PostMapping("/users")
-    @PreAuthorize("hasRole(\"" + RolesConstants.ADMIN + "\")")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<User> createUser(@Valid @RequestBody UserDTO userDTO) throws URISyntaxException {
         log.debug("REST request to save User : {}", userDTO);
 
@@ -117,7 +117,7 @@ public class UserResource {
      * @throws IdNumberAlreadyUsedException {@code 400 (Bad Request)} if the ID number is already in use.
      */
     @PutMapping("/users")
-    @PreAuthorize("hasRole(\"" + RolesConstants.ADMIN + "\")")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<UserDTO> updateUser(@Valid @RequestBody UserDTO userDTO) {
         log.debug("REST request to update User : {}", userDTO);
         Optional<User> existingUser = userRepository.findOneByEmailIgnoreCase(userDTO.getEmail());
@@ -157,7 +157,7 @@ public class UserResource {
     public ResponseEntity<UserDTO> getUser(@PathVariable String idNumber) {
         log.debug("REST request to get User : {}", idNumber);
         return ResponseUtil.wrapOrNotFound(
-            userService.getUserWithRolesByIdNumber(idNumber)
+            userService.getUserWithAuthoritiesByIdNumber(idNumber)
                 .map(UserDTO::new));
     }
 
@@ -168,7 +168,7 @@ public class UserResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/users/{idNumber}")
-    @PreAuthorize("hasRole(\"" + RolesConstants.ADMIN + "\")")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<Void> deleteUser(@PathVariable String idNumber) {
         log.debug("REST request to delete User: {}", idNumber);
         userService.deleteUser(idNumber);

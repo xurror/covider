@@ -2,7 +2,10 @@ package cm.ubuea.covider.registration.service.mapper;
 
 import org.springframework.stereotype.Service;
 
+<<<<<<< HEAD
 import cm.ubuea.covider.registration.domain.Role;
+=======
+>>>>>>> from upstream updates
 import cm.ubuea.covider.registration.domain.User;
 import cm.ubuea.covider.registration.service.dto.UserDTO;
 
@@ -47,13 +50,19 @@ public class UserMapper {
             user.setEmail(userDTO.getEmail());
             user.setActivated(userDTO.isActivated());
             user.setLangKey(userDTO.getLangKey());
+<<<<<<< HEAD
             Set<Role> roles = this.rolesFromStrings(userDTO.getRoles());
             user.setRoles(roles);
+=======
+            // Set<Authority> authorities = this.authoritiesFromStrings(userDTO.getAuthorities());
+            user.setAuthorities(userDTO.getAuthorities());
+>>>>>>> from upstream updates
             return user;
         }
     }
 
 
+<<<<<<< HEAD
     private Set<Role> rolesFromStrings(Set<String> rolesAsString) {
         Set<Role> authorities = new HashSet<>();
 
@@ -67,6 +76,19 @@ public class UserMapper {
 
         return authorities;
     }
+=======
+    // private Set<Authority> authoritiesFromStrings(Set<String> authoritiesAsString) {
+    //     Set<Authority> authorities = new HashSet<>();
+
+    //     if (authoritiesAsString != null) {
+    //         for (String authority: authoritiesAsString) {
+    //             authorities.add(Authority.valueOf(authority));
+    //         }
+    //         return authorities;
+    //     }
+    //     return authorities;
+    // }
+>>>>>>> from upstream updates
 
     public User userFromId(Long id) {
         if (id == null) {
