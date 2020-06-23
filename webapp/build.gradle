@@ -74,6 +74,12 @@ dependencies {
 	
     testImplementation 'com.h2database:h2:1.4.200'
     testImplementation 'org.springframework.security:spring-security-test'
+	// implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.eclipse.persistence:org.eclipse.persistence.jpa:2.7.7'
+	runtimeOnly 'mysql:mysql-connector-java'
+	implementation ('org.springframework.boot:spring-boot-starter-data-jpa') {
+        exclude group: "org.hibernate"
+    }
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
@@ -114,7 +120,7 @@ task weaveJpaEntities(type: JavaExec, dependsOn: [compileJava, processResources]
     args '-classpath'
     args configurations.compile.incoming.files.asPath
     args '-loglevel'
-    args 'INFO' // logging level at "FINE" shows alot of output to console.
+    args 'FINE' // logging level at "FINE" shows alot of output to console.
     args sourceSets.main.java.outputDir.absolutePath
     args sourceSets.main.java.outputDir.absolutePath
 

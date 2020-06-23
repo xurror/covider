@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
+<<<<<<< HEAD
   <component name="FacetManager">
     <facet type="android" name="Android">
       <configuration>
@@ -24,6 +25,12 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
+=======
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+>>>>>>> ee036c76d7008d27e159cd44a06b7f86daf2f91f
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
