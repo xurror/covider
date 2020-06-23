@@ -4,7 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+<<<<<<< HEAD
     tools:context=".dmVerifyUser">
+=======
+    tools:context=".dmLogin">
+>>>>>>> Redefined the interface
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,7 +26,11 @@
             android:src="@drawable/logo"
             android:layout_gravity="center"
             android:paddingTop="10dp"
+<<<<<<< HEAD
             android:contentDescription="@string/logo_icon" />
+=======
+            android:contentDescription="logo" />
+>>>>>>> Redefined the interface
         <TextView
             android:id="@+id/app_name"
             android:layout_width="wrap_content"
