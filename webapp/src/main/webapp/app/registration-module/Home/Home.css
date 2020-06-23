@@ -1,7 +1,7 @@
 .app {
-  padding: 3rem;
   display: flex;
-  margin-left: 3rem;
+  justify-content: center;
+  margin-top: 5%;
 }
 
 .main {
@@ -27,11 +27,6 @@
   margin-top: 5rem; 
   margin-bottom: 5rem;
 }
-
-/* .button:hover {
-  color: 'red';
-  pointer-events: visible;
-} */
 
 a {
   color: 'white';
