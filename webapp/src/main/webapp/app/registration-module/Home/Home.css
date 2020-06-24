@@ -1,0 +1,46 @@
+.app {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.main {
+  margin-top: 7rem;
+  margin-left: 10rem;
+}
+.cardstyle {
+  width: 22rem; 
+  height: 35rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: rgb(110, 19, 236);
+}
+
+.routercardstyle {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.button {
+  padding:1em;
+  text-align: center;
+  margin-top: 5rem; 
+  margin-bottom: 5rem;
+}
+
+a {
+  color: 'white';
+  text-decoration: none;
+}
+
+.App-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+@media (prefers-reduced-motion: no-preference) {}
+
+
+@keyframes App-logo-spin {}
