@@ -6,9 +6,13 @@ import com.admin.module.model.user.NormalUser;
 import com.admin.module.repository.user.UsersRepository;
 
 @Transactional
-public interface NormalUserRepo extends UsersRepository<NormalUser>{
+public interface NormalUserRepo extends UsersRepository{
 
 }
 
+/*public interface NormalUserRepo extends UsersRepository<NormalUser>{
+
+}
+*/
 
 
