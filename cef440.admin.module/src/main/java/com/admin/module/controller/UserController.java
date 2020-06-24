@@ -16,10 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.admin.module.dto.UserDTO;
+import com.admin.module.dto.AdminUserDTO;
 import com.admin.module.dto.AgentUserDTO;
 import com.admin.module.dto.UserDTO;
 import com.admin.module.dto.NMUserDTO;
 import com.admin.module.service.UserService;
+
 
 
 
@@ -45,15 +47,50 @@ public class UserController {
 		return ResponseEntity.ok(userService.retrieveUsers());
 	}
 	
+	@PostMapping("/user")
+	public ResponseEntity<UserDTO> addUser(@RequestBody UserDTO newUserDTO) {
+		UserDTO userDTO = userService.createUser(newUserDTO);
+		return new ResponseEntity<> (userDTO,HttpStatus.CREATED);
+		
+	}
+/*	
+	 @PostMapping("/private/category/set/{categorySetString}")
+	    public ResponseEntity<CategoryDTO> addCategory(@RequestBody CreateCategoryDTO newCategory, @PathVariable String categorySetString) {
+	        CategoryDTO categoryDTO = categoryService.saveCategory(newCategory, categorySetString);
+
+	        return new ResponseEntity<> (categoryDTO,HttpStatus.CREATED);
+	    }
+*/	
 	@GetMapping("/users/nmuser/{userType}")
-	public ResponseEntity<List<NMUserDTO>> getAllNMUsers(@PathVariable String userType){
+	public ResponseEntity<List<UserDTO>> getAllNMUsers(@PathVariable String userType){
 		return ResponseEntity.ok().body(userService.retrieveNMUsers(userType));
 	}
 	
 	@GetMapping("/users/agentuser/{userType}")
-	public ResponseEntity<List<AgentUserDTO>> getAllAgentUsers(@PathVariable String userType){
+	public ResponseEntity<List<UserDTO>> getAllAgentUsers(@PathVariable String userType){
 		return ResponseEntity.ok(userService.retrieveAgentUsers(userType));
 	}
+	
+	@GetMapping("/users/adminuser/{userType}")
+	public ResponseEntity<List<UserDTO>> getAllAdminUsers(@PathVariable String userType){
+		return ResponseEntity.ok(userService.retrieveAdminUsers(userType));
+	}
+	
+	@GetMapping("/users/nmuser/{userType}/userid/{userId}")
+	public ResponseEntity<NMUserDTO> getNMUsers(@PathVariable String userType, @PathVariable int userId){
+		return ResponseEntity.ok().body(userService.retrieveNMUser(userType, userId));
+	}
+	
+	@GetMapping("/users/agentuser/{userType}/userid/{userId}")
+	public ResponseEntity<AgentUserDTO> getAgentUsers(@PathVariable String userType, @PathVariable int userId){
+		return ResponseEntity.ok().body(userService.retrieveAgentUser(userType, userId));
+	}
+	
+	@GetMapping("/users/adminuser/{userType}/userid/{userId}")
+	public ResponseEntity<AdminUserDTO> getAdminUsers(@PathVariable String userType, @PathVariable int userId){
+		return ResponseEntity.ok().body(userService.retrieveAdminUser(userType, userId));
+	}
+	
 	
 	
 
