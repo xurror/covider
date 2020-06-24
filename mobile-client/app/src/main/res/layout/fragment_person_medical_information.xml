@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".PersonMedicalInformation">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="24dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="24dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Current COVID-19 Status"
+                app:startIconDrawable="@drawable/ic_baseline_local_hospital_24"
+                app:errorEnabled="true"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Have you been tested for COVID-19"
+                app:startIconDrawable="@drawable/ic_baseline_local_hospital_24"
+                app:errorEnabled="true"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchMaterial"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                app:useMaterialThemeColors="true"
+                app:thumbTint="@color/blue"
+                android:text="Cough"
+                style="@style/Widget.MaterialComponents.CompoundButton.Switch"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout1" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchMaterial1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                app:useMaterialThemeColors="true"
+                app:thumbTint="@color/blue"
+                android:text="High Temperature"
+                style="@style/Widget.MaterialComponents.CompoundButton.Switch"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@+id/switchMaterial" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchMaterial2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                app:useMaterialThemeColors="true"
+                app:thumbTint="@color/blue"
+                android:text="Fever"
+                style="@style/Widget.MaterialComponents.CompoundButton.Switch"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@+id/switchMaterial1" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchMaterial3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                app:useMaterialThemeColors="true"
+                app:thumbTint="@color/blue"
+                android:text="Tiredness"
+                style="@style/Widget.MaterialComponents.CompoundButton.Switch"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@+id/switchMaterial2" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchMaterial4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                app:useMaterialThemeColors="true"
+                app:thumbTint="@color/blue"
+                android:text="Breathing Issues"
+                style="@style/Widget.MaterialComponents.CompoundButton.Switch"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@+id/switchMaterial3" />
+
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/extendedFloatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/primary"
+                android:tint="@color/white"
+                android:text="SAVE"
+                android:textColor="@color/white"
+                app:icon="@drawable/ic_baseline_check_24"
+                app:iconTint="@color/white"
+                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton.Icon"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                app:layout_constraintTop_toBottomOf="@+id/switchMaterial4"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>
