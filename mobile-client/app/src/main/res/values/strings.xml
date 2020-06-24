@@ -1,12 +1,35 @@
 <resources>
-    <string name="app_name">covider</string>
-    <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="app_name">CEFF440 PROJECT</string>
+    <string name="prefLoginState">loginstate</string>
+    <string name="prefLoginUserName">loginusername</string>
+    <string name="prefLoginUserID">loginuserid</string>
+    <string name="prefLoginUserEmail">loginuseremail</string>
+    <string name="prefLoginUserStatus">loginuserstatus</string>
+    <string name="preftoken">token</string>
+    <string name="approxresidence" />
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="channel_id">MyChannel</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+
+    <string name="top_icon">TOP ICON</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="password2">Confirm Password</string>
+    <string name="login">LOGIN</string>
+    <string name="signup">SIGN UP</string>
+    <string name="reset">RESET PASSWORD</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="gotologin">Go back to login</string>
+    <string name="or">OR</string>
+    <string name="google_icon">google icon</string>
+    <string name="facebook_icon">facebook icon</string>
+    <string name="new_user_register_now">New User? Register Now</string>
+    <string name="alreadyhaveaccount">Already have an account? Login here</string>
 </resources>
