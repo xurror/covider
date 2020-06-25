@@ -21,10 +21,10 @@
 -->
 
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
-    xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:sec="http://www.springframework.org/schema/security"
-    xmlns:tx="http://www.springframework.org/schema/tx" xmlns:cache="http://www.springframework.org/schema/cache"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:sec="http://www.springframework.org/schema/security"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
         http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
@@ -37,9 +37,9 @@
 
 
     <!-- Enable Spring Annotation Configuration -->
-	<context:annotation-config />
-	<!-- Scan for all of Spring components such as Spring Service -->
-	<context:component-scan base-package="cm.ubuea.covider.registration.service"></context:component-scan>
+    <context:annotation-config />
+    <!-- Scan for all of Spring components such as Spring Service -->
+    <context:component-scan base-package="cm.ubuea.covider.registration.service"></context:component-scan>
 
 
     <bean id="hikariDataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
@@ -79,11 +79,11 @@
 
 
     <!-- Necessary to get the entity manager injected into the factory bean -->
-	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />	
+    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
 
-	<!-- Entity Manager Factory -->
+    <!-- Entity Manager Factory -->
     <bean id="entityManagerFactory"
-        class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+          class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="hikariDataSource" />
         <property name="persistenceUnitName" value="EclipseLink-PU" />
         <property name="jpaVendorAdapter">
@@ -94,12 +94,12 @@
         </property>
     </bean>
 
-	<!-- Transaction Manager -->
-	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-		<property name="entityManagerFactory" ref="entityManagerFactory" />
-	</bean>
+    <!-- Transaction Manager -->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
 
-	<!-- Detect @Transactional -->
-	<tx:annotation-driven transaction-manager="transactionManager" />
+    <!-- Detect @Transactional -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
 
 </beans>

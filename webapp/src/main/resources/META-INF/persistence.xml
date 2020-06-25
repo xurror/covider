@@ -10,6 +10,8 @@
         <class>cm.ubuea.covider.registration.domain.PersistentAuditEvent</class>
         <class>cm.ubuea.covider.registration.domain.User</class>
         <class>cm.ubuea.covider.registration.domain.Role</class>
+        <class>cm.ubuea.covider.registration.domain.UserLocation</class>
+        <class>cm.ubuea.covider.registration.domain.MedicalRecord</class>
 
         <shared-cache-mode>ALL</shared-cache-mode>
         <properties>
@@ -22,6 +24,8 @@
             <property name="eclipselink.logging.level" value="INFO"/>
             <property name="eclipselink.jdbc.batch-writing" value="JDBC"/>
             <property name="eclipselink.batch.size" value="100"/>
+            <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
+            <property name="eclipselink.ddl-generation.output-mode" value="database"/>
         </properties>
     </persistence-unit>
 </persistence>
