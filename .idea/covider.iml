@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
+<<<<<<< HEAD
   <component name="FacetManager">
     <facet type="android" name="Android">
       <configuration>
@@ -17,6 +18,12 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="jdk" jdkName="Android API 29 Platform" jdkType="Android SDK" />
+=======
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+>>>>>>> 9f8a637... added functionality to add user's visited locations and medical status
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
