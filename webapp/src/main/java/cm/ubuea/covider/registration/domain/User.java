@@ -3,15 +3,7 @@ package cm.ubuea.covider.registration.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.LocalDateTime;
 import java.util.Set;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -25,7 +17,7 @@ public class User extends AbstractAuditingEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @NotNull
     @Column(name = "id_number", unique = true, nullable = false)
     private String idNumber;
@@ -70,6 +62,17 @@ public class User extends AbstractAuditingEntity {
         inverseJoinColumns = {@JoinColumn(name = "role_name", referencedColumnName = "name")})
     private Set<Role> roles;
 
+    @OneToOne(fetch = FetchType.LAZY,
+        cascade =  CascadeType.ALL,
+        mappedBy = "user")
+    private UserLocation userLocation;
+
+    @OneToOne(fetch = FetchType.LAZY,
+        cascade =  CascadeType.ALL,
+        mappedBy = "user")
+    private MedicalRecord medicalRecord;
+
+
     public User() {
 
     }
@@ -100,7 +103,7 @@ public class User extends AbstractAuditingEntity {
     public String getIdNumber() {
         return this.idNumber;
     }
-        
+
     public void setIdNumber(final String idNumber) {
         this.idNumber = idNumber;
     }
