@@ -25,7 +25,7 @@ class Login extends Component {
   handleLogin() {
     this.props.setFirstTime(true)
     this.setState({ modalShow: true })
-    this.setState({ stage: 2 })
+    // this.setState({ stage: 2 })
   }
   changeRoute(route) {
     this.props.changeRoute(route)
@@ -66,7 +66,44 @@ const RenderLoginPage = (props) => {
   
   return (
     <div className="wrapper shadow ct">
-      login page
+      <div className="card-body">
+        <p onClick={() => changeRoute('home')} className='f5 link dim black underline pointer'>Back</p>
+        <div className="d-flex justify-content-between">
+          <div className="p-2" style={{ marginLeft: "-10px" }}>
+            <h4>Login</h4>
+          </div>
+          <div className="p-2">
+            <a href="/help" style={{ color: "#B8C5D9" }}>Having trouble? <strong className="helpColor" >Get Help</strong></a>
+          </div>
+        </div>
+
+        <div style={{ marginTop: "2rem" }}>
+          <p style={{ fontSize: "1.2rem" }}>Welcome back, login to continue</p>
+          <p style={{ fontSize: ".8rem;" }}>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae</p>
+        </div>
+        <LoginSuccesModal
+            show={modalShow}
+            onHide={() => onHide()}
+          />
+
+        <div style={{ width: "40%" }}>
+          <Form>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Email / Id card number</Form.Label>
+              <Form.Control type="email" placeholder="Email / Id card number" />
+            </Form.Group>
+
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Password" />
+            </Form.Group>
+            <Button onClick={() => handleLogin()} className="grow" variant="primary" style={{ backgroundColor: '#6e13ec', borderWidth: 0 }}>
+              Login
+            </Button>
+
+          </Form>
+        </div>
+      </div>
     </div>
   )
 }
