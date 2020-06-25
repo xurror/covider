@@ -53,6 +53,14 @@
         <property name="idleTimeout" value="60000" />
         <property name="ConnectionTestQuery" value="SELECT 1" />
 
+<!--        <property name="jdbcUrl" value="jdbc:h2:mem:testdb" />-->
+<!--        <property name="username" value="sa" />-->
+<!--        <property name="password" value="password" />-->
+<!--        <property name="minimumIdle" value="3" />-->
+<!--        <property name="maximumPoolSize" value="10" />-->
+<!--        <property name="idleTimeout" value="60000" />-->
+<!--        <property name="ConnectionTestQuery" value="SELECT 1" />-->
+
         <!-- These are the properties for the all Tenants DB; the same configuration is also (hard-coded) in the TomcatJdbcDataSourcePerTenantService class -->
         <property name="dataSourceProperties">
             <props>

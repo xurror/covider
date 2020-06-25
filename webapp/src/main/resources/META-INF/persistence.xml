@@ -5,6 +5,9 @@
 
     <persistence-unit name="EclipseLink-PU" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+<!--      <class>cm.ubuea.covider.profile_module.models.User</class>-->
+<!--      <class>cm.ubuea.covider.profile_module.models.Location</class>-->
+<!--      <class>cm.ubuea.covider.profile_module.models.Role</class>-->
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <shared-cache-mode>ALL</shared-cache-mode>
         <properties>
