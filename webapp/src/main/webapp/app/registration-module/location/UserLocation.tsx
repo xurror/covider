@@ -25,7 +25,7 @@ class UserLocation extends Component {
     const { changeStage } = this.props;
     return (
       <div className="wrapper shadow">
-        location 
+        Location
       </div>
     )
   }
