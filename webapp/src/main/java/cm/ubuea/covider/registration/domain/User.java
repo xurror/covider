@@ -1,29 +1,26 @@
 package cm.ubuea.covider.registration.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Set;
-
-import javax.persistence.CollectionTable;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name="user")
-public class User extends AbstractAuditingEntity implements Serializable {
+@Table(name="c_user")
+public class User extends AbstractAuditingEntity {
 
-    private static final long serialVersionUID = 1520540783775614588L;
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -67,13 +64,11 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Column(name = "reset_date")
     private LocalDateTime resetDate;
 
-    @ElementCollection
-    @CollectionTable(
-            name="authority",
-            joinColumns=@JoinColumn(name="id_number")
-    )
-    @Column(name = "user_authority")
-    private Set<String> authorities;
+    @ManyToMany
+    @JoinTable(name = "c_user_role",
+        joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
+        inverseJoinColumns = {@JoinColumn(name = "role_name", referencedColumnName = "name")})
+    private Set<Role> roles;
 
     public User() {
 
@@ -162,12 +157,12 @@ public class User extends AbstractAuditingEntity implements Serializable {
         this.langKey = langKey;
     }
 
-    public Set<String> getAuthorities() {
-        return authorities;
+    public Set<Role> getRoles() {
+        return roles;
     }
 
-    public void setAuthorities(Set<String> authorities) {
-        this.authorities = authorities;
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 
     @Override
@@ -192,6 +187,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
         return "User{" +
             "email='" + email + '\'' +
             ", name='" + name + '\'' +
+            ", roles='" + roles + '\'' +
             ", idNumber='" + idNumber + '\'' +
             ", activated='" + activated + '\'' +
             ", langKey='" + langKey + '\'' +

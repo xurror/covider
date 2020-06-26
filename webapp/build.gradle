@@ -11,7 +11,6 @@ plugins {
     id "com.gorylenko.gradle-git-properties" version '2.2.2'
     id "net.ltgt.apt-eclipse" version '0.21'
     id "net.ltgt.apt-idea" version '0.21'
-    id 'checkstyle'
     id "jacoco"
 	id 'java'
 }
@@ -61,6 +60,7 @@ dependencies {
     implementation "javax.cache:cache-api"
     implementation "org.ehcache:ehcache"
     implementation 'org.apache.commons:commons-lang3:3.10'
+    implementation 'org.flywaydb:flyway-core:6.4.4'
     implementation 'io.jsonwebtoken:jjwt-api:0.10.5'
     implementation "org.hibernate.validator:hibernate-validator"
     implementation ('org.springframework.boot:spring-boot-starter-data-jpa') {
@@ -146,12 +146,6 @@ task dropDB {
 gitProperties {
     failOnNoGitDirectory = false
     keys = ["git.branch", "git.commit.id.abbrev", "git.commit.id.describe"]
-}
-
-checkstyle {
-    toolVersion '8.32'
-    configFile file("checkstyle.xml")
-    checkstyleTest.enabled = false
 }
 
 compileJava.dependsOn processResources
