@@ -4,8 +4,8 @@ import { Button, Modal, Spinner } from 'react-bootstrap';
 function LoginSuccesModal(props) {
   return (
     <div>
-      login success Modal
-    </div>>
+      Login Successfull Modal
+    </div>
   );
 }
 
