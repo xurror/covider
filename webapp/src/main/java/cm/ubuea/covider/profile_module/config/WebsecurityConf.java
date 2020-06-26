@@ -42,15 +42,6 @@ public class WebsecurityConf extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring()
-                .antMatchers(HttpMethod.GET, "/")
-                .and().ignoring()
-                .antMatchers(HttpMethod.POST, "/authenticate")
-                .and().ignoring()
-                .antMatchers("**/swagger-ui.html");
-    }
-    @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
 
