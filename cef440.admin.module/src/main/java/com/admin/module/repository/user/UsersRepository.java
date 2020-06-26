@@ -16,8 +16,18 @@ import com.admin.module.model.user.Users;
 @Repository
 public interface UsersRepository extends JpaRepository<Users, Integer> {
 
-	List<Users> findByUserType(String userType);
+	//List<Users> findByUserType(String userType);
 }
+
+
+/*
+ * @NoRepositoryBean public interface UsersRepository<T extends Users> extends
+ * CrudRepository<T, Long> {
+ * 
+ * List<Users> findByUserType(String userType);
+ * 
+ * }
+ */
 
 /*
  * @Repository public interface UsersRepository extends JpaRepository<Users,

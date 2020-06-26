@@ -6,12 +6,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
-import com.admin.module.dto.NMUserDTO;
 import com.admin.module.dto.UserDTO;
-import com.admin.module.dto.AdminUserDTO;
-import com.admin.module.dto.AgentUserDTO;
 import com.admin.module.model.user.UserType;
 import com.admin.module.model.user.Users;
 import com.admin.module.repository.user.UsersRepository;
@@ -24,11 +23,16 @@ public class UserServiceImp implements UserService {
 	private UsersRepository usersRepository;
 	
 	
+	
+
 	@Autowired
 	public UserServiceImp(UsersRepository usersRepository) {
 		super();
 		this.usersRepository = usersRepository;
+		
 	}
+
+
 
 	@Override
 	public List<UserDTO> retrieveUsers() {
@@ -41,45 +45,56 @@ public class UserServiceImp implements UserService {
 	
 	
 	@Override
-	public List<UserDTO> retrieveNMUsers(String userType) {
+	public List<UserDTO> retrieveNMUsers() { //String userType
 		// TODO Auto-generated method stub
-		Iterable<Users> users = usersRepository.findByUserType("NORMAL");
+		List<UserDTO> userDTOS = retrieveUsers();
 		List<UserDTO> nmUserDTOS = new ArrayList<>();
-		nmUserDTOS=loadUserDTOS(users);
+		for(UserDTO userDTO: userDTOS) {
+			if(userDTO.getUserType() == UserType.NORMAL) {
+				nmUserDTOS.add(userDTO);
+			}
+		}
 		return nmUserDTOS;
 		  
 	}
 
 	@Override
-	public List<UserDTO> retrieveAgentUsers(String userType) {
+	public List<UserDTO> retrieveAgentUsers() {
 		// TODO Auto-generated method stub
-		Iterable<Users> users = usersRepository.findByUserType("AGENT");
+		List<UserDTO> userDTOS = retrieveUsers();
 		List<UserDTO> agentUserDTOS = new ArrayList<>();
-		agentUserDTOS=loadUserDTOS(users);
+		for(UserDTO userDTO: userDTOS) {
+			if(userDTO.getUserType() == UserType.AGENT) {
+				agentUserDTOS.add(userDTO);
+			}
+		}
 		return agentUserDTOS;
 	}
 
 	@Override
-	public List<UserDTO> retrieveAdminUsers(String userType) {
+	public List<UserDTO> retrieveAdminUsers() {
 		// TODO Auto-generated method stub
-		Iterable<Users> users = usersRepository.findByUserType("ADMIN");
+		List<UserDTO> userDTOS = retrieveUsers();
 		List<UserDTO> adminUserDTOS = new ArrayList<>();
-		adminUserDTOS=loadUserDTOS(users);
+		for(UserDTO userDTO: userDTOS) {
+			if(userDTO.getUserType() == UserType.ADMIN) {
+				adminUserDTOS.add(userDTO);
+			}
+		}
 		return adminUserDTOS;
 	}
 	
 	@Override
-	public NMUserDTO retrieveNMUser(String userType, int userId) {
+	public UserDTO retrieveUser(int userId) {
 		// TODO Auto-generated method stub
-		List<UserDTO> nmUserDTOS = retrieveNMUsers(userType);
-		for(UserDTO userDTO: nmUserDTOS) {
-			if(userDTO.getUserId() == userId) {
-				return (NMUserDTO) userDTO;
-			} 
-			
-		}
-		return null;
-		//throw new ResourceNotFoundException("No category set found with identifier"+categorySetString);
+		Optional<Users> userOptional = usersRepository.findById(userId);
+		if(userOptional.isPresent()) {
+            Users user = userOptional.get();
+            UserDTO userDTO = copyUsertoUserDTO(user);
+            return  userDTO;
+        } else {
+            throw new ResourceNotFoundException("User with User_Id = "+ userId + " does not exist");
+        }
 	}
 	
 /*	
@@ -108,34 +123,7 @@ public class UserServiceImp implements UserService {
 */
 	
 	
-	@Override
-	public AgentUserDTO retrieveAgentUser(String userType, int userId) {
-		// TODO Auto-generated method stub
-		List<UserDTO> agentUserDTOS = retrieveNMUsers(userType);
-		for(UserDTO userDTO: agentUserDTOS) {
-			if(userDTO.getUserId() == userId) {
-				return (AgentUserDTO) userDTO;
-			} 
-			
-		}
-		return null;
-		//throw new ResourceNotFoundException("No category set found with identifier"+categorySetString);
-	}
-	
-	@Override
-	public AdminUserDTO retrieveAdminUser(String userType, int userId) {
-		// TODO Auto-generated method stub
-		List<UserDTO> adminUserDTOS = retrieveAdminUsers(userType);
-		for(UserDTO userDTO: adminUserDTOS) {
-			if(userDTO.getUserId() == userId) {
-				return (AdminUserDTO) userDTO;
-			} 
-			
-		}
-		return null;
-		//throw new ResourceNotFoundException("No category set found with identifier"+categorySetString);
-	}
-	
+		
 	public List<UserDTO> loadUserDTOS(Iterable<Users> users) {
 		
 		List<UserDTO> userDTOS = new ArrayList<>();
@@ -167,12 +155,26 @@ public class UserServiceImp implements UserService {
         userDTO.setUserDOB(user.getUserDOB());
         userDTO.setUserPassword(user.getUserPassword());
         userDTO.setUserType(user.getUserType());
-        userDTO.setUserDateOfBirthString(user.getUserDateOfBirthString());
+        //userDTO.setUserDateOfBirthString(user.getUserDateOfBirthString());
        
         return userDTO;
     }
 	
 	public Users copyUserDTOtoUser(UserDTO newUserDTO) {
+		UserType userType = newUserDTO.getUserType();
+		UserType type;
+		switch(userType) {
+		case ADMIN:
+			type = userType;
+			break;
+		case AGENT:
+			type = userType;
+			break;
+		default:
+			type = UserType.NORMAL;
+		}
+		
+			
         
 		Users user = new Users();
 		user.setUserFullName(newUserDTO.getUserFullName());
@@ -180,8 +182,8 @@ public class UserServiceImp implements UserService {
 		user.setUserEmail(newUserDTO.getUserEmail());
 		user.setUserDOB(newUserDTO.getUserDOB());
 		user.setUserPassword(newUserDTO.getUserPassword());
-		user.setUserType(newUserDTO.getUserType());
-		user.setUserDateOfBirthString(newUserDTO.getUserDateOfBirthString());       
+		user.setUserType(type);
+		//user.setUserDateOfBirthString(newUserDTO.getUserDateOfBirthString());       
         return user;
     }
 	

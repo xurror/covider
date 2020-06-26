@@ -22,7 +22,7 @@ import lombok.Data;
 @Data
 public class UserDTO {
 
-	private Long userId;
+	private int userId;
 	private String userFullName;
 	private String userName;
 	private String userEmail;
@@ -35,8 +35,8 @@ public class UserDTO {
 		
 	}
 
-	public UserDTO(Long userId, String userFullName, String userName, String userEmail, Date userDOB,
-			String userPassword, UserType userType, String userDateOfBirthString) {
+	public UserDTO(int userId, String userFullName, String userName, String userEmail, Date userDOB,
+			String userPassword, UserType userType) {
 		super();
 		this.userId = userId;
 		this.userFullName = userFullName;
@@ -45,7 +45,6 @@ public class UserDTO {
 		this.userDOB = userDOB;
 		this.userPassword = userPassword;
 		this.userType = userType;
-		this.userDateOfBirthString = userDateOfBirthString;
 	}
 
 	@Override
@@ -55,11 +54,11 @@ public class UserDTO {
 				+ userType + "]";
 	}
 
-	public Long getUserId() {
+	public int getUserId() {
 		return userId;
 	}
 
-	public void setUserId(Long userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 
