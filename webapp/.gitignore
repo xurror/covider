@@ -61,3 +61,4 @@ Thumbs.db
 build/
 bin/
 .vscode
+.idea
