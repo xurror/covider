@@ -24,7 +24,7 @@ public class Users {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "USER_ID", columnDefinition = "bigint(10)", length = 8)
-	private Long userId;
+	private int userId;
 
 	// @NotNull
 
@@ -40,7 +40,6 @@ public class Users {
 	private String userEmail;
 
 	@Temporal(value = TemporalType.DATE)
-
 	@Column(name = "USER_DOB", nullable = false, columnDefinition = "date")
 	private Date userDOB;
 
@@ -60,7 +59,7 @@ public class Users {
 
 	}
 
-	public Users(Long userId, String userFullName, String userName, String userEmail, Date userDOB, String userPassword,
+	public Users(int userId, String userFullName, String userName, String userEmail, Date userDOB, String userPassword,
 			UserType userType, String userDateOfBirthString) {
 		super();
 		this.userId = userId;
@@ -80,11 +79,11 @@ public class Users {
 				+ "]";
 	}
 
-	public Long getUserId() {
+	public int getUserId() {
 		return userId;
 	}
 
-	public void setUserId(Long userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 
