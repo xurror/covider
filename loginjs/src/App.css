@@ -2,30 +2,6 @@
   text-align: center;
 }
 
-.da{
-  max-width: 350px;
-  ;
-}
-.title{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.bab {
-
-  background-color:#2253b4;
-  display: center;
-  max-width: 320px;
-  border: 25px solid #f1f1f1;
-  padding-top:100px ;
-  padding-bottom: 100px ;
-  margin: 0 auto;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-
-}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -34,7 +10,6 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
-    animation: App-logo-fadeout 
   }
 }
 
