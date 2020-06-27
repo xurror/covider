@@ -1,11 +1,14 @@
 .App {
   text-align: center;
+  width: 80%;
+  margin: auto;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -14,14 +17,19 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: gray;
+}
+
+.Map {
+  margin: auto;
+  padding: 4%;
+  text-align: center;
 }
 
 .App-link {
