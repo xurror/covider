@@ -26,6 +26,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	 implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.eclipse.persistence:org.eclipse.persistence.jpa:2.7.7'
+    implementation "javax.annotation:javax.annotation-api"
+    implementation "org.hibernate.validator:hibernate-validator"
 	runtimeOnly 'mysql:mysql-connector-java'
 	implementation ('org.springframework.boot:spring-boot-starter-data-jpa') {
         exclude group: "org.hibernate"
