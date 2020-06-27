@@ -6,8 +6,8 @@ import Geolocation from './distribution_module/Geolocation/Geolocation'
 function App() {
   return (
     <div>
-        /* <Login/> */
-        <Geolocation />
+         {/* <Login/> */}
+        {/* <Geolocation /> */}
     </div>
    
   )

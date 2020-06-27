@@ -3,6 +3,7 @@ import './Geolocation.css';
 import GoogleMapReact  from 'google-map-react';
 import Marker from './Marker';
 
+// You should use a valid API key as indicated down here to access google map 
 
 const Geolocation = (props: any) => {
   const getMapOptions = (maps: any) => {
@@ -14,6 +15,7 @@ const Geolocation = (props: any) => {
     };
   };
 
+    // insert user longitude and latitude just after lat and lng
     const [center] = useState({lat: 4.16015815019341, lng: 9.228515625000002 });
     const [zoom] = useState(15);
 
@@ -28,16 +30,18 @@ const Geolocation = (props: any) => {
         <div className="Map">
           <div style={{ height: '60vh', width: '100%' }}>
             <GoogleMapReact
-              bootstrapURLKeys={{ key:"AIzaSyByphHfH2P3HIK9w0vU46GWUKUSg0BHTGQ" }}
+              // insert a valid API key down just after key
+              bootstrapURLKeys={{ key: 'API' }}
               defaultCenter={center}
               defaultZoom={zoom}
               options={getMapOptions}
             >
 
             <Marker
+                        // insert user longitude and latitude just after lat and lng
                         lat={4.16015815019341}
                         lng={9.228515625000002}
-                        name="User location"
+                        name="user location"
                         color="blue"
                       />
 
