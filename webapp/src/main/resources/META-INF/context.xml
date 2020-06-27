@@ -35,7 +35,7 @@
     <!-- Enable Spring Annotation Configuration -->
 	<context:annotation-config />
 	<!-- Scan for all of Spring components such as Spring Service -->
-	<context:component-scan base-package="cm.ubuea.covider.samplemodule.service"></context:component-scan>
+	<context:component-scan base-package="cm.ubuea.covider.profile_module.services"></context:component-scan>
 
 
     <bean id="hikariDataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
@@ -44,10 +44,10 @@
 
     <!-- HikariConfig config that is fed to above dataSource -->
     <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="jdbcUrl" value="jdbc:mysql://sql3.freemysqlhosting.net:3306/sql3349346?serverTimezone=UTC" />
-        <property name="username" value="sql3349346" />
-        <property name="password" value="2wzPFAEZ3e" />
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/covider?serverTimezone=UTC" />
+        <property name="username" value="root" />
+        <property name="password" value="mysql" />
         <property name="minimumIdle" value="3" />
         <property name="maximumPoolSize" value="10" />
         <property name="idleTimeout" value="60000" />
@@ -75,7 +75,7 @@
 
 
     <!-- Necessary to get the entity manager injected into the factory bean -->
-	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />	
+	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
 
 	<!-- Entity Manager Factory -->
     <bean id="entityManagerFactory"
