@@ -1,2 +1,2 @@
-rootProject.name='covider'
+rootProject.name='Covider Admin'
 include ':app'
