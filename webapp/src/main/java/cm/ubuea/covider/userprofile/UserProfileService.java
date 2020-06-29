@@ -8,8 +8,10 @@ import cm.ubuea.covider.registration.repository.UserLocationRepository;
 import cm.ubuea.covider.registration.repository.UserRepository;
 import cm.ubuea.covider.registration.service.dto.LocationDTO;
 import cm.ubuea.covider.registration.service.dto.MedicalRecordDTO;
+import cm.ubuea.covider.registration.service.dto.UserDetailsDTO;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -71,5 +73,35 @@ public class UserProfileService {
             userLocationInfo.setPrevious_location(userLocations);
             userLocationRepository.save(userLocationInfo);
         }
+    }
+
+    public List<UserDetailsDTO> getAll() {
+        Iterable<User> iterable = userRepository.findAll();
+        List<UserDetailsDTO> userDetailsDTOS = new ArrayList<>();
+        for (User user : iterable) {
+            UserDetailsDTO dto = new UserDetailsDTO();
+            dto.setIdNumber(user.getIdNumber());
+            dto.setEmail(user.getEmail());
+            dto.setCurrent_symptoms(user.getMedicalRecord().getCurrent_symptoms());
+            dto.setCurrent_status(user.getMedicalRecord().isCurrent_status());
+            dto.setCurrent_loctaion(user.getUserLocation().getCurrent_loctaion());
+            dto.setPrevious_location(user.getUserLocation().getPrevious_location());
+            userDetailsDTOS.add(dto);
+        }
+        return userDetailsDTOS;
+    }
+
+
+    public UserDetailsDTO getOne(String id) {
+        Optional<User> userOptional = userRepository.findOneByIdNumber(id);
+            User user = userOptional.get();
+            UserDetailsDTO dto = new UserDetailsDTO();
+            dto.setIdNumber(user.getIdNumber());
+            dto.setEmail(user.getEmail());
+            dto.setCurrent_symptoms(user.getMedicalRecord().getCurrent_symptoms());
+            dto.setCurrent_status(user.getMedicalRecord().isCurrent_status());
+            dto.setCurrent_loctaion(user.getUserLocation().getCurrent_loctaion());
+            dto.setPrevious_location(user.getUserLocation().getPrevious_location());
+            return dto;
     }
 }

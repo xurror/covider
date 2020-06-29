@@ -168,6 +168,22 @@ public class User extends AbstractAuditingEntity {
         this.roles = roles;
     }
 
+    public UserLocation getUserLocation() {
+        return userLocation;
+    }
+
+    public void setUserLocation(UserLocation userLocation) {
+        this.userLocation = userLocation;
+    }
+
+    public MedicalRecord getMedicalRecord() {
+        return medicalRecord;
+    }
+
+    public void setMedicalRecord(MedicalRecord medicalRecord) {
+        this.medicalRecord = medicalRecord;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {

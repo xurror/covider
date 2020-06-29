@@ -7,10 +7,13 @@ import cm.ubuea.covider.registration.service.UserLocationService;
 import cm.ubuea.covider.registration.service.UserService;
 import cm.ubuea.covider.registration.service.dto.LocationDTO;
 import cm.ubuea.covider.registration.service.dto.MedicalRecordDTO;
+import cm.ubuea.covider.registration.service.dto.UserDetailsDTO;
 import cm.ubuea.covider.registration.service.serviceImpl.MedicalRecordServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -19,6 +22,16 @@ public class UserProfileController {
 
     public UserProfileController(UserProfileService userProfileService) {
         this.userProfileService = userProfileService;
+    }
+
+    @GetMapping("/users")
+    public ResponseEntity<List<UserDetailsDTO>> getAllUsersRecords() {
+        return new ResponseEntity<>(userProfileService.getAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("/user/{id_card}")
+    public ResponseEntity<UserDetailsDTO> getUserRecords(@PathVariable("id_card") String id){
+        return new ResponseEntity<>(userProfileService.getOne(id), HttpStatus.OK);
     }
 
     @GetMapping("/user/profile/{id_card}/medical")
