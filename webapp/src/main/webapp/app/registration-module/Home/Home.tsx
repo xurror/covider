@@ -52,11 +52,11 @@ class Home extends Component {
               A few clicks away from becoming a member</h6>
           </Card.Subtitle>
           <Card.Text className="text-center" style={{ marginTop: "2rem", fontSize: ".8rem", color: "antiquewhite" }}>
-            Lorem ipsum dolor sit amet et
-                  delectus</Card.Text>
+            fill in every information. to make things go faster
+                  </Card.Text>
           <div className="button" onClick={() => this.setState({ route: 'login' })} >
             <p className='link dim underline pointer'
-              style={{ color: "#faebd7", textDecoration: "underline" }}>Have an Account ? <strong>Login</strong></p>
+              style={{ color: "#faebd7", textDecoration: "underline" }}>Do you Have an Account ? <strong> Login</strong></p>
           </div>
         </div>
       )

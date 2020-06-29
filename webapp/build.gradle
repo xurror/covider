@@ -6,19 +6,19 @@ buildscript {
 }
 
 plugins {
-	id 'org.springframework.boot' version '2.3.1.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'org.springframework.boot' version '2.3.1.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
     id "com.gorylenko.gradle-git-properties" version '2.2.2'
     id "net.ltgt.apt-eclipse" version '0.21'
     id "net.ltgt.apt-idea" version '0.21'
     id "jacoco"
-	id 'java'
+    id 'java'
 }
 
 apply plugin: 'io.spring.dependency-management'
 dependencyManagement {
     imports {
-       mavenBom "org.springframework:spring-framework-bom:5.2.6.RELEASE"
+        mavenBom "org.springframework:spring-framework-bom:5.2.6.RELEASE"
     }
 }
 
@@ -35,13 +35,13 @@ springBoot {
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation "org.springframework.boot:spring-boot-starter-cache"
     implementation "org.springframework.boot:spring-boot-starter-aop"
     implementation "org.springframework.boot:spring-boot-starter-logging"
@@ -54,13 +54,13 @@ dependencies {
     implementation 'io.github.jhipster:jhipster-framework:3.8.0'
     implementation "com.fasterxml.jackson.core:jackson-annotations"
     implementation "com.fasterxml.jackson.core:jackson-databind"
-	implementation 'org.eclipse.persistence:org.eclipse.persistence.jpa:2.7.7'
+    implementation 'org.eclipse.persistence:org.eclipse.persistence.jpa:2.7.7'
     implementation "javax.annotation:javax.annotation-api"
     implementation "javax.transaction:javax.transaction-api"
     implementation "javax.cache:cache-api"
     implementation "org.ehcache:ehcache"
     implementation 'org.apache.commons:commons-lang3:3.10'
-    implementation 'org.flywaydb:flyway-core:6.4.4'
+    // implementation 'org.flywaydb:flyway-core:6.4.4'
     implementation 'io.jsonwebtoken:jjwt-api:0.10.5'
     implementation "org.hibernate.validator:hibernate-validator"
     implementation ('org.springframework.boot:spring-boot-starter-data-jpa') {
@@ -70,13 +70,13 @@ dependencies {
 
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.10.5'
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.10.5'
-	runtimeOnly 'mysql:mysql-connector-java'
-	
+    runtimeOnly 'mysql:mysql-connector-java'
+
     testImplementation 'com.h2database:h2:1.4.200'
     testImplementation 'org.springframework.security:spring-security-test'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
 }
 
 // task integrationTest(type:Test) {
@@ -96,7 +96,7 @@ dependencies {
 // }
 
 test {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
 
 import groovy.sql.Sql
