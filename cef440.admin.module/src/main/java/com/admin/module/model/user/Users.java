@@ -22,7 +22,7 @@ public class Users {
 	// @Size(min = 5, max = 60, message = "Name must be between 5 to 60 characters")
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY.AUTO)
 	@Column(name = "USER_ID", columnDefinition = "bigint(10)", length = 8)
 	private int userId;
 
