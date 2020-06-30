@@ -26,6 +26,7 @@ public class dmLogin extends AppCompatActivity {
         });
 
 
+
         Button login_button = findViewById(R.id.login_button);
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +34,7 @@ public class dmLogin extends AppCompatActivity {
                 // Toast.makeText(getApplicationContext(), "Message sent, will be in touch", Toast.LENGTH_LONG).show();
                 Intent gotoDisTracking = new Intent(getApplicationContext(), dmDisTrack.class);
                 startActivity(gotoDisTracking);
+
             }
         });
     }
