@@ -16,6 +16,8 @@ import com.admin.module.model.user.Users;
 import com.admin.module.repository.user.UsersRepository;
 import com.admin.module.service.UserService;
 
+import cef440.admin.module.converter.StringToEnumConverter;
+
 
 
 @Service
@@ -50,7 +52,7 @@ public class UserServiceImp implements UserService {
 		List<UserDTO> userDTOS = retrieveUsers();
 		List<UserDTO> nmUserDTOS = new ArrayList<>();
 		for(UserDTO userDTO: userDTOS) {
-			if(userDTO.getUserType() == UserType.NORMAL) {
+			if(userDTO.getUserType() == UserType.NORMAL.toString()) {
 				nmUserDTOS.add(userDTO);
 			}
 		}
@@ -64,7 +66,7 @@ public class UserServiceImp implements UserService {
 		List<UserDTO> userDTOS = retrieveUsers();
 		List<UserDTO> agentUserDTOS = new ArrayList<>();
 		for(UserDTO userDTO: userDTOS) {
-			if(userDTO.getUserType() == UserType.AGENT) {
+			if(userDTO.getUserType() == UserType.AGENT.toString()) {
 				agentUserDTOS.add(userDTO);
 			}
 		}
@@ -77,7 +79,7 @@ public class UserServiceImp implements UserService {
 		List<UserDTO> userDTOS = retrieveUsers();
 		List<UserDTO> adminUserDTOS = new ArrayList<>();
 		for(UserDTO userDTO: userDTOS) {
-			if(userDTO.getUserType() == UserType.ADMIN) {
+			if(userDTO.getUserType() == UserType.ADMIN.toString()) {
 				adminUserDTOS.add(userDTO);
 			}
 		}
@@ -154,26 +156,27 @@ public class UserServiceImp implements UserService {
         userDTO.setUserEmail(user.getUserEmail());
         userDTO.setUserDOB(user.getUserDOB());
         userDTO.setUserPassword(user.getUserPassword());
-        userDTO.setUserType(user.getUserType());
-        //userDTO.setUserDateOfBirthString(user.getUserDateOfBirthString());
-       
+        userDTO.setUserType(user.getUserType().toString());
+        userDTO.setUserDateOfBirthString(user.getUserDateOfBirthString());
+        
         return userDTO;
     }
 	
 	public Users copyUserDTOtoUser(UserDTO newUserDTO) {
-		UserType userType = newUserDTO.getUserType();
-		UserType type;
-		switch(userType) {
-		case ADMIN:
-			type = userType;
+		
+		String userType = newUserDTO.getUserType();
+		String type;
+		
+		switch(userType.toLowerCase()) {
+		case "admin":
+			type = userType.toLowerCase();
 			break;
-		case AGENT:
-			type = userType;
+		case "agent":
+			type = userType.toLowerCase();
 			break;
 		default:
-			type = UserType.NORMAL;
+			type = "normal";
 		}
-		
 			
         
 		Users user = new Users();
@@ -182,8 +185,8 @@ public class UserServiceImp implements UserService {
 		user.setUserEmail(newUserDTO.getUserEmail());
 		user.setUserDOB(newUserDTO.getUserDOB());
 		user.setUserPassword(newUserDTO.getUserPassword());
-		user.setUserType(type);
-		//user.setUserDateOfBirthString(newUserDTO.getUserDateOfBirthString());       
+		user.setUserType(new StringToEnumConverter().convert(type));
+		user.setUserDateOfBirthString(newUserDTO.getUserDateOfBirthString());       
         return user;
     }
 	

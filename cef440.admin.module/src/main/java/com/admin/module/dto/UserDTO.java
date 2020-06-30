@@ -28,7 +28,7 @@ public class UserDTO {
 	private String userEmail;
 	private Date userDOB;
 	private String userPassword;
-	private UserType userType;
+	private String userType;
 	private transient String userDateOfBirthString;
 
 	public UserDTO() {
@@ -36,7 +36,7 @@ public class UserDTO {
 	}
 
 	public UserDTO(int userId, String userFullName, String userName, String userEmail, Date userDOB,
-			String userPassword, UserType userType) {
+			String userPassword, String userType, String userDateOfBirthString) {
 		super();
 		this.userId = userId;
 		this.userFullName = userFullName;
@@ -45,6 +45,7 @@ public class UserDTO {
 		this.userDOB = userDOB;
 		this.userPassword = userPassword;
 		this.userType = userType;
+		this.userDateOfBirthString = userDateOfBirthString;
 	}
 
 	@Override
@@ -102,11 +103,11 @@ public class UserDTO {
 		this.userPassword = userPassword;
 	}
 
-	public UserType getUserType() {
+	public String getUserType() {
 		return userType;
 	}
 
-	public void setUserType(UserType userType) {
+	public void setUserType(String userType) {
 		this.userType = userType;
 	}
 	
