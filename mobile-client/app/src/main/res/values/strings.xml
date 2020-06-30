@@ -24,6 +24,8 @@
     <string name="enter_token">Enter Token</string>
     <string name="signs_and_symptoms">Signs and syntoms</string>
     <string name="health_information">Health Information</string>
+    <string name="notification">Notifications</string>
+    <string name="users">Users</string>
     <string name="_3_places_you_lastly_visited">3 places you lastly visited</string>
     <string name="fever">Fever</string>
     <string name="dry_cough">Dry Cough</string>
@@ -33,4 +35,5 @@
     <string name="contact_us">Contact us</string>
     <string name="to_">To: Covider</string>
     <string name="message">Message</string>
+    <string name="list_view_to_contain_username_user_location_longitude_and_latitude">List view to contain username, user location: longitude and latitude</string>
 </resources>
