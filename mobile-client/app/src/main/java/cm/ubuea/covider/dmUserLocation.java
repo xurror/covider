@@ -1,21 +1,11 @@
 package cm.ubuea.covider;
 
-<<<<<<< HEAD
-import androidx.appcompat.app.AppCompatActivity;
-=======
-import androidx.fragment.app.FragmentActivity;
->>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
 
+import androidx.fragment.app.FragmentActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-<<<<<<< HEAD
-import android.widget.Toast;
-
-public class dmUserLocation extends AppCompatActivity {
-=======
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -26,25 +16,11 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class dmUserLocation extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
->>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dm_user_location);
-
-<<<<<<< HEAD
-        Button back_button = findViewById(R.id.submit_button);
-        back_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Location set", Toast.LENGTH_LONG).show();
-                Intent gotoLogin = new Intent(getApplicationContext(), dmLogin.class);
-                startActivity(gotoLogin);
-            }
-        });
-=======
-
 
         Button set_button = findViewById(R.id.set_button);
         set_button.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +55,5 @@ public class dmUserLocation extends FragmentActivity implements OnMapReadyCallba
         LatLng Buea = new LatLng(4.1488902,9.2856629);
         mMap.addMarker(new MarkerOptions().position(Buea).title("Buea"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Buea, 15));
->>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
     }
 }
