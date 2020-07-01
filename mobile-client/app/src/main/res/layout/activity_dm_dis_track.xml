@@ -1,36 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".dmDisTrack">
-
-    <LinearLayout
+    android:layout_gravity="center"
+    android:layout_centerInParent="true"
+    android:orientation="vertical">
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_gravity="center">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="tracking for user distribution ie tracking user location giving"
-            android:textSize="20sp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            />
+        />
+    <Button
+        android:id="@+id/found_button"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="@string/found"
+        android:textColor="#542F5A"
+        android:textSize="20sp"
+        android:background="@drawable/button"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:elevation="20pt"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25dp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        />
 
-        <Button
-            android:id="@+id/found_button"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="@string/found"
-            android:textColor="#542F5A"
-            android:textSize="20sp"
-            android:background="@drawable/button"
-            android:layout_gravity="center"
-            android:layout_marginTop="70dp"
-            android:elevation="20pt"
-            />
-    </LinearLayout>
-</ScrollView>
+</RelativeLayout>

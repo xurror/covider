@@ -20,7 +20,7 @@ public class dmRandevouz extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "Message sent, will be in touch", Toast.LENGTH_LONG).show();
-                Intent sendToDb = new Intent(getApplicationContext(), dmRandevouz.class);
+                Intent sendToDb = new Intent(getApplicationContext(), dmLogin.class);
                 startActivity(sendToDb);
             }
         });
