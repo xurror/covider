@@ -6,23 +6,17 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="name_placeholder">Enter full names</string>
     <string name="id_placeholder">ID Card number</string>
     <string name="login_text">Login</string>
     <string name="verify">Verify</string>
-<<<<<<< HEAD
-=======
     <string name="set">Set</string>
->>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
     <string name="found">Found</string>
     <string name="submit">Submit</string>
     <string name="location_text">Upload your home location</string>
     <string name="country_region_city">Country, Region, City</string>
-<<<<<<< HEAD
-=======
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_dmser_locaton_map">Map</string>
     <string name="title_activity_dm_user_location">Map</string>
@@ -41,6 +35,4 @@
     <string name="to_">To: Covider</string>
     <string name="message">Message</string>
     <string name="list_view_to_contain_username_user_location_longitude_and_latitude">List view to contain username, user location: longitude and latitude</string>
-    <string name="enter_token">Enter Token</string>
-    >>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
 </resources>
