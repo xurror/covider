@@ -1,21 +1,11 @@
 package cm.ubuea.covider;
 
-<<<<<<< HEAD
-import androidx.appcompat.app.AppCompatActivity;
-=======
 import androidx.fragment.app.FragmentActivity;
->>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-<<<<<<< HEAD
-
-public class dmDisTrack extends AppCompatActivity {
-=======
 import android.widget.Toast;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -26,7 +16,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class dmDisTrack extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
->>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +26,6 @@ public class dmDisTrack extends FragmentActivity implements OnMapReadyCallback {
         found_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-<<<<<<< HEAD
-                Intent gotoVerifyUser = new Intent(getApplicationContext(), dmVerifyUser.class);
-                startActivity(gotoVerifyUser);
-            }
-        });
-
-=======
                 // Toast.makeText(getApplicationContext(), "Message sent, will be in touch", Toast.LENGTH_LONG).show();
                 Intent gotoRandevouz = new Intent(getApplicationContext(), dmVerifyUser.class);
                 startActivity(gotoRandevouz);
@@ -73,6 +55,5 @@ public class dmDisTrack extends FragmentActivity implements OnMapReadyCallback {
         LatLng Buea = new LatLng(4.1488902,9.2856629);
         mMap.addMarker(new MarkerOptions().position(Buea).title("Buea"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Buea, 15));
->>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
     }
 }
