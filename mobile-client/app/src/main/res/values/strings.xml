@@ -22,4 +22,6 @@
     <string name="title_activity_dmser_locaton_map">Map</string>
     <string name="title_activity_dm_user_location">Map</string>
     <string name="enter_token">Enter Token</string>
+    <string name="registered_users">REGISTERED USERS</string>
+    <string name="username">Username</string>
 </resources>
