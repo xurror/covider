@@ -2,6 +2,7 @@ package cm.ubuea.covider;
 
 import androidx.fragment.app.FragmentActivity;
 
+import androidx.fragment.app.FragmentActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;

@@ -74,7 +74,6 @@
             android:layout_margin="20dp"
             tools:ignore="RtlSymmetry"
             android:importantForAutofill="no" />
-
         <Button
             android:id="@+id/verify_button"
             android:layout_width="150dp"
@@ -85,8 +84,15 @@
             android:background="@drawable/button"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
+<<<<<<< HEAD
             android:elevation="20pt" />
 
     </LinearLayout>
 
+=======
+            android:elevation="20pt"
+            />
+
+    </LinearLayout>
+>>>>>>> 7f3a083... distribution module
 </ScrollView>
