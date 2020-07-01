@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.cef440" >
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    package="cm.ubuea.covider">
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -55,40 +51,40 @@
         <activity android:name=".dmLogin" />
 =======
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true" >
-
+        android:usesCleartextTraffic="true">
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
 
         <activity
-            android:name=".PersonHome"
-            android:theme="@style/DashboardTheme"
-            android:windowSoftInputMode="adjustPan" />
-
-        <activity
-            android:name=".PersonalInformation"
-            android:theme="@style/ToolBarTheme"
-            android:windowSoftInputMode="adjustPan" />
-        <activity
             android:name=".SignUp"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".ForgotPassword"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan"  />
+        <activity
+            android:name=".PersonHome"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/DashboardTheme" />
         <activity
             android:name=".Login"
+<<<<<<< HEAD
             android:noHistory="true"
             android:windowSoftInputMode="adjustPan" />
 >>>>>>> 27b9055... Splash, login, signup and forgot password screens design
+=======
+            android:windowSoftInputMode="adjustPan"  />
+>>>>>>> 607ceb8... Update to splash, login, signup and design of user home page
         <activity
             android:name=".MainActivity"
-            android:windowSoftInputMode="adjustPan" >
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+<<<<<<< HEAD
 <<<<<<< HEAD
         </activity>
         <meta-data
@@ -96,14 +92,23 @@
             android:value="@string/google_maps_key" />
 =======
         </activity> <!-- [START firebase_service] -->
+=======
+        </activity>
+
+        <!-- [START firebase_service] -->
+>>>>>>> 607ceb8... Update to splash, login, signup and design of user home page
         <service
-            android:name=".MyFirebaseMessagingService"
+            android:name="cm.ubuea.covider.MyFirebaseMessagingService"
             android:exported="false" >
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+<<<<<<< HEAD
 >>>>>>> 27b9055... Splash, login, signup and forgot password screens design
+=======
+
+>>>>>>> 607ceb8... Update to splash, login, signup and design of user home page
     </application>
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
