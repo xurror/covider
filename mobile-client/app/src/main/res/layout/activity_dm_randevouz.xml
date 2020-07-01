@@ -1,32 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#542F5A"
+=======
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
     tools:context=".dmRandevouz">
 
     <LinearLayout
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_margin="20dp"
 
+=======
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
         >
 
         <TextView
             android:id="@+id/contact_p"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:text="Contact us "
             android:textColor="#fff"
+=======
+            android:text="@string/contact_us"
+            android:textColor="@color/colorPrimary"
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
             android:textSize="30sp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:textStyle="bold"
             />
 
+<<<<<<< HEAD
         <EditText
             android:id="@+id/to_p"
             android:layout_width="match_parent"
@@ -38,19 +57,38 @@
             android:paddingLeft="5dp"
             android:layout_margin="20dp"
             />
+=======
+        <TextView
+            android:id="@+id/to_p"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/to_"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="20sp"
+            android:paddingStart="5dp"
+            android:layout_margin="20dp"
+            tools:ignore="RtlSymmetry" />
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
 
         <EditText
             android:id="@+id/message_p"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="text"
+<<<<<<< HEAD
             android:hint="Message"
             android:textColor="#fff"
             android:textColorHint="#fff"
+=======
+            android:hint="@string/message"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
             android:textSize="20sp"
             android:background="@drawable/textbox"
             android:gravity="start"
             android:paddingTop="8dp"
+<<<<<<< HEAD
             android:paddingLeft="7dp"
             android:paddingRight="5dp"
             android:paddingBottom="4dp"
@@ -58,6 +96,15 @@
 
         <Button
             android:id="@+id/rendevouz_button"
+=======
+            android:paddingStart="7dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="4dp"
+            android:importantForAutofill="no" />
+
+        <Button
+            android:id="@+id/rendezvous_button"
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/submit"
@@ -65,7 +112,11 @@
             android:textSize="20sp"
             android:background="@drawable/button"
             android:layout_gravity="center"
+<<<<<<< HEAD
             android:layout_marginTop="70dp"
+=======
+            android:layout_marginTop="20dp"
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
             android:elevation="20pt"
             />
     </LinearLayout>

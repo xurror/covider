@@ -20,8 +20,13 @@ public class dmHealthInfo extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "Status recorded", Toast.LENGTH_LONG).show();
+<<<<<<< HEAD
                 Intent gotoRandevouz = new Intent(getApplicationContext(), dmRandevouz.class);
                 startActivity(gotoRandevouz);
+=======
+                Intent gotoUser = new Intent(getApplicationContext(), Users.class);
+                startActivity(gotoUser);
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
             }
         });
     }

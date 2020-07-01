@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#542F5A"
+=======
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
     tools:context=".dmHealthInfo">
 
     <LinearLayout
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="200dp"
+=======
+        android:layout_height="match_parent"
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
         android:padding="10dp"
         android:layout_margin="4dp"
         android:orientation="vertical"
@@ -18,8 +29,13 @@
             android:id="@+id/health_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:text="Health Information"
             android:textColor="#fff"
+=======
+            android:text="@string/health_information"
+            android:textColor="@color/colorPrimary"
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
             android:textSize="30sp"
             android:layout_margin="10dp"
             android:textStyle="bold"
@@ -30,6 +46,7 @@
             android:id="@+id/place_p"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:inputType="text"
             android:hint="3 places you lastly visited"
             android:textColorHint="#fff"
@@ -40,11 +57,23 @@
             android:textStyle="bold"
             />
         <TextView
+=======
+            android:hint="@string/_3_places_you_lastly_visited"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="25sp"
+            android:paddingStart="5dp"
+            android:layout_gravity="center"
+            android:padding="20dp"
+            android:textStyle="bold"
+            tools:ignore="RtlSymmetry" />
+        <EditText
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
             android:id="@+id/place1_p"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:inputType="text"
             android:hint="@string/country_region_city"
+<<<<<<< HEAD
             android:textColorHint="#fff"
             android:textSize="20sp"
             android:paddingLeft="5dp"
@@ -54,11 +83,25 @@
             android:padding="20dp"
             />
         <TextView
+=======
+            android:textColorHint="@color/colorPrimary"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:paddingStart="5dp"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/ic_health_location"
+            android:drawablePadding="4dp"
+            android:padding="20dp"
+            tools:ignore="RtlSymmetry"
+            android:autofillHints="@string/fill_hints" />
+        <EditText
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
             android:id="@+id/place2_p"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:inputType="text"
             android:hint="@string/country_region_city"
+<<<<<<< HEAD
             android:textColorHint="#fff"
             android:textSize="20sp"
             android:paddingLeft="5dp"
@@ -81,11 +124,40 @@
         android:drawablePadding="4dp"
         android:padding="20dp"
         />
+=======
+            android:textColorHint="@color/colorPrimary"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:paddingStart="5dp"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/ic_health_location"
+            android:drawablePadding="4dp"
+            android:padding="20dp"
+            tools:ignore="RtlSymmetry"
+            android:autofillHints="@string/fill_hints"/>
+        <EditText
+            android:id="@+id/place3_p"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="@string/country_region_city"
+            android:textColorHint="@color/colorPrimary"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:paddingStart="5dp"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/ic_health_location"
+            android:drawablePadding="4dp"
+            android:padding="20dp"
+            tools:ignore="RtlSymmetry"
+            android:autofillHints="@string/fill_hints"/>
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
 
         <TextView
             android:id="@+id/sign"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:inputType="text"
             android:hint="Signs and symtoms"
             android:textColorHint="#fff"
@@ -96,13 +168,29 @@
 
             android:textStyle="bold"
             />
+=======
+            android:hint="@string/signs_and_symptoms"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="25sp"
+            android:paddingStart="5dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            tools:ignore="RtlSymmetry" />
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
         <Switch
             android:id="@+id/fever_s"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:text="Fever"
             android:textSize="25sp"
             android:textColor="#fff"
+=======
+            android:text="@string/fever"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimary"
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
             android:textAppearance="?android:textAppearanceSmall"
             android:layout_margin="10dp"
             />
@@ -110,9 +198,15 @@
             android:id="@+id/cough_s"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:text="Dry Cough"
             android:textSize="25sp"
             android:textColor="#fff"
+=======
+            android:text="@string/dry_cough"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimary"
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
             android:textAppearance="?android:textAppearanceSmall"
             android:layout_margin="10dp"
             />
@@ -120,9 +214,15 @@
             android:id="@+id/tiredness_s"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:text="Tiredness"
             android:textSize="25sp"
             android:textColor="#fff"
+=======
+            android:text="@string/tiredness"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimary"
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
             android:textAppearance="?android:textAppearanceSmall"
             android:layout_margin="10dp"
             />
@@ -136,11 +236,18 @@
             android:textSize="20sp"
             android:background="@drawable/button"
             android:layout_gravity="center"
+<<<<<<< HEAD
             android:layout_marginTop="70dp"
+=======
+            android:layout_marginTop="20dp"
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
             android:elevation="20pt"
             />
 
     </LinearLayout>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
 </ScrollView>

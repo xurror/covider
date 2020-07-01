@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+<<<<<<< HEAD
+=======
+import android.widget.EditText;
+>>>>>>> 03fd9d9080807420c4d55bd5497ce766e7eddca0
 import android.widget.Toast;
 
 public class dmVerifyUser extends AppCompatActivity {
