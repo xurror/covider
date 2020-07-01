@@ -68,7 +68,6 @@
             android:padding="20dp"
             tools:ignore="RtlSymmetry"
             android:importantForAutofill="no" />
-
         <Button
             android:id="@+id/verify_button"
             android:layout_width="150dp"
