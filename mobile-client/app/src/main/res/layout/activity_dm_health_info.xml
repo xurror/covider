@@ -16,11 +16,7 @@
             android:id="@+id/health_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
             android:text="@string/health_information"
-=======
-            android:text="Health Information"
->>>>>>> Redefined the interface
             android:textColor="@color/colorPrimary"
             android:textSize="30sp"
             android:layout_margin="10dp"
@@ -31,17 +27,12 @@
             android:id="@+id/place_p"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
             android:hint="@string/_3_places_you_lastly_visited"
-=======
             android:inputType="text"
-            android:hint="3 places you lastly visited"
->>>>>>> Redefined the interface
             android:textColorHint="@color/colorPrimary"
             android:textSize="25sp"
             android:paddingStart="5dp"
             android:layout_gravity="center"
-            android:inputType="text"
             android:padding="20dp"
             android:paddingLeft="5dp"
             android:textStyle="bold" />
@@ -98,12 +89,7 @@
             android:id="@+id/sign"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
             android:hint="@string/signs_and_symptoms"
-=======
-            android:inputType="text"
-            android:hint="@string/signs_and_syntoms"
->>>>>>> Redefined the interface
             android:textColorHint="@color/colorPrimary"
             android:textSize="25sp"
             android:paddingStart="5dp"
@@ -141,6 +127,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
             android:textSize="20sp"
+            android:text="@string/submit"
             android:background="@drawable/button"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
