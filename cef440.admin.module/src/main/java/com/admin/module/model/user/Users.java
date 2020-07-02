@@ -1,15 +1,13 @@
 package com.admin.module.model.user;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.*;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
+import com.admin.module.model.Location;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Data;
 
@@ -17,7 +15,7 @@ import lombok.Data;
 @Entity(name = "USER_tbl")
 @Inheritance(strategy = InheritanceType.JOINED) // JOINED and comment next line
 @DiscriminatorColumn(name = "USER_TYPE", discriminatorType = DiscriminatorType.STRING)
-public class Users {
+public class Users implements Serializable{
 
 	// @Size(min = 5, max = 60, message = "Name must be between 5 to 60 characters")
 
@@ -25,10 +23,13 @@ public class Users {
 	@GeneratedValue(strategy = GenerationType.IDENTITY.AUTO)
 	@Column(name = "USER_ID", columnDefinition = "bigint(10)", length = 8)
 	private int userId;
+	
+	@JsonIgnore
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="locationId", nullable=false)
+	//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private Location userLocation;
 
-	// @NotNull
-
-	// @Size(min = 5,max = 50,message = "Name must be between 5 to 50 characters")
 
 	@Column(name = "USER_FULLNAME", unique = true, nullable = false, columnDefinition = "varchar(50) NOT NULL", length = 50)
 	private String userFullName;
@@ -60,7 +61,7 @@ public class Users {
 	}
 
 	public Users(int userId, String userFullName, String userName, String userEmail, Date userDOB, String userPassword,
-			UserType userType, String userDateOfBirthString) {
+			UserType userType,  String userDateOfBirthString) {
 		super();
 		this.userId = userId;
 		this.userFullName = userFullName;
@@ -71,6 +72,8 @@ public class Users {
 		this.userType = userType;
 		this.userDateOfBirthString = userDateOfBirthString;
 	}
+	
+	
 
 	@Override
 	public String toString() {
@@ -86,6 +89,7 @@ public class Users {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+	
 
 	public String getUserFullName() {
 		return userFullName;
@@ -143,5 +147,47 @@ public class Users {
 	public void setUserDateOfBirthString(String userDateOfBirthString) {
 		this.userDateOfBirthString = userDateOfBirthString;
 	}
+	
+	
+	
+	@JsonIgnore
+	public int getLocationId() {
+		return userLocation.getLocationId();
+	}
+	
+	@JsonIgnore
+	public String getLocationRegion() {
+		return userLocation.getRegion();
+	}
+	
+	@JsonIgnore
+	public String getLocationDivision() {
+		return userLocation.getDivision();
+	}
+	
+	@JsonIgnore
+	public String getLocationTown() {
+		return userLocation.getTown();
+	}
+	
+	
+	public Location getUserLocation() {
+		return  userLocation;
+	}
+	
+	public Location getUserLocation_1() {
+		return new Location(getLocationId(), getLocationRegion(), getLocationDivision(), getLocationTown());
+	}
+	
+	@JsonIgnore
+	public void setUserLocation() {
+			this.userLocation = new Location(getLocationId(), getLocationRegion(), getLocationDivision(), getLocationTown());
+	}
+	
+	@JsonIgnore
+	public void putUserLocation(Location location) {
+		this.userLocation = location;
+	}
+	
 
 }

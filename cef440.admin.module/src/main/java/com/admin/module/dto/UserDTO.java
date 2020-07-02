@@ -13,6 +13,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
+import com.admin.module.model.Location;
 import com.admin.module.model.user.UserType;
 
 //import com.admin.module.model.user.UserType;
@@ -29,6 +30,7 @@ public class UserDTO {
 	private Date userDOB;
 	private String userPassword;
 	private String userType;
+	private Location userLocation;
 	private transient String userDateOfBirthString;
 
 	public UserDTO() {
@@ -36,7 +38,7 @@ public class UserDTO {
 	}
 
 	public UserDTO(int userId, String userFullName, String userName, String userEmail, Date userDOB,
-			String userPassword, String userType, String userDateOfBirthString) {
+			String userPassword, String userType, Location userLocation, String userDateOfBirthString) {
 		super();
 		this.userId = userId;
 		this.userFullName = userFullName;
@@ -45,6 +47,7 @@ public class UserDTO {
 		this.userDOB = userDOB;
 		this.userPassword = userPassword;
 		this.userType = userType;
+		this.userLocation = userLocation;
 		this.userDateOfBirthString = userDateOfBirthString;
 	}
 
@@ -62,6 +65,16 @@ public class UserDTO {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+	
+	
+	public Location getUserLocation() {
+		return userLocation;
+	}
+
+	public void setUserLocation(Location userLocation) {
+			this.userLocation = userLocation;
+	}
+
 
 	public String getUserFullName() {
 		return userFullName;

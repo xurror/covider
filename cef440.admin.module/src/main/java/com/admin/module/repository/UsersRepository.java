@@ -1,5 +1,5 @@
 
-package com.admin.module.repository.user;
+package com.admin.module.repository;
 
 import java.util.List;
 import java.util.Optional;
