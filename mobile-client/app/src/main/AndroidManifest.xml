@@ -9,10 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".dmRandevouz"></activity>
         <activity android:name=".dmHealthInfo" />
         <activity android:name=".dmVerifyUser" />
         <activity android:name=".dmDisTrack" />
+=======
+>>>>>>> f6163dffc900dceeb0e1bc62c8551e8bf488d3bb
         <activity android:name=".Users">
         </activity>
         <activity android:name=".Notification" />
@@ -43,6 +46,12 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
+<<<<<<< HEAD
+=======
+        <activity android:name=".dmVerifyUser" />
+        <activity android:name=".dmList" />
+        <activity android:name=".dmDisTrack" />
+>>>>>>> f6163dffc900dceeb0e1bc62c8551e8bf488d3bb
         <activity android:name=".dmLogin" />
         <activity
             android:name=".MainActivity"
