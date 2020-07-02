@@ -21,7 +21,8 @@
                     android:layout_height="130dp"
                     android:layout_gravity="center"
                     android:paddingTop="10dp"
-                    android:src="@drawable/logo" />
+                    android:src="@drawable/logo"
+                    android:contentDescription="@string/logo_icon" />
 
                 <TextView
                     android:id="@+id/app_name"
@@ -40,15 +41,17 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="20dp"
-                    android:drawableLeft="@drawable/ic_person"
+                    android:drawableStart="@drawable/ic_person"
                     android:drawablePadding="5dp"
                     android:hint="@string/name_placeholder"
                     android:inputType="text"
                     android:padding="20dp"
-                    android:paddingLeft="5dp"
+                    android:paddingStart="5dp"
                     android:textColor="@color/design_default_color_on_secondary"
                     android:textColorHint="@color/colorPrimary"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    tools:ignore="RtlSymmetry"
+                    android:importantForAutofill="no" />
 
                 <TextView
                     android:id="@+id/app_name"
@@ -66,30 +69,34 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="20dp"
-                    android:drawableLeft="@drawable/ic_card"
+                    android:drawableStart="@drawable/ic_card"
                     android:drawablePadding="5dp"
                     android:hint="@string/id_placeholder"
                     android:inputType="text"
                     android:padding="20dp"
-                    android:paddingLeft="5dp"
+                    android:paddingStart="5dp"
                     android:textColor="@color/design_default_color_on_secondary"
                     android:textColorHint="@color/colorPrimary"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    tools:ignore="RtlSymmetry"
+                    android:importantForAutofill="no" />
                 <EditText
                     android:id="@+id/id_token"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="20dp"
-                    android:drawableLeft="@drawable/ic_eye"
+                    android:drawableStart="@drawable/ic_eye"
                     android:drawablePadding="5dp"
                     android:hint="@string/enter_token"
                     android:inputType="numberDecimal"
                     android:padding="20dp"
-                    android:paddingLeft="5dp"
+                    android:paddingStart="5dp"
                     android:textColor="@color/design_default_color_on_secondary"
                     android:textColorHint="@color/colorPrimary"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:importantForAutofill="no"
+                    tools:ignore="RtlSymmetry" />
 
                 <Button
                     android:id="@+id/login_button"

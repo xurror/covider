@@ -27,10 +27,14 @@
             android:background="@drawable/logo"
             android:paddingTop="10dp"
 <<<<<<< HEAD
+<<<<<<< HEAD
             android:contentDescription="@string/logo_icon" />
 =======
             android:contentDescription="logo" />
 >>>>>>> Redefined the interface
+=======
+            android:contentDescription="@string/logo_icon" />
+>>>>>>> refactoring
         <TextView
             android:id="@+id/app_name"
             android:layout_width="wrap_content"
