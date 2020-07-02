@@ -1,5 +1,6 @@
 package com.admin.module.model.user;
 
+<<<<<<< HEAD
 import java.io.Serializable;
 import java.util.Date;
 
@@ -8,6 +9,18 @@ import javax.persistence.*;
 import com.admin.module.model.Location;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+=======
+import java.util.Date;
+
+import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 
 import lombok.Data;
 
@@ -15,7 +28,11 @@ import lombok.Data;
 @Entity(name = "USER_tbl")
 @Inheritance(strategy = InheritanceType.JOINED) // JOINED and comment next line
 @DiscriminatorColumn(name = "USER_TYPE", discriminatorType = DiscriminatorType.STRING)
+<<<<<<< HEAD
 public class Users implements Serializable{
+=======
+public class Users {
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 
 	// @Size(min = 5, max = 60, message = "Name must be between 5 to 60 characters")
 
@@ -23,6 +40,7 @@ public class Users implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY.AUTO)
 	@Column(name = "USER_ID", columnDefinition = "bigint(10)", length = 8)
 	private int userId;
+<<<<<<< HEAD
 	
 	@JsonIgnore
 	@ManyToOne(fetch=FetchType.LAZY)
@@ -30,6 +48,12 @@ public class Users implements Serializable{
 	//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Location userLocation;
 
+=======
+
+	// @NotNull
+
+	// @Size(min = 5,max = 50,message = "Name must be between 5 to 50 characters")
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 
 	@Column(name = "USER_FULLNAME", unique = true, nullable = false, columnDefinition = "varchar(50) NOT NULL", length = 50)
 	private String userFullName;
@@ -61,7 +85,11 @@ public class Users implements Serializable{
 	}
 
 	public Users(int userId, String userFullName, String userName, String userEmail, Date userDOB, String userPassword,
+<<<<<<< HEAD
 			UserType userType,  String userDateOfBirthString) {
+=======
+			UserType userType, String userDateOfBirthString) {
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 		super();
 		this.userId = userId;
 		this.userFullName = userFullName;
@@ -72,8 +100,11 @@ public class Users implements Serializable{
 		this.userType = userType;
 		this.userDateOfBirthString = userDateOfBirthString;
 	}
+<<<<<<< HEAD
 	
 	
+=======
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 
 	@Override
 	public String toString() {
@@ -89,7 +120,10 @@ public class Users implements Serializable{
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 
 	public String getUserFullName() {
 		return userFullName;
@@ -147,6 +181,7 @@ public class Users implements Serializable{
 	public void setUserDateOfBirthString(String userDateOfBirthString) {
 		this.userDateOfBirthString = userDateOfBirthString;
 	}
+<<<<<<< HEAD
 	
 	
 	
@@ -189,5 +224,7 @@ public class Users implements Serializable{
 		this.userLocation = location;
 	}
 	
+=======
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 
 }

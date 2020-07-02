@@ -11,11 +11,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.admin.module.dto.UserDTO;
+<<<<<<< HEAD
 import com.admin.module.model.Location;
 import com.admin.module.model.user.UserType;
 import com.admin.module.model.user.Users;
 import com.admin.module.repository.LocationRepository;
 import com.admin.module.repository.UsersRepository;
+=======
+import com.admin.module.model.user.UserType;
+import com.admin.module.model.user.Users;
+import com.admin.module.repository.user.UsersRepository;
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 import com.admin.module.service.UserService;
 
 import cef440.admin.module.converter.StringToEnumConverter;
@@ -25,15 +31,25 @@ import cef440.admin.module.converter.StringToEnumConverter;
 @Service
 public class UserServiceImp implements UserService {
 	private UsersRepository usersRepository;
+<<<<<<< HEAD
 	private LocationRepository locationRepository;
+=======
+	
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 	
 	
 
 	@Autowired
+<<<<<<< HEAD
 	public UserServiceImp(UsersRepository usersRepository, LocationRepository locationRepository) {
 		super();
 		this.usersRepository = usersRepository;
 		this.locationRepository = locationRepository;
+=======
+	public UserServiceImp(UsersRepository usersRepository) {
+		super();
+		this.usersRepository = usersRepository;
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 		
 	}
 
@@ -102,7 +118,35 @@ public class UserServiceImp implements UserService {
         }
 	}
 	
+<<<<<<< HEAD
 
+=======
+/*	
+	@Override
+    public UserDTO retrieveNMUser(int userId) {
+        Optional<Users> nmUserOptional = usersRepository.findById(userId);
+
+        if(nmUserOptional.isPresent()) {
+            Users user = nmUserOptional.get();
+            UserDTO userDTO = new UserDTO();
+            userDTO.setUserId(user.getUserId());
+            userDTO.setUserFullName(user.getUserFullName());
+            userDTO.setUserName(user.getUserName());
+            userDTO.setUserEmail(user.getUserEmail());
+            userDTO.setUserDOB(user.getUserDOB());
+            userDTO.setUserPassword(user.getUserPassword());
+            userDTO.setUserType(user.getUserType());
+            userDTO.setUserDateOfBirthString(user.getUserDateOfBirthString());
+         
+
+            return  userDTO;
+        } else {
+            throw new ResourceNotFoundException("Requested category does not exist");
+        }
+    }
+*/
+	
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 	
 		
 	public List<UserDTO> loadUserDTOS(Iterable<Users> users) {
@@ -117,10 +161,17 @@ public class UserServiceImp implements UserService {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public UserDTO createUser(UserDTO newUserDTO, int userLocation) {
 		// TODO Auto-generated method stub
 		Users user = new Users();
 		user = copyUserDTOtoUser(newUserDTO, userLocation);
+=======
+	public UserDTO createUser(UserDTO newUserDTO) {
+		// TODO Auto-generated method stub
+		Users user = new Users();
+		user = copyUserDTOtoUser(newUserDTO);
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 		user = usersRepository.save(user);
 		
 		return copyUsertoUserDTO(user);
@@ -136,13 +187,20 @@ public class UserServiceImp implements UserService {
         userDTO.setUserDOB(user.getUserDOB());
         userDTO.setUserPassword(user.getUserPassword());
         userDTO.setUserType(user.getUserType().toString());
+<<<<<<< HEAD
         userDTO.setUserLocation(user.getUserLocation());
+=======
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
         userDTO.setUserDateOfBirthString(user.getUserDateOfBirthString());
         
         return userDTO;
     }
 	
+<<<<<<< HEAD
 	public Users copyUserDTOtoUser(UserDTO newUserDTO, int locationId) {
+=======
+	public Users copyUserDTOtoUser(UserDTO newUserDTO) {
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 		
 		String userType = newUserDTO.getUserType();
 		String type;
@@ -157,6 +215,7 @@ public class UserServiceImp implements UserService {
 		default:
 			type = "normal";
 		}
+<<<<<<< HEAD
 		
 		Users user = new Users();
 		
@@ -169,6 +228,11 @@ public class UserServiceImp implements UserService {
 		
         
 		
+=======
+			
+        
+		Users user = new Users();
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 		user.setUserFullName(newUserDTO.getUserFullName());
 		user.setUserName(newUserDTO.getUserName());
 		user.setUserEmail(newUserDTO.getUserEmail());

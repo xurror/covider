@@ -13,7 +13,10 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
+<<<<<<< HEAD
 import com.admin.module.model.Location;
+=======
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 import com.admin.module.model.user.UserType;
 
 //import com.admin.module.model.user.UserType;
@@ -30,7 +33,10 @@ public class UserDTO {
 	private Date userDOB;
 	private String userPassword;
 	private String userType;
+<<<<<<< HEAD
 	private Location userLocation;
+=======
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 	private transient String userDateOfBirthString;
 
 	public UserDTO() {
@@ -38,7 +44,11 @@ public class UserDTO {
 	}
 
 	public UserDTO(int userId, String userFullName, String userName, String userEmail, Date userDOB,
+<<<<<<< HEAD
 			String userPassword, String userType, Location userLocation, String userDateOfBirthString) {
+=======
+			String userPassword, String userType, String userDateOfBirthString) {
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 		super();
 		this.userId = userId;
 		this.userFullName = userFullName;
@@ -47,7 +57,10 @@ public class UserDTO {
 		this.userDOB = userDOB;
 		this.userPassword = userPassword;
 		this.userType = userType;
+<<<<<<< HEAD
 		this.userLocation = userLocation;
+=======
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 		this.userDateOfBirthString = userDateOfBirthString;
 	}
 
@@ -65,6 +78,7 @@ public class UserDTO {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+<<<<<<< HEAD
 	
 	
 	public Location getUserLocation() {
@@ -75,6 +89,8 @@ public class UserDTO {
 			this.userLocation = userLocation;
 	}
 
+=======
+>>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 
 	public String getUserFullName() {
 		return userFullName;
