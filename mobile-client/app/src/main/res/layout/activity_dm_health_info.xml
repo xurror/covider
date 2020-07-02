@@ -27,8 +27,6 @@
             android:id="@+id/place_p"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/_3_places_you_lastly_visited"
-            android:inputType="text"
             android:textColorHint="@color/colorPrimary"
             android:textSize="25sp"
             android:paddingStart="5dp"
