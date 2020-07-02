@@ -18,10 +18,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 <<<<<<< HEAD
+<<<<<<< HEAD
             android:text="@string/health_information"
 =======
             android:text="Health Information"
 >>>>>>> Redefined the interface
+=======
+            android:text="@string/health_information"
+>>>>>>> refactoring
             android:textColor="@color/colorPrimary"
             android:textSize="30sp"
             android:layout_margin="10dp"
@@ -34,11 +38,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 <<<<<<< HEAD
+<<<<<<< HEAD
             android:hint="@string/_3_places_you_lastly_visited"
 =======
             android:inputType="text"
             android:hint="3 places you lastly visited"
 >>>>>>> Redefined the interface
+=======
+            android:hint="@string/_3_places_you_lastly_visited"
+>>>>>>> refactoring
             android:textColorHint="@color/colorPrimary"
             android:textSize="25sp"
             android:paddingStart="5dp"
@@ -100,11 +108,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 <<<<<<< HEAD
+<<<<<<< HEAD
             android:hint="@string/signs_and_symptoms"
 =======
             android:inputType="text"
             android:hint="@string/signs_and_syntoms"
 >>>>>>> Redefined the interface
+=======
+            android:hint="@string/signs_and_symptoms"
+>>>>>>> refactoring
             android:textColorHint="@color/colorPrimary"
             android:textSize="25sp"
             android:paddingStart="5dp"

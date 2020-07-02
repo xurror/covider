@@ -18,10 +18,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 <<<<<<< HEAD
+<<<<<<< HEAD
             android:text="@string/contact_us"
 =======
             android:text="Contact us "
 >>>>>>> Redefined the interface
+=======
+            android:text="@string/contact_us"
+>>>>>>> refactoring
             android:textColor="@color/colorPrimary"
             android:textSize="30sp"
             android:layout_gravity="center"
@@ -34,11 +38,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 <<<<<<< HEAD
+<<<<<<< HEAD
             android:hint="@string/to_"
 =======
             android:inputType="text"
             android:hint="To: Covider"
 >>>>>>> Redefined the interface
+=======
+            android:hint="@string/to_"
+>>>>>>> refactoring
             android:textColorHint="@color/colorPrimary"
             android:textSize="20sp"
             android:paddingStart="5dp"
@@ -51,10 +59,14 @@
             android:layout_height="match_parent"
             android:inputType="text"
 <<<<<<< HEAD
+<<<<<<< HEAD
             android:hint="@string/message"
 =======
             android:hint="Message"
 >>>>>>> Redefined the interface
+=======
+            android:hint="@string/message"
+>>>>>>> refactoring
             android:textColor="@color/colorPrimary"
             android:textColorHint="@color/colorPrimary"
             android:textSize="20sp"
