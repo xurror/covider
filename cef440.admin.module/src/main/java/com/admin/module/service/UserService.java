@@ -19,11 +19,9 @@ public interface UserService {
 	 * retrieveAdminUsers(String userType);
 	 */
 	UserDTO retrieveUser(int userId);
-<<<<<<< HEAD
+
 	UserDTO createUser(UserDTO newUserDTO, int userLocation);
-=======
-	UserDTO createUser(UserDTO newUserDTO);
->>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
+
 	
 
 }

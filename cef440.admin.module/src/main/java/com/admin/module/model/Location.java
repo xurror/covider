@@ -1,6 +1,6 @@
 package com.admin.module.model;
 
-<<<<<<< HEAD
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -113,14 +113,4 @@ public class Location implements Serializable{
 	}
 	
 	
-	
-	
-
-	
-	
-	
-=======
-public class Location {
-
->>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
 }

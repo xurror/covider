@@ -44,15 +44,11 @@ public class UserController {
 		return ResponseEntity.ok(userService.retrieveUsers());
 	}
 	
-<<<<<<< HEAD
+
 	@PostMapping("/user/location/{locationId}")
 	public ResponseEntity<UserDTO> addUser(@RequestBody UserDTO newUserDTO, @PathVariable int locationId) {
 		UserDTO userDTO = userService.createUser(newUserDTO, locationId);
-=======
-	@PostMapping("/user")
-	public ResponseEntity<UserDTO> addUser(@RequestBody UserDTO newUserDTO) {
-		UserDTO userDTO = userService.createUser(newUserDTO);
->>>>>>> 8b7ff0406c9ee65cea817dec36710cbf66071268
+
 		return new ResponseEntity<> (userDTO,HttpStatus.CREATED);
 		
 	}
