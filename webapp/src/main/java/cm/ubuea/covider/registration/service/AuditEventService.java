@@ -6,10 +6,6 @@ import cm.ubuea.covider.registration.repository.PersistenceAuditEventRepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-<<<<<<< HEAD
-import org.springframework.beans.factory.annotation.Autowired;
-=======
->>>>>>> from upstream updates
 import org.springframework.boot.actuate.audit.AuditEvent;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -38,10 +34,6 @@ public class AuditEventService {
 
     private final AuditEventConverter auditEventConverter;
 
-<<<<<<< HEAD
-    @Autowired
-=======
->>>>>>> from upstream updates
     public AuditEventService(
         PersistenceAuditEventRepository persistenceAuditEventRepository,
         AuditEventConverter auditEventConverter, JHipsterProperties jhipsterProperties) {

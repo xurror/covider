@@ -1,11 +1,6 @@
 package cm.ubuea.covider.registration.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-<<<<<<< HEAD
-import java.time.LocalDateTime;
-import java.util.Set;
-import javax.persistence.*;
-=======
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -20,32 +15,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
->>>>>>> from upstream updates
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-<<<<<<< HEAD
-@Table(name="c_user")
-public class User extends AbstractAuditingEntity {
-
-    private static final long serialVersionUID = 1L;
-=======
 @Table(name="user")
 public class User extends AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1520540783775614588L;
->>>>>>> from upstream updates
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-<<<<<<< HEAD
-
-=======
     
->>>>>>> from upstream updates
     @NotNull
     @Column(name = "id_number", unique = true, nullable = false)
     private String idNumber;
@@ -84,24 +67,6 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Column(name = "reset_date")
     private LocalDateTime resetDate;
 
-<<<<<<< HEAD
-    @ManyToMany
-    @JoinTable(name = "c_user_role",
-        joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
-        inverseJoinColumns = {@JoinColumn(name = "role_name", referencedColumnName = "name")})
-    private Set<Role> roles;
-
-    @OneToOne(fetch = FetchType.LAZY,
-        cascade =  CascadeType.ALL,
-        mappedBy = "user")
-    private UserLocation userLocation;
-
-    @OneToOne(fetch = FetchType.LAZY,
-        cascade =  CascadeType.ALL,
-        mappedBy = "user")
-    private MedicalRecord medicalRecord;
-
-=======
     @ElementCollection
     @CollectionTable(
             name="authority",
@@ -109,7 +74,6 @@ public class User extends AbstractAuditingEntity implements Serializable {
     )
     @Column(name = "user_authority")
     private Set<String> authorities;
->>>>>>> from upstream updates
 
     public User() {
 
@@ -141,11 +105,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
     public String getIdNumber() {
         return this.idNumber;
     }
-<<<<<<< HEAD
-
-=======
         
->>>>>>> from upstream updates
     public void setIdNumber(final String idNumber) {
         this.idNumber = idNumber;
     }
@@ -202,21 +162,12 @@ public class User extends AbstractAuditingEntity implements Serializable {
         this.langKey = langKey;
     }
 
-<<<<<<< HEAD
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-=======
     public Set<String> getAuthorities() {
         return authorities;
     }
 
     public void setAuthorities(Set<String> authorities) {
         this.authorities = authorities;
->>>>>>> from upstream updates
     }
 
     @Override
@@ -241,10 +192,6 @@ public class User extends AbstractAuditingEntity implements Serializable {
         return "User{" +
             "email='" + email + '\'' +
             ", name='" + name + '\'' +
-<<<<<<< HEAD
-            ", roles='" + roles + '\'' +
-=======
->>>>>>> from upstream updates
             ", idNumber='" + idNumber + '\'' +
             ", activated='" + activated + '\'' +
             ", langKey='" + langKey + '\'' +

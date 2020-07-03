@@ -39,16 +39,12 @@ repositories {
 }
 
 dependencies {
-<<<<<<< HEAD
-<<<<<<< HEAD
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-security'
-=======
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
->>>>>>> Pulling from upstream/distrubuted_module
     implementation "org.springframework.boot:spring-boot-starter-cache"
     implementation "org.springframework.boot:spring-boot-starter-aop"
     implementation "org.springframework.boot:spring-boot-starter-logging"
@@ -81,15 +77,9 @@ dependencies {
 
     testImplementation 'com.h2database:h2:1.4.200'
     testImplementation 'org.springframework.security:spring-security-test'
-<<<<<<< HEAD
-    testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-    }
-=======
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-=======
->>>>>>> Pulling from upstream/distrubuted_module
+
 	// implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.eclipse.persistence:org.eclipse.persistence.jpa:2.7.7'
 	runtimeOnly 'mysql:mysql-connector-java'
@@ -99,7 +89,6 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
->>>>>>> setup datasource and mysql DB
 }
 
 // task integrationTest(type:Test) {
@@ -129,8 +118,6 @@ configurations {
     weaver.extendsFrom implementation
 }
 
-<<<<<<< HEAD
-=======
 import groovy.sql.Sql
 
 configurations {
@@ -138,7 +125,6 @@ configurations {
     weaver.extendsFrom implementation
 }
 
->>>>>>> setup datasource and mysql DB
 task weaveJpaEntities(type: JavaExec, dependsOn: [compileJava, processResources]) {
     main = 'org.eclipse.persistence.tools.weaving.jpa.StaticWeave'
     classpath configurations.weaver
@@ -148,10 +134,7 @@ task weaveJpaEntities(type: JavaExec, dependsOn: [compileJava, processResources]
     args configurations.compile.incoming.files.asPath
     args '-loglevel'
     args 'FINE' // logging level at "FINE" shows alot of output to console.
-<<<<<<< HEAD
->>>>>>> setup datasource and mysql DB
-=======
->>>>>>> Pulling from upstream/distrubuted_module
+
     args sourceSets.main.java.outputDir.absolutePath
     args sourceSets.main.java.outputDir.absolutePath
 
@@ -186,8 +169,4 @@ gitProperties {
 }
 
 compileJava.dependsOn processResources
-<<<<<<< HEAD
-=======
->>>>>>> setup datasource and mysql DB
-=======
->>>>>>> Pulling from upstream/distrubuted_module
+

@@ -1,16 +1,5 @@
 package cm.ubuea.covider.registration.service.dto;
 
-<<<<<<< HEAD
-import cm.ubuea.covider.registration.domain.Role;
-import cm.ubuea.covider.registration.domain.User;
-import javax.validation.constraints.*;
-import java.time.LocalDateTime;
-import java.util.Set;
-import java.util.stream.Collectors;
-
-/**
- * A DTO representing a user, with his roles.
-=======
 import cm.ubuea.covider.registration.domain.User;
 import javax.validation.constraints.*;
 
@@ -19,7 +8,6 @@ import java.util.Set;
 
 /**
  * A DTO representing a user, with his authorities.
->>>>>>> from upstream updates
  */
 public class UserDTO {
 
@@ -49,11 +37,7 @@ public class UserDTO {
 
     private LocalDateTime lastModifiedDate;
 
-<<<<<<< HEAD
-    private Set<String> roles;
-=======
     private Set<String> authorities;
->>>>>>> from upstream updates
 
     public UserDTO() {
         // Empty constructor needed for Jackson.
@@ -70,13 +54,7 @@ public class UserDTO {
         this.createdDate = user.getCreatedDate();
         this.lastModifiedBy = user.getLastModifiedBy();
         this.lastModifiedDate = user.getLastModifiedDate();
-<<<<<<< HEAD
-        this.roles = user.getRoles().stream()
-            .map(Role::getName)
-            .collect(Collectors.toSet());
-=======
         this.authorities = user.getAuthorities();
->>>>>>> from upstream updates
     }
 
     public Long getId() {
@@ -159,21 +137,12 @@ public class UserDTO {
         this.lastModifiedDate = lastModifiedDate;
     }
 
-<<<<<<< HEAD
-    public Set<String> getRoles() {
-        return this.roles;
-    }
-
-    public void setRoles(Set<String> roles) {
-        this.roles = roles;
-=======
     public Set<String> getAuthorities() {
         return this.authorities;
     }
 
     public void setAuthorities(Set<String> authorities) {
         this.authorities = authorities;
->>>>>>> from upstream updates
     }
 
     // prettier-ignore
@@ -189,11 +158,7 @@ public class UserDTO {
             ", createdDate=" + createdDate +
             ", lastModifiedBy='" + lastModifiedBy + '\'' +
             ", lastModifiedDate=" + lastModifiedDate +
-<<<<<<< HEAD
-            ", roles=" + roles +
-=======
             ", authorities=" + authorities +
->>>>>>> from upstream updates
             "}";
     }
 }

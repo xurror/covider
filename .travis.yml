@@ -1,5 +1,4 @@
 dist: bionic
-<<<<<<< HEAD
 matrix:
   include:
   - language: generic
@@ -44,7 +43,6 @@ matrix:
       - cd webapp
     run:
       - npm run build
-=======
 
 language: generic
 
@@ -109,4 +107,3 @@ script:
   - ./gradlew check build # && ./gradlew test
   - npm install && npm run build
   
->>>>>>> update readme with swagger docs
