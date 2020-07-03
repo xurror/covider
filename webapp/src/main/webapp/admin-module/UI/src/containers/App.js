@@ -5,7 +5,7 @@ export default class App extends Component {
     render() {
         return (
             <View>
-                <Text> The app starts here  </Text>
+                <Text> The is the initial  </Text>
             </View>
         )
     }
