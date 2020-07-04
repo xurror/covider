@@ -69,7 +69,7 @@ class UserBasicInfo extends Component {
                 Having trouble? <strong className="helpColor">Get Help</strong></p>
             </div>
           </div>
-          <p style={{ fontsize: ".8rem" }}>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae</p>
+          <p style={{ fontsize: ".8rem" }}>Covider Free Registration</p>
 
           <RegisterSuccessModal
             show={modalShow}

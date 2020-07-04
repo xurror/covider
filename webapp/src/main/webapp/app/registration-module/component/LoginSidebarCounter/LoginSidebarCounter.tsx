@@ -17,8 +17,8 @@ const LoginSidebarCounter = (props) => {
                 Login to continue</h6>
             </Card.Subtitle>
             <Card.Text className="text-center" style={{ marginTop: "2rem", fontSize: ".8rem", color: "antiquewhite" }}>
-              Lorem ipsum dolor sit amet et
-            delectus</Card.Text>
+              Do your own covider registration
+            Here</Card.Text>
           </div>
           :
           <div>
