@@ -25,7 +25,7 @@ class Login extends Component {
   handleLogin() {
     this.props.setFirstTime(true)
     this.setState({ modalShow: true })
-    // this.setState({ stage: 2 })
+    this.setState({ stage: 2 })
   }
   changeRoute(route) {
     this.props.changeRoute(route)
