@@ -56,7 +56,7 @@ class Home extends Component {
                   </Card.Text>
           <div className="button" onClick={() => this.setState({ route: 'login' })} >
             <p className='link dim underline pointer'
-              style={{ color: "#faebd7", textDecoration: "underline" }}>Do you Have an Account ? <strong> Login</strong></p>
+              style={{ color: "#faebd7", textDecoration: "underline" }}>Have an Account ? <strong>Login</strong></p>
           </div>
         </div>
       )
