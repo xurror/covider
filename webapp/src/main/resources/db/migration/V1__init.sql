@@ -3,12 +3,13 @@ CREATE TABLE `c_role` (
 );
 
 INSERT INTO `c_role` (`name`) VALUES
-('APP_ADMIN'),
-('APP_AGENT'),
-('APP_USER');
+('ADMIN'),
+('AGENT'),
+('USER'),
+('ANONYMOUS');
 
 CREATE TABLE `c_persistent_audit_event` (
-  `event_id` bigint(20) PRIMARY KEY,
+  `event_id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `event_date` longblob,
   `event_type` varchar(255) DEFAULT NULL,
   `principal` varchar(255) NOT NULL
@@ -22,7 +23,7 @@ CREATE TABLE `c_persistent_audit_evt_data` (
 );
 
 CREATE TABLE `c_user` (
-  `id` INT PRIMARY KEY,
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
   `activated` tinyint(1) NOT NULL DEFAULT '0',
   `activation_key` varchar(20) DEFAULT NULL,
   `created_by` varchar(50) NOT NULL,
