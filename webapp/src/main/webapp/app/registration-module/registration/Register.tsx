@@ -61,8 +61,8 @@ const RenderRegisterHome = (props) => {
         </div>
 
         <div style={{ marginTop: "2rem", }}>
-          <p style={{ fontSize: "1.2rem", }}>Choose your member role</p>
-          <p style={{ fontSize: ".8rem" }}>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae</p>
+          <p style={{ fontSize: "0.9rem", }}>Free Covid Registration</p>
+          <p style={{ fontSize: "1.2rem" }}>Choose Your Member Role</p>
         </div>
 
         <div>
@@ -80,7 +80,7 @@ const RenderRegisterHome = (props) => {
             </div>
             <div style={{ paddingLeft: "1rem", marginBottom: -5 }}>
               <p style={{ marginBottom: -2 }}>Agent</p>
-              <p>Lorem ipsum</p>
+              <p>Login</p>
             </div>
           </div>
 
@@ -97,7 +97,7 @@ const RenderRegisterHome = (props) => {
             </div>
             <div style={{ paddingLeft: "1rem", marginBottom: -5 }}>
               <p style={{ marginBottom: -2 }}>User</p>
-              <p>Lorem ipsum</p>
+              <p>Login</p>
             </div>
           </div>
         </div>
