@@ -48,8 +48,10 @@
 
     <!-- HikariConfig config that is fed to above dataSource -->
     <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
-        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/covider?serverTimezone=UTC" />
+        <!-- <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/covider?serverTimezone=UTC" /> -->
+        <property name="driverClassName" value="org.h2.Driver" />
+        <property name="jdbcUrl" value="jdbc:h2:mem:TestCovider" />
         <property name="username" value="root" />
         <property name="password" value="mysql" />
         <property name="minimumIdle" value="3" />
@@ -89,7 +91,8 @@
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
                 <property name="showSql" value="true" />
-                <property name="databasePlatform" value="org.eclipse.persistence.platform.database.MySQLPlatform"/>
+			    <property name="databasePlatform" value="org.eclipse.persistence.platform.database.H2Platform"/>
+                <!-- <property name="databasePlatform" value="org.eclipse.persistence.platform.database.MySQLPlatform"/> -->
             </bean>
         </property>
     </bean>
