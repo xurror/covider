@@ -1,10 +1,8 @@
-/*importation of the needed library*/
 import React, { Component } from 'react';
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import { Form, FormControl } from 'react-bootstrap';
 import './MedicalHistoryInfo.css';
 
-/*creation of the class component with the information of the family*/
 class MedicalHistoryInfo extends Component {
   constructor() {
     super();
