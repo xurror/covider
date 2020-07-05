@@ -41,5 +41,6 @@ matrix:
     before_script:
       - date
       - cd webapp
+      - npm install
     run:
       - npm run build
