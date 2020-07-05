@@ -12,3 +12,6 @@
 .idea/modules.xml
 .idea/scopes/scope_settings.xml
 .idea/vcs.xml
+local.properties
+app.iml
+src-covider.iml
