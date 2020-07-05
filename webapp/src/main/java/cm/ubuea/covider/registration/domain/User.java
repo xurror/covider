@@ -46,7 +46,7 @@ public class User extends AbstractAuditingEntity {
     @Size(max = 20)
     @Column(name = "activation_key", length = 20)
     @JsonIgnore
-    private String activationKey;
+    public String activationKey;
 
     @Size(max = 20)
     @Column(name = "reset_key", length = 20)
