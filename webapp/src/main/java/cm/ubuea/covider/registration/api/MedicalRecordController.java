@@ -45,7 +45,7 @@ public class MedicalRecordController {
     @GetMapping("/record/{uidcard}")
     public List<MedicalRecord> getUserMedicalRecord(@PathVariable("uidcard") String uidcard) {
 
-        List<MedicalRecord> medic=medicalRecordRepository.findAll().
+        List<MedicalRecord> medic = medicalRecordRepository.findAll().
             stream().
             filter(e->e.getUser().getIdNumber().equals(uidcard)).
             collect(Collectors.toList());
@@ -62,10 +62,8 @@ public class MedicalRecordController {
                 m.setCurrentSymptoms(medicalRecordDTO.getCurrentSymptoms());
                 m.setUser(userRepository.findOneByIdNumber(medicalRecordDTO.getUserIdNumber()).get());
                 return medicalRecordRepository.save(m);
-            })
-            .orElseGet(() -> {
+            }).orElseGet(() -> {
                return null;
-
             });
     }
 }
