@@ -2,7 +2,7 @@ package cm.ubuea.covider.registration.domain;
 
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
 
@@ -13,7 +13,7 @@ public class UserLocation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long location_id;
 
-    @NotBlank
+    @NotNull
     @Size(max = 20)
     private String current_loctaion;
 
