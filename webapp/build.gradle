@@ -107,7 +107,7 @@ configurations {
     weaver.extendsFrom implementation
 }
 
-task weaveJpaEntities(type: JavaExec, dependsOn: [compileJava, processResources]) {
+task weave(type: JavaExec, dependsOn: [compileJava, processResources]) {
     main = 'org.eclipse.persistence.tools.weaving.jpa.StaticWeave'
     classpath configurations.weaver
     args '-persistenceinfo'
@@ -121,7 +121,7 @@ task weaveJpaEntities(type: JavaExec, dependsOn: [compileJava, processResources]
 
     inputs.files fileTree(processResources.destinationDir).matching({pattern -> pattern.include('**/META-INF/persistence.xml')})
 }
-classes.dependsOn weaveJpaEntities
+classes.dependsOn weave
 
 URLClassLoader loader = GroovyObject.class.classLoader
 configurations.driver.each {File file ->
