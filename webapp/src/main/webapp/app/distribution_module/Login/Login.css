@@ -21,7 +21,7 @@ a {
     justify-content: center;
     align-items: center;
     background-position: center;
-    background-color: purple;
+    background-color: blueviolet;
     position: relative;
     z-index: -1;
 }
@@ -31,13 +31,14 @@ a {
     position: absolute;
     top: 80%;
     left: 35%;
+    justify-content: center;
     transform: translate(-50, -50);
-    background-color:purple;
+    background-color:blueviolet;
     border-radius: 10px;
 }
 
 .top-box{
-    padding: 60px 80px;
+    padding: 80px 40px;
 }
 
 .logo img {
@@ -99,34 +100,38 @@ title h1{
     color: white;
     float: right;
 }
-
 .button {
-    width: 50%;
-    border-radius: 40%;
-    padding: 8px;
-    outline: none;
+    background-color: #4CAF50; /* Green */
     border: none;
-    font-family: sans-serif;
-    font-size: 20px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
     cursor: pointer;
-    margin-left: 20%;
-    margin-right: 50%;
-    margin-bottom: 10px;
-    float: center;
-    color: purple;
-    background-color: white;
+  }
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+    border-radius: 12px;
+    justify-content: center;
 }
 
-.button:hover{
-    background-color: rgb(33, 116, 194);
+
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
 }
+
 
 .signup-box{
-    width: 100px;
     background-color: #e3e3e3;
     padding: 25px;
     font-size: 12px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    
+    text-align: center;
 }
+
