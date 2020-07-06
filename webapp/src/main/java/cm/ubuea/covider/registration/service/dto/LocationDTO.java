@@ -9,7 +9,7 @@ import java.util.List;
 public class LocationDTO {
     private String current_loctaion;
     private List<String > previous_location;
-    private Long userid;
+    private String userIdCard;
 
     public LocationDTO() {
     }
@@ -30,11 +30,11 @@ public class LocationDTO {
         this.previous_location = previous_location;
     }
 
-    public Long getUserid() {
-        return userid;
+    public String getUserIdCard() {
+        return userIdCard;
     }
 
-    public void setUserid(Long userid) {
-        this.userid = userid;
+    public void setUserIdCard(String userIdCard) {
+        this.userIdCard = userIdCard;
     }
 }

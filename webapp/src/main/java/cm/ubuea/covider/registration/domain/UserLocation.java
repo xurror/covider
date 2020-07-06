@@ -1,6 +1,8 @@
 package cm.ubuea.covider.registration.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -22,6 +24,7 @@ public class UserLocation {
     @Column(name = "previous_location")
     private List<String > previous_location;
 
+    @JsonIgnore
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinTable(name = "c_user_location",
         joinColumns = {@JoinColumn(name = "location_id", referencedColumnName = "location_id")},
@@ -55,6 +58,7 @@ public class UserLocation {
         this.previous_location = previous_location;
     }
 
+    @JsonIgnore
     public User getUser() {
         return user;
     }

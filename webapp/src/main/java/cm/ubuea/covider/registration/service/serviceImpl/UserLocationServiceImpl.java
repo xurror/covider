@@ -22,7 +22,7 @@ UserRepository userRepository;
         UserLocation userLocation = new UserLocation();
         userLocation.setCurrent_loctaion(locationDTO.getCurrent_loctaion());
         userLocation.setPrevious_location(locationDTO.getPrevious_location());
-        userLocation.setUser(userRepository.findById(locationDTO.getUserid()).get());
+        userLocation.setUser(userRepository.findOneByIdNumber(locationDTO.getUserIdCard()).get());
         userLocationRepository.save(userLocation);
     }
     }

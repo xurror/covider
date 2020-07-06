@@ -46,3 +46,4 @@ CREATE TABLE `c_user_role` (
   FOREIGN KEY (`role_name`) REFERENCES `c_role` (`name`) ON UPDATE RESTRICT ON DELETE CASCADE,
   FOREIGN KEY (`user_id`) REFERENCES `c_user` (`id`) ON UPDATE RESTRICT ON DELETE CASCADE
 );
+
