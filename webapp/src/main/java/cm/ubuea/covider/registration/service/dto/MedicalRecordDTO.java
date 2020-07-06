@@ -32,7 +32,7 @@ public class MedicalRecordDTO {
         return userIdNumber;
     }
 
-    public void setUserId(String userIdNumber) {
+    public void setUserIdNumber(String userIdNumber) {
         this.userIdNumber = userIdNumber;
     }
 }
