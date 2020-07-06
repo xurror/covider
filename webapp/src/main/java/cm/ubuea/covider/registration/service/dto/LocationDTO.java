@@ -9,11 +9,7 @@ import java.util.List;
 public class LocationDTO {
     private String current_loctaion;
     private List<String > previous_location;
-<<<<<<< HEAD
-    private String userIdNumber;
-=======
     private Long userid;
->>>>>>> added functionality to add user's visited locations and medical status
 
     public LocationDTO() {
     }
@@ -34,20 +30,11 @@ public class LocationDTO {
         this.previous_location = previous_location;
     }
 
-<<<<<<< HEAD
-    public String getUserIdNumber() {
-        return userIdNumber;
-    }
-
-    public void setUserid(String useridNumber) {
-        this.userIdNumber = useridNumber;
-=======
     public Long getUserid() {
         return userid;
     }
 
     public void setUserid(Long userid) {
         this.userid = userid;
->>>>>>> added functionality to add user's visited locations and medical status
     }
 }

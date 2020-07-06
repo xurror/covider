@@ -2,58 +2,62 @@ package cm.ubuea.covider.registration.domain;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Entity
-@Table(name="c_medical_record")
+@Table(name="medical_record")
 public class MedicalRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long medical_id;
 
-    @NotNull
-    private boolean currentStatus;
+
+    private boolean current_status;
 
     @ElementCollection
-    @CollectionTable(name = "c_current_user_symptoms", joinColumns = @JoinColumn(name = "id"))
+    @CollectionTable(name = "current_user_symptoms", joinColumns = @JoinColumn(name = "medical_id"))
     @Column(name = "current_symptoms")
-    private List<String> currentSymptoms;
+    private List<String> current_symptoms;
 
+    @JsonIgnore
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinTable(name = "c_user_med_record",
-        joinColumns = {@JoinColumn(name = "medical_id", referencedColumnName = "id")},
-        inverseJoinColumns = {@JoinColumn(name = "user_id_number", referencedColumnName = "id_number")})
+        joinColumns = {@JoinColumn(name = "medical_id", referencedColumnName = "medical_id")},
+        inverseJoinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")})
     private User user;
 
     public MedicalRecord() {
     }
 
-    public Long getId() {
-        return id;
+    public Long getMedical_id() {
+        return medical_id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setMedical_id(Long medical_id) {
+        this.medical_id = medical_id;
     }
 
-    public boolean getCurrentStatus() {
-        return currentStatus;
+    public boolean isCurrent_status() {
+        return current_status;
     }
 
-    public void setCurrentStatus(boolean currentStatus) {
-        this.currentStatus = currentStatus;
+    public void setCurrent_status(boolean current_status) {
+        this.current_status = current_status;
     }
 
-    public List<String> getCurrentSymptoms() {
-        return currentSymptoms;
+    public List<String> getCurrent_symptoms() {
+        return current_symptoms;
     }
 
-    public void setCurrentSymptoms(List<String> currentSymptoms) {
-        this.currentSymptoms = currentSymptoms;
+    public void setCurrent_symptoms(List<String> current_symptoms) {
+        this.current_symptoms = current_symptoms;
     }
 
+    @JsonIgnore
     public User getUser() {
         return user;
     }

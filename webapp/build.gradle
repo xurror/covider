@@ -70,8 +70,7 @@ dependencies {
 
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.10.5'
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.10.5'
-	runtimeOnly 'mysql:mysql-connector-java'
-    runtimeOnly 'com.h2database:h2:1.4.200'
+    runtimeOnly 'mysql:mysql-connector-java'
 
     testImplementation 'com.h2database:h2:1.4.200'
     testImplementation 'org.springframework.security:spring-security-test'
@@ -107,7 +106,7 @@ configurations {
     weaver.extendsFrom implementation
 }
 
-task weave(type: JavaExec, dependsOn: [compileJava, processResources]) {
+task weaveJpaEntities(type: JavaExec, dependsOn: [compileJava, processResources]) {
     main = 'org.eclipse.persistence.tools.weaving.jpa.StaticWeave'
     classpath configurations.weaver
     args '-persistenceinfo'
@@ -121,7 +120,7 @@ task weave(type: JavaExec, dependsOn: [compileJava, processResources]) {
 
     inputs.files fileTree(processResources.destinationDir).matching({pattern -> pattern.include('**/META-INF/persistence.xml')})
 }
-classes.dependsOn weave
+classes.dependsOn weaveJpaEntities
 
 URLClassLoader loader = GroovyObject.class.classLoader
 configurations.driver.each {File file ->
