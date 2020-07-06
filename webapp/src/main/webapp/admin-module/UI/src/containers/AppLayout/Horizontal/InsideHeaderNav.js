@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from "react";
 import { withRouter } from "react-router-dom";
 import ColorOption from "containers/Customizer/ColorOption";
@@ -33,6 +34,8 @@ const Horizontal =(props)=> {
 
 export default withRouter(Horizontal);
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import React from "react";
 import { withRouter } from "react-router-dom";
 import ColorOption from "containers/Customizer/ColorOption";
@@ -66,4 +69,7 @@ const Horizontal =(props)=> {
   };
 
 export default withRouter(Horizontal);
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

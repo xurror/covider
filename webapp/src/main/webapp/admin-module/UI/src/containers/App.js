@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { Component } from 'react'
 import { Text, View } from 'react-native'
 
@@ -12,6 +13,8 @@ export default class App extends Component {
     }
 }
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import React, { Component } from 'react'
 import { Text, View } from 'react-native'
 
@@ -24,4 +27,7 @@ export default class App extends Component {
         )
     }
 }
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

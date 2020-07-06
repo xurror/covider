@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, {useState} from "react";
 import { Link, withRouter } from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
@@ -285,6 +286,8 @@ const [apps, setApps] = useState(false);
 
 export default withRouter(Header);
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import React, {useState} from "react";
 import { Link, withRouter } from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
@@ -570,4 +573,7 @@ const [apps, setApps] = useState(false);
 
 
 export default withRouter(Header);
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

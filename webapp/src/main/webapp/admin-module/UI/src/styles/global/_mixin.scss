@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Box Shadow
 @mixin box-shadow($shadow...) {
   -webkit-box-shadow: $shadow;
@@ -232,6 +233,8 @@
   background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent);
   background-repeat: repeat-x;
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 // Box Shadow
 @mixin box-shadow($shadow...) {
   -webkit-box-shadow: $shadow;
@@ -464,5 +467,8 @@
 @mixin gradient-x($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
   background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent);
   background-repeat: repeat-x;
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 }

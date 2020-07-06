@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
   "name": "MailList",
   "version": "0.0.0",
@@ -6,10 +7,15 @@
   "main": "./index.js"
 }
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 {
   "name": "MailList",
   "version": "0.0.0",
   "private": true,
   "main": "./index.js"
 }
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

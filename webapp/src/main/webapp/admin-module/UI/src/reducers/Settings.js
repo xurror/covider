@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {
   CHANGE_DIRECTION,
   CHANGE_NAVIGATION_STYLE,
@@ -102,6 +103,8 @@ const settings = (state = initialSettings, action) => {
 
 export default settings;
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import {
   CHANGE_DIRECTION,
   CHANGE_NAVIGATION_STYLE,
@@ -204,4 +207,7 @@ const settings = (state = initialSettings, action) => {
 };
 
 export default settings;
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

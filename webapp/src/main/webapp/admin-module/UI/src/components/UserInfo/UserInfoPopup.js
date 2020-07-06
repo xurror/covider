@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from 'react';
 import {useDispatch} from 'react-redux'
 import {userSignOut} from 'actions/Auth';
@@ -41,6 +42,8 @@ export default UserInfoPopup;
 
 
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import React from 'react';
 import {useDispatch} from 'react-redux'
 import {userSignOut} from 'actions/Auth';
@@ -82,4 +85,7 @@ const UserInfoPopup = () => {
 export default UserInfoPopup;
 
 
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

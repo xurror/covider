@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from "react";
 import { withRouter } from "react-router-dom";
 import {useSelector} from "react-redux";
@@ -44,6 +45,8 @@ const Vertical =(props)=> {
 
 export default withRouter(Vertical);
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import React from "react";
 import { withRouter } from "react-router-dom";
 import {useSelector} from "react-redux";
@@ -88,4 +91,7 @@ const Vertical =(props)=> {
   };
 
 export default withRouter(Vertical);
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

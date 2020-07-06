@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {applyMiddleware, compose, createStore} from 'redux';
 import reducers from '../reducers/index';
 import {createBrowserHistory} from 'history'
@@ -32,6 +33,8 @@ export default function configureStore(initialState) {
 }
 export {history};
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import {applyMiddleware, compose, createStore} from 'redux';
 import reducers from '../reducers/index';
 import {createBrowserHistory} from 'history'
@@ -64,4 +67,7 @@ export default function configureStore(initialState) {
   return store;
 }
 export {history};
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
 import Avatar from '@material-ui/core/Avatar';
@@ -75,6 +76,8 @@ const ToDoItem = SortableElement(({todo, onTodoSelect, onTodoChecked, onMarkAsSt
 });
 
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import React from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
 import Avatar from '@material-ui/core/Avatar';
@@ -150,5 +153,8 @@ const ToDoItem = SortableElement(({todo, onTodoSelect, onTodoChecked, onMarkAsSt
   )
 });
 
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 export default ToDoItem;

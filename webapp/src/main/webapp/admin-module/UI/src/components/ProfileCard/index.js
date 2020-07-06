@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from 'react';
 
 const ProfileCard = () => {
@@ -39,6 +40,8 @@ const ProfileCard = () => {
 export default ProfileCard;
 
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import React from 'react';
 
 const ProfileCard = () => {
@@ -78,4 +81,7 @@ const ProfileCard = () => {
 
 export default ProfileCard;
 
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from "react";
 import Button from '@material-ui/core/Button';
 
@@ -22,6 +23,8 @@ const DryFruit = () => {
 
 export default DryFruit;
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import React from "react";
 import Button from '@material-ui/core/Button';
 
@@ -44,4 +47,7 @@ const DryFruit = () => {
 };
 
 export default DryFruit;
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

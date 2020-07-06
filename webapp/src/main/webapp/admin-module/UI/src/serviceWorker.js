@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 // This optional code is used to register a service worker.
 // register() is not called by default.
 
@@ -137,6 +138,8 @@ export function unregister() {
   }
 }
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 // This optional code is used to register a service worker.
 // register() is not called by default.
 
@@ -274,4 +277,7 @@ export function unregister() {
     });
   }
 }
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

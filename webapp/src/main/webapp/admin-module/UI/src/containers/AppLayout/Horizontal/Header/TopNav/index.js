@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import Menu from './Menu';
@@ -20,6 +21,8 @@ TopNav.defaultProps = {
   styleName: ''
 };
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import Menu from './Menu';
@@ -40,4 +43,7 @@ export default withRouter(TopNav);
 TopNav.defaultProps = {
   styleName: ''
 };
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

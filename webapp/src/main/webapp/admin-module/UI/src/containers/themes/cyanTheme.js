@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import cyan from '@material-ui/core/colors/cyan';
 import green from '@material-ui/core/colors/green';
 
@@ -28,6 +29,8 @@ export default {
   },
 };
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import cyan from '@material-ui/core/colors/cyan';
 import green from '@material-ui/core/colors/green';
 
@@ -56,4 +59,7 @@ export default {
     },
   },
 };
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

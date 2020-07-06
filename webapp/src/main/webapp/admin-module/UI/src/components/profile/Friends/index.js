@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from "react";
 import Widget from "../../Widget/index";
 
@@ -39,6 +40,8 @@ const Friends = ({friendList}) => {
 };
 export default Friends;
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import React from "react";
 import Widget from "../../Widget/index";
 
@@ -78,4 +81,7 @@ const Friends = ({friendList}) => {
   )
 };
 export default Friends;
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

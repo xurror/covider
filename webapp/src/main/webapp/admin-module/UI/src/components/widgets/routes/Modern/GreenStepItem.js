@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from "react";
 import Auxiliary from "util/Auxiliary";
 
@@ -17,6 +18,8 @@ const GreenStepItem = ({data}) => {
 
 export default GreenStepItem;
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import React from "react";
 import Auxiliary from "util/Auxiliary";
 
@@ -34,4 +37,7 @@ const GreenStepItem = ({data}) => {
 };
 
 export default GreenStepItem;
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

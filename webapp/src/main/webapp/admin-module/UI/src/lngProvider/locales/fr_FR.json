@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
   "sidebar.main": "Principale",
   "sidebar.dashboard": "Tableau de bord",
@@ -565,6 +566,8 @@
   "sidebar.modern": "Moderne"
 }
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 {
   "sidebar.main": "Principale",
   "sidebar.dashboard": "Tableau de bord",
@@ -1130,4 +1133,7 @@
   "sidebar.classic": "Classique",
   "sidebar.modern": "Moderne"
 }
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

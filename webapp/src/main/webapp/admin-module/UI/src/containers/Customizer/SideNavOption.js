@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import FormControl from '@material-ui/core/FormControl';
@@ -105,6 +106,8 @@ const Customizer =()=> {
 export default (Customizer);
 
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import FormControl from '@material-ui/core/FormControl';
@@ -210,4 +213,7 @@ const Customizer =()=> {
 
 export default (Customizer);
 
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

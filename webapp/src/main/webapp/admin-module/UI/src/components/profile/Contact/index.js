@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from "react";
 import Widget from "components/Widget";
 import {contactList} from '../../../app/routes/socialApps/routes/Profile/data'
@@ -23,6 +24,8 @@ const Contact = () => {
 
 export default Contact;
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import React from "react";
 import Widget from "components/Widget";
 import {contactList} from '../../../app/routes/socialApps/routes/Profile/data'
@@ -46,4 +49,7 @@ const Contact = () => {
 }
 
 export default Contact;
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

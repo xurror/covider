@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
 
@@ -28,6 +29,8 @@ const ToDoItem = ({todo, onTodoChecked}) => {
 };
 
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import React from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
 
@@ -56,5 +59,8 @@ const ToDoItem = ({todo, onTodoChecked}) => {
   )
 };
 
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 export default ToDoItem;

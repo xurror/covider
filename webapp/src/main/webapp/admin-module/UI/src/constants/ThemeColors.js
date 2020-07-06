@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 export const INDIGO = "indigo";
 export const CYAN = "cyan";
 export const AMBER = "amber";
@@ -18,6 +19,8 @@ export const DARK_DEEP_PURPLE = "dark-deep-purple";
 export const DARK_GREEN = "dark-green";
 export const DARK_THEME_COLOR = "dark-theme";
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 export const INDIGO = "indigo";
 export const CYAN = "cyan";
 export const AMBER = "amber";
@@ -36,4 +39,7 @@ export const DARK_BLUE = "dark-blue";
 export const DARK_DEEP_PURPLE = "dark-deep-purple";
 export const DARK_GREEN = "dark-green";
 export const DARK_THEME_COLOR = "dark-theme";
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

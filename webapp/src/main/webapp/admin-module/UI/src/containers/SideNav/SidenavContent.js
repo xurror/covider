@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, {Component} from 'react';
 import {NavLink, withRouter} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
@@ -280,6 +281,8 @@ class SidenavContent extends Component {
 
 export default withRouter(SidenavContent);
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import React, {Component} from 'react';
 import {NavLink, withRouter} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
@@ -560,4 +563,7 @@ class SidenavContent extends Component {
 }
 
 export default withRouter(SidenavContent);
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

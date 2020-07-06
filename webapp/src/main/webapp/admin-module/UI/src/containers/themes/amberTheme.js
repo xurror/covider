@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import deepOrange from '@material-ui/core/colors/deepOrange';
 import amber from '@material-ui/core/colors/amber';
 
@@ -29,6 +30,8 @@ export default {
   },
 };
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import deepOrange from '@material-ui/core/colors/deepOrange';
 import amber from '@material-ui/core/colors/amber';
 
@@ -58,4 +61,7 @@ export default {
     },
   },
 };
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

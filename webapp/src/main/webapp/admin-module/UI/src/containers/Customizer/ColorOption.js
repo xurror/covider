@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, {useEffect, useState} from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import URLSearchParams from 'url-search-params'
@@ -187,6 +188,8 @@ const ColorOption = (props) => {
 export default withRouter(ColorOption);
 
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import React, {useEffect, useState} from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import URLSearchParams from 'url-search-params'
@@ -374,4 +377,7 @@ const ColorOption = (props) => {
 
 export default withRouter(ColorOption);
 
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

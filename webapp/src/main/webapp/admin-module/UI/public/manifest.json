@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
   "short_name": "React App",
   "name": "Create React App Sample",
@@ -15,6 +16,8 @@
   "background_color": "#ffffff"
 }
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 {
   "short_name": "React App",
   "name": "Create React App Sample",
@@ -30,4 +33,7 @@
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

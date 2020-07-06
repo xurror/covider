@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {
   HIDE_MESSAGE,
   INIT_URL,
@@ -85,6 +86,8 @@ export default (state = INIT_STATE, action) => {
   }
 }
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import {
   HIDE_MESSAGE,
   INIT_URL,
@@ -170,4 +173,7 @@ export default (state = INIT_STATE, action) => {
       return state;
   }
 }
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

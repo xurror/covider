@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 export const notifications = [
   {
     id: 1,
@@ -40,6 +41,8 @@ export const notifications = [
   }
 ];
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 export const notifications = [
   {
     id: 1,
@@ -80,4 +83,7 @@ export const notifications = [
     badge: 3
   }
 ];
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

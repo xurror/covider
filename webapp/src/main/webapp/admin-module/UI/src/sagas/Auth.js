@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {all, call, fork, put, takeEvery} from "redux-saga/effects";
 import {
   auth,
@@ -87,6 +88,8 @@ export default function* rootSaga() {
     fork(createUserAccount),
     fork(signOutUser)]);
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import {all, call, fork, put, takeEvery} from "redux-saga/effects";
 import {
   auth,
@@ -174,5 +177,8 @@ export default function* rootSaga() {
   yield all([fork(signInUser),
     fork(createUserAccount),
     fork(signOutUser)]);
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 }

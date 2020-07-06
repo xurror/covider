@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Customizer const
 export const TOGGLE_COLLAPSED_NAV = 'toggle_collapse_menu';
 export const DRAWER_TYPE = 'drawer_type';
@@ -124,6 +125,8 @@ export const REMOVE_LABEL = 'remove_label';
 export const UPDATE_SEARCH = 'update_search';
 
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 // Customizer const
 export const TOGGLE_COLLAPSED_NAV = 'toggle_collapse_menu';
 export const DRAWER_TYPE = 'drawer_type';
@@ -248,4 +251,7 @@ export const SET_CURRENT_TODO_NULL = 'set_current_todo_null';
 export const REMOVE_LABEL = 'remove_label';
 export const UPDATE_SEARCH = 'update_search';
 
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

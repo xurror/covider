@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import pink from '@material-ui/core/colors/pink';
 import teal from '@material-ui/core/colors/teal';
 
@@ -28,6 +29,8 @@ export default {
   },
 };
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import pink from '@material-ui/core/colors/pink';
 import teal from '@material-ui/core/colors/teal';
 
@@ -56,4 +59,7 @@ export default {
     },
   },
 };
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

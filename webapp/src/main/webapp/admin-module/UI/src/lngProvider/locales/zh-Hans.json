@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
   "sidebar.main": "主要",
   "sidebar.dashboard": "仪表板",
@@ -565,6 +566,8 @@
   "sidebar.modern": "現代"
 }
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 {
   "sidebar.main": "主要",
   "sidebar.dashboard": "仪表板",
@@ -1130,4 +1133,7 @@
   "sidebar.classic": "經典",
   "sidebar.modern": "現代"
 }
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

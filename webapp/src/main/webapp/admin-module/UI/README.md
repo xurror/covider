@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # [Jumbo React - React Redux Material Admin Template](https://themeforest.net/item/react-material-bootstrap-4-admin-template/20978545 "Jumbo React")
 Jumbo React is a react redux based admin template. 
 
@@ -34,6 +35,8 @@ We appreciate your collaboration. If you build something which you believe could
 
 We merge only those features which we find useful for the community.
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 # [Jumbo React - React Redux Material Admin Template](https://themeforest.net/item/react-material-bootstrap-4-admin-template/20978545 "Jumbo React")
 Jumbo React is a react redux based admin template. 
 
@@ -68,4 +71,7 @@ it is well documented at [here](http://docs.g-axon.work/jumbo-react/ "Documentat
 We appreciate your collaboration. If you build something which you believe could help others in their project. You can make that as a pull request. But make sure that it should be in a genral uses rather then something which is built for a specific project.
 
 We merge only those features which we find useful for the community.
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import arrayMove from 'array-move';
 import todoConversation from 'app/routes/todo/data/todoConversation';
 import toDos from 'app/routes/todo/data/todo';
@@ -433,6 +434,8 @@ export default (state = INIT_STATE, action) => {
   }
 }
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import arrayMove from 'array-move';
 import todoConversation from 'app/routes/todo/data/todoConversation';
 import toDos from 'app/routes/todo/data/todo';
@@ -866,4 +869,7 @@ export default (state = INIT_STATE, action) => {
       return state;
   }
 }
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, {useState} from 'react';
 import IconButton from '@material-ui/core/IconButton'
 import {Dropdown, DropdownMenu, DropdownToggle, Popover} from 'reactstrap';
@@ -86,6 +87,8 @@ AppModuleHeader.defaultProps = {
   notification: true,
   apps: true
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import React, {useState} from 'react';
 import IconButton from '@material-ui/core/IconButton'
 import {Dropdown, DropdownMenu, DropdownToggle, Popover} from 'reactstrap';
@@ -172,5 +175,8 @@ AppModuleHeader.defaultProps = {
   value: '',
   notification: true,
   apps: true
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 };

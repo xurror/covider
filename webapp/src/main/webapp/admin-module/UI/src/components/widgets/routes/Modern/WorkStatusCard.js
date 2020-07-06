@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from "react";
 import Fab from '@material-ui/core/Fab';
 import {Area, AreaChart, ResponsiveContainer} from "recharts";
@@ -46,6 +47,8 @@ const WorkStatusCard = () => {
 
 export default WorkStatusCard;
 =======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 import React from "react";
 import Fab from '@material-ui/core/Fab';
 import {Area, AreaChart, ResponsiveContainer} from "recharts";
@@ -92,4 +95,7 @@ const WorkStatusCard = () => {
 };
 
 export default WorkStatusCard;
+<<<<<<< HEAD
 >>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
