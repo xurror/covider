@@ -31,7 +31,6 @@ class MedicalHistoryInfo extends Component {
     this.setState({ familyStatus: event.target.value });
   }
 
-  /*the render function */
   render() {
     const { changeStage } = this.props;
     return (
@@ -109,7 +108,7 @@ class MedicalHistoryInfo extends Component {
 
 
         <div style={{ display: 'flex', marginTop: "1rem", justifyContent: "space-between" }}>
-          <div onClick={() => {
+          {/* <div onClick={() => {
             const stage = {
               stage: 1,
             };
@@ -117,7 +116,7 @@ class MedicalHistoryInfo extends Component {
           }}
             style={{ flex: 1, justifyItems: 'center' }}>
             <p className="link dim pointer" style={{ fontSize: "1.2rem" }}><FaArrowLeft /> Previous</p>
-          </div>
+          </div> */}
           <div onClick={() => {
             const stage = {
               stage: 3,
