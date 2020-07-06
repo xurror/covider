@@ -20,9 +20,9 @@ UserRepository userRepository;
     @Override
     public void addUserLocation(LocationDTO locationDTO) {
         UserLocation userLocation = new UserLocation();
-        userLocation.setCurrent_loctaion(locationDTO.getCurrent_loctaion());
-        userLocation.setPrevious_location(locationDTO.getPrevious_location());
-        userLocation.setUser(userRepository.findById(locationDTO.getUserid()).get());
+        userLocation.setCurrentLoctaion(locationDTO.getCurrent_loctaion());
+        userLocation.setPreviousLocation(locationDTO.getPrevious_location());
+        userLocation.setUser(userRepository.findOneByIdNumber(locationDTO.getUserIdNumber()).orElse(null));
         userLocationRepository.save(userLocation);
     }
     }
