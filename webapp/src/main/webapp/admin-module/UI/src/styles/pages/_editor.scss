@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*Editor Styles*/
 .rdw-inline-wrapper {
   @include display-flex();
@@ -6,3 +7,13 @@
 .rdw-option-wrapper {
   margin-bottom: 6px;
 }
+=======
+/*Editor Styles*/
+.rdw-inline-wrapper {
+  @include display-flex();
+}
+
+.rdw-option-wrapper {
+  margin-bottom: 6px;
+}
+>>>>>>> 4d2bbb9... backbone for the dashboard

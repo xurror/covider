@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 {
   "name": "UserInfo",
   "version": "0.0.0",
   "private": true,
   "main": "./UserInfo.js"
 }
+=======
+{
+  "name": "UserInfo",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./UserInfo.js"
+}
+>>>>>>> 4d2bbb9... backbone for the dashboard

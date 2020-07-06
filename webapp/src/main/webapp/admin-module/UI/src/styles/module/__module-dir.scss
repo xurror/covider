@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Modules
    ========================================================================== */
 @import "app-module";
@@ -6,4 +7,14 @@
 @import "contact";
 @import "calendar";
 @import "profile";
+=======
+/* Modules
+   ========================================================================== */
+@import "app-module";
+@import "chat";
+@import "mail";
+@import "contact";
+@import "calendar";
+@import "profile";
+>>>>>>> 4d2bbb9... backbone for the dashboard
 @import "wall-app";

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "presets": [
     [
@@ -25,3 +26,32 @@
     }
   }
 }
+=======
+{
+  "presets": [
+    [
+      "es2015",
+      {
+        "modules": false
+      }
+    ],
+    "react",
+    "stage-2"
+  ],
+  "plugins": [
+    "syntax-dynamic-import",
+    "transform-decorators-legacy",
+    "transform-object-rest-spread",
+    "react-hot-loader/babel"
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "transform-decorators-legacy",
+        "transform-object-rest-spread",
+        "istanbul"
+      ]
+    }
+  }
+}
+>>>>>>> 4d2bbb9... backbone for the dashboard

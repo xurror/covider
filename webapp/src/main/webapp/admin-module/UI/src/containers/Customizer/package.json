@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 {
   "name": "Customizer",
   "version": "0.0.0",
   "private": true,
   "main": "./Customizer.js"
 }
+=======
+{
+  "name": "Customizer",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Customizer.js"
+}
+>>>>>>> 4d2bbb9... backbone for the dashboard

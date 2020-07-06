@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*Avatar Styles*/
 .user-avatar {
   margin-right: 8px;
@@ -27,3 +28,34 @@
     color: $light-gray;
   }
 }
+=======
+/*Avatar Styles*/
+.user-avatar {
+  margin-right: 8px;
+  @extend %size-50;
+
+  & img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &-lg {
+    margin-right: 10px;
+    @extend %size-60;
+  }
+}
+
+.user-detail {
+  & .user-name {
+    margin-bottom: 2px;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+
+  & .user-description {
+    font-size: 13px;
+    margin-bottom: 0;
+    color: $light-gray;
+  }
+}
+>>>>>>> 4d2bbb9... backbone for the dashboard

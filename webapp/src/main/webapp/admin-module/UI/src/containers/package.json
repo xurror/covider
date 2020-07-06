@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 {
   "name": "App",
   "version": "0.0.0",
   "private": true,
   "main": "./App.js"
 }
+=======
+{
+  "name": "App",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./App.js"
+}
+>>>>>>> 4d2bbb9... backbone for the dashboard

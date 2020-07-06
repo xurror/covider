@@ -1,4 +1,3 @@
-import React from 'react';
 
 const LatestPosts = ({recentData}) => {
   const {image, title, description, date} = recentData;

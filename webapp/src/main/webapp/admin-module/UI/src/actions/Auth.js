@@ -77,3 +77,4 @@ export const hideAuthLoader = () => {
     type: ON_HIDE_LOADER,
   };
 };
+

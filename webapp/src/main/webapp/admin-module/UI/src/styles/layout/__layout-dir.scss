@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Layouts
    ========================================================================== */
 @import "app-layout";
@@ -6,4 +7,14 @@
 @import "main-content";
 @import "footer";
 @import "right-sidebar";
+=======
+/* Layouts
+   ========================================================================== */
+@import "app-layout";
+@import "sidebar";
+@import "header";
+@import "main-content";
+@import "footer";
+@import "right-sidebar";
+>>>>>>> 4d2bbb9... backbone for the dashboard
 @import "navbar";

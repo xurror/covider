@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*Main Content Styles*/
 .app-main-content {
   flex: 1;
@@ -11,4 +12,19 @@
   @media screen and (max-width: 575px) {
     padding: 20px;
   }
+=======
+/*Main Content Styles*/
+.app-main-content {
+  flex: 1;
+  width: 100%;
+}
+
+.app-wrapper {
+  padding: 30px;
+  width: 100%;
+
+  @media screen and (max-width: 575px) {
+    padding: 20px;
+  }
+>>>>>>> 4d2bbb9... backbone for the dashboard
 }
