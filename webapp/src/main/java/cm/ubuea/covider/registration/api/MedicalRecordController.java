@@ -22,7 +22,7 @@ public class MedicalRecordController {
         this.medicalRecordService = medicalRecordService;
     }
 
-    @PostMapping("/add")
+    @PostMapping("/")
     public ResponseEntity<?> addMedicalRecord(@Valid @RequestBody MedicalRecordDTO medicalRecordDTO ) {
         medicalRecordService.addMedicalRecord(medicalRecordDTO);
         return new ResponseEntity("Medical Record successfully added",HttpStatus.CREATED);
