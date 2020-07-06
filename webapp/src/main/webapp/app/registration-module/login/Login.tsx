@@ -6,6 +6,9 @@ import MedicalHistoryInfo from '../medical-history/MedicalHistoryInfo';
 import UserLocation from '../location/UserLocation';
 import LoginSuccesModal from '../registerSuccesModal/RegisterSuccessModal';
 
+import { setToken } from '../redux/actions/authActions';
+import { connect } from 'react-redux';
+
 class Login extends Component {
   constructor() {
     super();
@@ -13,6 +16,8 @@ class Login extends Component {
       stage: 1,
       role: '',
       modalShow: false,
+      password: '',
+      idNumber: ''
     }
   }
 
@@ -22,10 +27,36 @@ class Login extends Component {
     this.props.changeStage(stage)
   }
 
+  passwordChange = (e) => this.setState({ password: e.target.value })
+  idNumberChange = (e) => this.setState({ idNumber: e.target.value })
+
   handleLogin() {
     this.props.setFirstTime(true)
+    const { password, idNumber } = this.state;
     this.setState({ modalShow: true })
-    this.setState({ stage: 2 })
+    let url = 'https://covider.herokuapp.com/api/account';
+    let auth = "Basic " + new Buffer(idNumber + ":" + password).toString("base64");
+
+    let fetchParams = {
+      method: 'GET',
+      headers: {
+        Authorization: auth,
+        'Content-Type': 'application/json'
+      },
+      // headers: {'Content-Type': 'application/json'},
+      // body: JSON.stringify(obj)
+    }
+    fetch(url, fetchParams)
+      .then(response => response.json())
+      .then(res => {
+        console.log(res)
+        this.setState({ modalShow: false })
+        this.setState({ stage: 2 })
+      })
+      .catch(err => {
+        console.log(err)
+      }).finally(fin => console.log('finish'))
+
   }
   changeRoute(route) {
     this.props.changeRoute(route)
@@ -39,8 +70,10 @@ class Login extends Component {
         <RenderLoginPage
           changeRoute={(route) => this.changeRoute(route)}
           handleLogin={() => this.handleLogin()}
+          passwordChange={(e) => this.passwordChange(e)}
+          idNumberChange={(e) => this.idNumberChange(e)}
           modalShow={modalShow}
-          onHide={() => this.setState({modalShow: false})}
+          onHide={() => this.setState({ modalShow: false })}
         />
       )
     } else if (stage === 2) {
@@ -59,11 +92,17 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapStateToProps = ({ token }) => {
+
+  return {}
+}
+
+export default connect(mapStateToProps, { setToken })(Login);
+
 
 const RenderLoginPage = (props) => {
-  const { changeRoute, handleLogin, modalShow, onHide } = props;
-  
+  const { changeRoute, handleLogin, modalShow, onHide, passwordChange, idNumberChange } = props;
+
   return (
     <div className="wrapper shadow ct">
       <div className="card-body">
@@ -82,20 +121,20 @@ const RenderLoginPage = (props) => {
           <p style={{ fontSize: ".8rem;" }}>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae</p>
         </div>
         <LoginSuccesModal
-            show={modalShow}
-            onHide={() => onHide()}
-          />
+          show={modalShow}
+          onHide={() => onHide()}
+        />
 
         <div style={{ width: "40%" }}>
           <Form>
             <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email / Id card number</Form.Label>
-              <Form.Control type="email" placeholder="Email / Id card number" />
+              <Form.Label>Id card number</Form.Label>
+              <Form.Control type="email" placeholder="Id card number" onChange={idNumberChange} />
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control type="password" placeholder="Password" onChange={passwordChange} />
             </Form.Group>
             <Button onClick={() => handleLogin()} className="grow" variant="primary" style={{ backgroundColor: '#6e13ec', borderWidth: 0 }}>
               Login
