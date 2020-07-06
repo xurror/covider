@@ -3,7 +3,7 @@ package cm.ubuea.covider.registration.domain;
 
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -13,7 +13,7 @@ public class MedicalRecord {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long medical_id;
 
-    @NotBlank
+    @NotNull
     private boolean current_status;
 
     @ElementCollection
