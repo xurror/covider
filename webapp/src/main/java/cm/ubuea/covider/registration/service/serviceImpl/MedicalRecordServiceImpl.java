@@ -7,6 +7,8 @@ import cm.ubuea.covider.registration.service.MedicalRecordService;
 import cm.ubuea.covider.registration.service.dto.MedicalRecordDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Service
 public class MedicalRecordServiceImpl implements MedicalRecordService {
@@ -24,4 +26,8 @@ public class MedicalRecordServiceImpl implements MedicalRecordService {
         medicalRecord.setUser(userRepository.findOneByIdNumber(medicalRecordDTO.getUserIdNumber()).orElse(null));
         medicalRecordRepository.save(medicalRecord);
     }
+
+
+
+
 }
