@@ -19,9 +19,9 @@ public class MedicalRecordServiceImpl implements MedicalRecordService {
     @Override
     public void addMedicalRecord(MedicalRecordDTO medicalRecordDTO) {
         MedicalRecord medicalRecord = new MedicalRecord();
-        medicalRecord.setCurrent_status(medicalRecordDTO.isCurrent_status());
-        medicalRecord.setCurrent_symptoms(medicalRecordDTO.getCurrent_symptoms());
-        medicalRecord.setUser(userRepository.findById(medicalRecordDTO.getUserid()).get());
+        medicalRecord.setCurrentStatus(medicalRecordDTO.getCurrentStatus());
+        medicalRecord.setCurrentSymptoms(medicalRecordDTO.getCurrentSymptoms());
+        medicalRecord.setUser(userRepository.findOneByIdNumber(medicalRecordDTO.getUserIdNumber()).orElse(null));
         medicalRecordRepository.save(medicalRecord);
     }
 }
