@@ -33,11 +33,7 @@ a {
     left: 35%;
     justify-content: center;
     transform: translate(-50, -50);
-<<<<<<< HEAD
     background-color:blueviolet;
-=======
-    background-color:purple;
->>>>>>> feda19c... add the router
     border-radius: 10px;
 }
 
