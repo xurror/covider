@@ -5,34 +5,34 @@ import java.util.List;
 
 
 public class MedicalRecordDTO {
-    private boolean current_status;
-    private List<String> current_symptoms;
-    private Long userid;
+    private boolean currentStatus;
+    private List<String> currentSymptoms;
+    private String userIdNumber;
 
     public MedicalRecordDTO() {
     }
 
-    public boolean isCurrent_status() {
-        return current_status;
+    public boolean getCurrentStatus() {
+        return currentStatus;
     }
 
-    public void setCurrent_status(boolean current_status) {
-        this.current_status = current_status;
+    public void setCurrentStatus(boolean currentStatus) {
+        this.currentStatus = currentStatus;
     }
 
-    public List<String> getCurrent_symptoms() {
-        return current_symptoms;
+    public List<String> getCurrentSymptoms() {
+        return currentSymptoms;
     }
 
-    public void setCurrent_symptoms(List<String> current_symptoms) {
-        this.current_symptoms = current_symptoms;
+    public void setCurrentSymptoms(List<String> currentSymptoms) {
+        this.currentSymptoms = currentSymptoms;
     }
 
-    public Long getUserid() {
-        return userid;
+    public String getUserIdNumber() {
+        return userIdNumber;
     }
 
-    public void setUserid(Long userid) {
-        this.userid = userid;
+    public void setUserId(String userIdNumber) {
+        this.userIdNumber = userIdNumber;
     }
 }

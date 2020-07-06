@@ -7,51 +7,51 @@ import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
-@Table(name="medical_record")
+@Table(name="c_medical_record")
 public class MedicalRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long medical_id;
+    private Long id;
 
     @NotNull
-    private boolean current_status;
+    private boolean currentStatus;
 
     @ElementCollection
-    @CollectionTable(name = "current_user_symptoms", joinColumns = @JoinColumn(name = "medical_id"))
+    @CollectionTable(name = "c_current_user_symptoms", joinColumns = @JoinColumn(name = "id"))
     @Column(name = "current_symptoms")
-    private List<String> current_symptoms;
+    private List<String> currentSymptoms;
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinTable(name = "c_user_med_record",
-        joinColumns = {@JoinColumn(name = "medical_id", referencedColumnName = "medical_id")},
-        inverseJoinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")})
+        joinColumns = {@JoinColumn(name = "medical_id", referencedColumnName = "id")},
+        inverseJoinColumns = {@JoinColumn(name = "user_id_number", referencedColumnName = "id_number")})
     private User user;
 
     public MedicalRecord() {
     }
 
-    public Long getMedical_id() {
-        return medical_id;
+    public Long getId() {
+        return id;
     }
 
-    public void setMedical_id(Long medical_id) {
-        this.medical_id = medical_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public boolean isCurrent_status() {
-        return current_status;
+    public boolean getCurrentStatus() {
+        return currentStatus;
     }
 
-    public void setCurrent_status(boolean current_status) {
-        this.current_status = current_status;
+    public void setCurrentStatus(boolean currentStatus) {
+        this.currentStatus = currentStatus;
     }
 
-    public List<String> getCurrent_symptoms() {
-        return current_symptoms;
+    public List<String> getCurrentSymptoms() {
+        return currentSymptoms;
     }
 
-    public void setCurrent_symptoms(List<String> current_symptoms) {
-        this.current_symptoms = current_symptoms;
+    public void setCurrentSymptoms(List<String> currentSymptoms) {
+        this.currentSymptoms = currentSymptoms;
     }
 
     public User getUser() {
