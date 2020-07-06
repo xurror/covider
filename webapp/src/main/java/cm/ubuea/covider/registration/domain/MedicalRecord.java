@@ -2,6 +2,8 @@ package cm.ubuea.covider.registration.domain;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
@@ -13,7 +15,7 @@ public class MedicalRecord {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long medical_id;
 
-    @NotBlank
+
     private boolean current_status;
 
     @ElementCollection
@@ -21,6 +23,7 @@ public class MedicalRecord {
     @Column(name = "current_symptoms")
     private List<String> current_symptoms;
 
+    @JsonIgnore
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinTable(name = "c_user_med_record",
         joinColumns = {@JoinColumn(name = "medical_id", referencedColumnName = "medical_id")},
@@ -54,6 +57,7 @@ public class MedicalRecord {
         this.current_symptoms = current_symptoms;
     }
 
+    @JsonIgnore
     public User getUser() {
         return user;
     }

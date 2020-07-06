@@ -7,7 +7,7 @@ import java.util.List;
 public class MedicalRecordDTO {
     private boolean current_status;
     private List<String> current_symptoms;
-    private Long userid;
+    private String userIdCard;
 
     public MedicalRecordDTO() {
     }
@@ -28,11 +28,11 @@ public class MedicalRecordDTO {
         this.current_symptoms = current_symptoms;
     }
 
-    public Long getUserid() {
-        return userid;
+    public String getUserIdCard() {
+        return userIdCard;
     }
 
-    public void setUserid(Long userid) {
-        this.userid = userid;
+    public void setUserIdCard(String userIdCard) {
+        this.userIdCard = userIdCard;
     }
 }
