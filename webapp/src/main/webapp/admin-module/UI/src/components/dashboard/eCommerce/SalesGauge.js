@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 import React, {useEffect} from 'react';
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";

@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 /*Breadcrumb Styles*/
 .breadcrumb {
   @include border-radius($border-radius-sm);
@@ -12,4 +14,25 @@
   line-height: 1;
   vertical-align: middle;
   padding-left: 0;
+=======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
+/*Breadcrumb Styles*/
+.breadcrumb {
+  @include border-radius($border-radius-sm);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: '\F2FB';
+  font: {
+    family: 'Material-Design-Iconic-Font';
+    size: 16px;
+  }
+  line-height: 1;
+  vertical-align: middle;
+  padding-left: 0;
+<<<<<<< HEAD
+>>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 }

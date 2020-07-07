@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 // Width and height Styles
 
 @each $prop, $abbrev in (width: w, height: h, max-width: mw, max-height: mh) {
@@ -7,3 +9,19 @@
     }
   }
 }
+=======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
+// Width and height Styles
+
+@each $prop, $abbrev in (width: w, height: h, max-width: mw, max-height: mh) {
+  @each $size, $length in $sizes {
+    .#{$abbrev}-#{$size} {
+      #{$prop}: $length !important;
+    }
+  }
+}
+<<<<<<< HEAD
+>>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0

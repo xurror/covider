@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 import React from 'react';
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
 
 const LatestPosts = ({recentData}) => {
   const {image, title, description, date} = recentData;
