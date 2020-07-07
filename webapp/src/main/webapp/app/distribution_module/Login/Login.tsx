@@ -1,7 +1,7 @@
 import React from "react";
 import  './Login.css'
-
 import logo from './user.png'
+import { NavLink } from 'react-router-dom';
 
 function Login(){
   return(
@@ -20,7 +20,7 @@ function Login(){
                 <div className="textbox">
                     <input type="password" placeholder="ID Card number" id=""/>
                 </div>
-                <input type="button" className="button" value="Verify"/>
+                <NavLink to="/Home"><button type="button" className="button button1">Login</button></NavLink>
                 <div className="checkbox">
                     <input type="checkbox" id="cbremember"/>
                     <label form="chremember">Remember Me</label>
