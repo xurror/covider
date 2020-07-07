@@ -13,7 +13,6 @@
             android:orientation="vertical"
             android:padding="10dp">
 
-
                 <ImageView
                     android:id="@+id/logo"
                     android:layout_width="130dp"
@@ -22,7 +21,6 @@
                     android:paddingTop="10dp"
                     android:src="@drawable/logo"
                     android:contentDescription="@string/logo_icon" />
-
 
                 <TextView
                     android:id="@+id/app_name"
