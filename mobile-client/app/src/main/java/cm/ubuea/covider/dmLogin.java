@@ -18,8 +18,9 @@ public class dmLogin extends AppCompatActivity {
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent gotoDisTracking = new Intent(getApplicationContext(), dmDisTrack.class);
-                startActivity(gotoDisTracking);
+              // Toast.makeText(getApplicationContext(), "Message sent, will be in touch", Toast.LENGTH_LONG).show();
+                Intent gotoUsers = new Intent(getApplicationContext(), Users.class);
+                startActivity(gotoUsers);
             }
         });
     }
