@@ -1,0 +1,89 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+export const notifications = [
+  {
+    id: 1,
+    image: "https://via.placeholder.com/150x150",
+    name: "Domnic Brown",
+    time: "6:19 PM",
+    message: "There are many variations of passages of...",
+    badge: 5
+  },
+  {
+    id: 2,
+    image: "https://via.placeholder.com/150x150",
+    name: "John Smith",
+    time: "4:18 PM",
+    message: "Lorem Ipsum is simply dummy text of the...",
+  },
+  {
+    id: 3,
+    image: "https://via.placeholder.com/150x150",
+    name: "John Smith",
+    time: "7:10 PM",
+    message: "The point of using Lorem Ipsum is that it has a...",
+    badge: 8
+  },
+  {
+    id: 4,
+    image: "https://via.placeholder.com/150x150",
+    name: "alex dolgove",
+    time: "5:10 PM",
+    message: "It is a long established fact that a reader will...",
+  },
+  {
+    id: 5,
+    image: "https://via.placeholder.com/150x150",
+    name: "Domnic Harris",
+    time: "7:35 PM",
+    message: "All the Lorem Ipsum generators on the...",
+    badge: 3
+  }
+];
+=======
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
+export const notifications = [
+  {
+    id: 1,
+    image: "https://via.placeholder.com/150x150",
+    name: "Domnic Brown",
+    time: "6:19 PM",
+    message: "There are many variations of passages of...",
+    badge: 5
+  },
+  {
+    id: 2,
+    image: "https://via.placeholder.com/150x150",
+    name: "John Smith",
+    time: "4:18 PM",
+    message: "Lorem Ipsum is simply dummy text of the...",
+  },
+  {
+    id: 3,
+    image: "https://via.placeholder.com/150x150",
+    name: "John Smith",
+    time: "7:10 PM",
+    message: "The point of using Lorem Ipsum is that it has a...",
+    badge: 8
+  },
+  {
+    id: 4,
+    image: "https://via.placeholder.com/150x150",
+    name: "alex dolgove",
+    time: "5:10 PM",
+    message: "It is a long established fact that a reader will...",
+  },
+  {
+    id: 5,
+    image: "https://via.placeholder.com/150x150",
+    name: "Domnic Harris",
+    time: "7:35 PM",
+    message: "All the Lorem Ipsum generators on the...",
+    badge: 3
+  }
+];
+<<<<<<< HEAD
+>>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
