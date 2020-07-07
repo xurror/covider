@@ -26,6 +26,7 @@ class Home extends Component {
     if (route === 'home') {
       return (
         <Register
+          changeRoute={(route) => this.setState({route})}
           changeStage={(stage) => this.setState({ stage })}
           setRole={(role) => this.setState({ role })}
         />
