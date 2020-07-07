@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-import { Form, FormControl } from 'react-bootstrap';
+import { Form, FormControl, Spinner } from 'react-bootstrap';
 import './MedicalHistoryInfo.css';
+import { connect } from 'react-redux';
+import axios from 'axios';
 
 class MedicalHistoryInfo extends Component {
   constructor() {
     super();
     this.state = {
-      medialDetails: '',
+      medicalDetails: '',
       covidStatus: '',
       testStatus: '',
       familyNumber: '',
       familyStatus: '',
+      loading: false,
     }
   }
 
   medicalHistory = (event) => {
-    this.setState({ medialDetails: event.target.value })
+    this.setState({ medicalDetails: event.target.value })
   }
   covidStatus = (event) => {
     this.setState({ covidStatus: event.target.value })
@@ -31,13 +34,47 @@ class MedicalHistoryInfo extends Component {
     this.setState({ familyStatus: event.target.value });
   }
 
+  gotoNext(stage) {
+    const { medicalDetails, covidStatus } = this.state;
+    this.setState({ loading: true })
+
+    let status = false;
+    if (covidStatus === 'positive') {
+      status = true
+    }
+
+    const { token } = this.props
+    const { user, changeStage } = this.props;
+
+    const obj = { currentStatus: status, currentSymptoms: [medicalDetails], userIdNumber: user.idNumber, userId: `${user.id}` }
+
+    axios.post('https://covider.herokuapp.com/api/medical/', {obj}, {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        authorization: token,
+      }
+    })
+      .then(res => {
+        this.setState({ loading: false })
+        changeStage(stage)
+        console.log(res.data);
+      })
+      .catch(err => {
+        this.setState({ loading: false })
+        console.log(err)
+      })
+  }
+
   render() {
-    const { changeStage } = this.props;
+    const { user } = this.props;
+    const { loading } = this.state;
+
     return (
       <div className="wrapper shadow">
         <div className="d-flex justify-content-between">
           <div className="p">
-            <h4>Medical information history</h4>
+            <h4>Enter your medical information history! {user.name}</h4>
           </div>
           <div className="p-2">
             <p className='link dim underline pointer'
@@ -121,10 +158,17 @@ class MedicalHistoryInfo extends Component {
             const stage = {
               stage: 3,
             };
-            changeStage(stage)
+            this.gotoNext(stage)
           }}
             className="nextBtn link pointer ib br2 grow bw2 shadow-3">
-            <p style={{ textAlign: 'center', position: "relative", bottom: -7, color: 'white' }}>Next <FaArrowRight /></p>
+
+            {
+              loading ?
+                <Spinner animation="border" variant="light" className='ma1' />
+                :
+                <p style={{ textAlign: 'center', position: "relative", bottom: -7, color: 'white' }}>  Next < FaArrowRight /></p>
+            }
+
           </div>
         </div >
 
@@ -133,4 +177,12 @@ class MedicalHistoryInfo extends Component {
     )
   }
 }
-export default MedicalHistoryInfo;
+
+const mapStateToProps = ({ token }) => {
+
+  return {
+    token: token.token
+  }
+}
+
+export default connect(mapStateToProps, null)(MedicalHistoryInfo);
