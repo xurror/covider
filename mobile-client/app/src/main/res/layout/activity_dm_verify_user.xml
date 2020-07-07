@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+<<<<<<< HEAD
     tools:context=".dmVerifyUser">
 
     <LinearLayout
@@ -11,31 +12,57 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="20dp"
+=======
+    tools:context=".dmLogin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+>>>>>>> c425d85... Initial Commit
         android:layout_gravity="center"
+<<<<<<< HEAD
 <<<<<<< HEAD
         android:gravity="center">
 =======
         android:gravity="center"
         >
 >>>>>>> 5940aab... distribution module
+=======
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:orientation="vertical">
+>>>>>>> 451456b... distribution module
 
         <ImageView
             android:id="@+id/logo"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/logo"
             android:layout_gravity="center"
             android:paddingTop="10dp"
+<<<<<<< HEAD
             android:contentDescription="@string/logo_icon" />
+=======
+            android:src="@drawable/logo" />
+
+>>>>>>> c425d85... Initial Commit
         <TextView
             android:id="@+id/app_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:text="@string/app_name"
             android:textColor="@color/colorPrimary"
             android:textSize="30sp"
+=======
+>>>>>>> c425d85... Initial Commit
             android:layout_gravity="center"
             android:layout_margin="10dp"
+<<<<<<< HEAD
+=======
+            android:text="@string/app_name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp"
+>>>>>>> 451456b... distribution module
             android:textStyle="bold" />
 
 
@@ -43,6 +70,7 @@
             android:id="@+id/name_p"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:inputType="text"
             android:hint="@string/name_placeholder"
             android:textColor="@color/colorPrimary"
@@ -51,16 +79,31 @@
             android:paddingStart="5dp"
             android:layout_gravity="center"
             android:drawableStart="@drawable/ic_person"
+=======
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:drawableLeft="@drawable/ic_person"
+>>>>>>> c425d85... Initial Commit
             android:drawablePadding="5dp"
+            android:hint="@string/name_placeholder"
+            android:inputType="text"
             android:padding="20dp"
+<<<<<<< HEAD
             android:layout_margin="20dp"
             tools:ignore="RtlSymmetry"
             android:importantForAutofill="no" />
+=======
+            android:paddingLeft="5dp"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="18sp" />
+>>>>>>> c425d85... Initial Commit
 
         <EditText
             android:id="@+id/id_p"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:inputType="text"
             android:hint="@string/id_placeholder"
             android:textColor="@color/colorPrimary"
@@ -69,29 +112,46 @@
             android:paddingStart="5dp"
             android:layout_gravity="center"
             android:drawableStart="@drawable/ic_card"
+=======
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:drawableLeft="@drawable/ic_card"
+>>>>>>> c425d85... Initial Commit
             android:drawablePadding="5dp"
+            android:hint="@string/id_placeholder"
+            android:inputType="text"
             android:padding="20dp"
+<<<<<<< HEAD
             android:layout_margin="20dp"
             tools:ignore="RtlSymmetry"
             android:importantForAutofill="no" />
+=======
+            android:paddingLeft="5dp"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="18sp" />
+
+>>>>>>> c425d85... Initial Commit
         <Button
             android:id="@+id/verify_button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="@string/verify"
-            android:textColor="#542F5A"
-            android:textSize="20sp"
-            android:background="@drawable/button"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
+<<<<<<< HEAD
 <<<<<<< HEAD
             android:elevation="20pt" />
 
     </LinearLayout>
 
 =======
+=======
+            android:background="@drawable/button"
+>>>>>>> 451456b... distribution module
             android:elevation="20pt"
-            />
+            android:text="@string/verify"
+            android:textColor="@color/color"
+            android:textSize="18sp" />
 
     </LinearLayout>
 >>>>>>> 7f3a083... distribution module
