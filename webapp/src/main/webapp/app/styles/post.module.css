@@ -1,0 +1,53 @@
+.post {
+    display: flex;
+    padding: 50px 100px 50px 50px;
+    justify-content: space-around;
+}
+
+.twitter h1, .instagram h1 {
+    font-size: 24px;
+    background-color: #e3e3e3;
+    text-align: center;
+    padding: 10px;
+    font-weight: 100;
+}
+
+.twitter,
+.instagram {
+    position: relative;
+    width: 360px;
+    height: 640px;
+    margin: auto;
+    border: 16px #333547 solid;
+    border-top-width: 60px;
+    border-bottom-width: 60px;
+    border-radius: 36px;
+}
+
+.twitter::before,
+.instagram::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 5px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 10px;
+}
+
+.twitter::after,
+.instagram::after {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 50%;
+    bottom: -65px;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 50%;
+}

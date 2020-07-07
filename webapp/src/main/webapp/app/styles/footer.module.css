@@ -1,0 +1,33 @@
+.footer {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 100%;
+    background-color: #333547;
+    text-align: center;
+}
+
+.footer::before {
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+}
+
+.footer p {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-writing-mode: tb-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: tb-rl;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    display: inline-block;
+    vertical-align: middle;
+    color: #8699ad;
+    font-size: 14px;
+
+}
