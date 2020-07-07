@@ -46,7 +46,7 @@ public class UserController {
 	
 
 	@PostMapping("/user/location/{locationId}")
-	public ResponseEntity<UserDTO> addUser(@RequestBody UserDTO newUserDTO, @PathVariable int locationId) {
+	public ResponseEntity<UserDTO> addUser(@RequestBody UserDTO newUserDTO, @PathVariable("locationId") int locationId) {
 		UserDTO userDTO = userService.createUser(newUserDTO, locationId);
 
 		return new ResponseEntity<> (userDTO,HttpStatus.CREATED);
