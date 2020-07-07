@@ -14,13 +14,25 @@ public class dmLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dm_login);
+
+        /*Button location_button = findViewById(R.id.location_button);
+        location_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Toast.makeText(getApplicationContext(), "Message sent, will be in touch", Toast.LENGTH_LONG).show();
+                    Intent gotoUserLocation = new Intent(getApplicationContext(), dmUserLocation.class);
+                    startActivity(gotoUserLocation);
+                }
+        });*/
+
+
         Button login_button = findViewById(R.id.login_button);
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              // Toast.makeText(getApplicationContext(), "Message sent, will be in touch", Toast.LENGTH_LONG).show();
-                Intent gotoUsers = new Intent(getApplicationContext(), Users.class);
-                startActivity(gotoUsers);
+                // Toast.makeText(getApplicationContext(), "Message sent, will be in touch", Toast.LENGTH_LONG).show();
+                Intent gotoDisTracking = new Intent(getApplicationContext(), dmList.class);
+                startActivity(gotoDisTracking);
             }
         });
     }

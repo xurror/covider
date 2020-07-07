@@ -12,10 +12,7 @@
     <string name="id_placeholder">ID Card number</string>
     <string name="login_text">Login</string>
     <string name="verify">Verify</string>
-<<<<<<< HEAD
-=======
     <string name="set">Set</string>
->>>>>>> dd14f5e... notification screen now getting data
     <string name="found">Found</string>
     <string name="submit">Submit</string>
     <string name="location_text">Upload your home location</string>
@@ -24,7 +21,6 @@
     <string name="title_activity_dmser_locaton_map">Map</string>
     <string name="title_activity_dm_user_location">Map</string>
     <string name="enter_token">Enter Token</string>
-<<<<<<< HEAD
     <string name="signs_and_symptoms">Signs and syntoms</string>
     <string name="health_information">Health Information</string>
     <string name="notification">Notifications</string>
@@ -39,11 +35,6 @@
     <string name="to_">To: Covider</string>
     <string name="message">Message</string>
     <string name="list_view_to_contain_username_user_location_longitude_and_latitude">List view to contain username, user location: longitude and latitude</string>
-<<<<<<< HEAD
     <string name="enter_token">Enter Token</string>
     <string name="set">SET</string>
-=======
->>>>>>> dd14f5e... notification screen now getting data
-=======
->>>>>>> 0a46fbc... Deleted Location Button
 </resources>
