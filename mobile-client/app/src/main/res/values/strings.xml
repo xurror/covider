@@ -17,4 +17,12 @@
     <string name="submit">Submit</string>
     <string name="location_text">Upload your home location</string>
     <string name="country_region_city">Country, Region, City</string>
+<<<<<<< HEAD
+=======
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_dmser_locaton_map">Map</string>
+    <string name="title_activity_dm_user_location">Map</string>
+    <string name="enter_token">Enter Token</string>
+    <string name="signs_and_syntoms">Signs and syntoms</string>
+>>>>>>> e575591... Redefined the interface
 </resources>

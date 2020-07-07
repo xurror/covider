@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#542F5A"
+    android:background="#FFFFFF"
     tools:context=".dmLogin">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="20dp"
         android:layout_gravity="center"
@@ -24,13 +24,13 @@
             android:src="@drawable/logo"
             android:layout_gravity="center"
             android:paddingTop="10dp"
-            />
+            android:contentDescription="logo" />
         <TextView
             android:id="@+id/app_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
-            android:textColor="#fff"
+            android:textColor="@color/colorPrimary"
             android:textSize="30sp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
@@ -44,8 +44,8 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             android:hint="@string/name_placeholder"
-            android:textColor="#fff"
-            android:textColorHint="#fff"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
             android:textSize="20sp"
             android:paddingLeft="5dp"
             android:layout_gravity="center"
@@ -61,8 +61,8 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             android:hint="@string/id_placeholder"
-            android:textColor="#fff"
-            android:textColorHint="#fff"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
             android:textSize="20sp"
             android:paddingLeft="5dp"
             android:layout_gravity="center"
