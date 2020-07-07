@@ -4,7 +4,7 @@ import { Form, Button } from 'react-bootstrap';
 import './Login.css';
 import MedicalHistoryInfo from '../medical-history/MedicalHistoryInfo';
 import UserLocation from '../location/UserLocation';
-import LoginSuccesModal from '../registerSuccesModal/RegisterSuccessModal';
+import LoginSuccesModal from '../loginSuccesModal/LoginSuccesModal';
 
 import { setToken } from '../redux/actions/authActions';
 import { connect } from 'react-redux';
@@ -17,7 +17,9 @@ class Login extends Component {
       role: '',
       modalShow: false,
       password: '',
-      idNumber: ''
+      idNumber: '',
+
+      user: {}
     }
   }
 
@@ -36,6 +38,8 @@ class Login extends Component {
     this.setState({ modalShow: true })
     let url = 'https://covider.herokuapp.com/api/account';
     let auth = "Basic " + new Buffer(idNumber + ":" + password).toString("base64");
+    console.log(auth);
+    this.props.setToken(auth)
 
     let fetchParams = {
       method: 'GET',
@@ -43,15 +47,37 @@ class Login extends Component {
         Authorization: auth,
         'Content-Type': 'application/json'
       },
-      // headers: {'Content-Type': 'application/json'},
       // body: JSON.stringify(obj)
     }
     fetch(url, fetchParams)
-      .then(response => response.json())
+      .then(response => {
+        const statusCode = response.status;
+        const responseJson = response.json();
+        return Promise.all([statusCode, responseJson]);
+      })
       .then(res => {
-        console.log(res)
-        this.setState({ modalShow: false })
-        this.setState({ stage: 2 })
+        const statusCode = res[0];
+        const responseJson = res[1];
+
+        if (statusCode == 200) {
+          console.log(responseJson)
+          
+          this.setState({ 
+            modalShow: false, 
+            user: responseJson,
+            stage: 2,
+          })
+
+        } else if (statusCode == 401) {
+          console.log(responseJson)
+          this.setState({ modalShow: false })
+          // this.setState({ stage: 2 })
+        } else {
+          console.log(responseJson)
+          this.setState({ modalShow: false })
+        }
+
+        
       })
       .catch(err => {
         console.log(err)
@@ -63,7 +89,7 @@ class Login extends Component {
   }
 
   render() {
-    const { stage, modalShow } = this.state;
+    const { stage, modalShow, user } = this.state;
 
     if (stage === 1) {
       return (
@@ -79,12 +105,14 @@ class Login extends Component {
     } else if (stage === 2) {
       return (
         <MedicalHistoryInfo
+          user={user}
           changeStage={(stage) => this.changeStage(stage)}
         />
       )
     } else {
       return (
         <UserLocation
+          user={user}
           changeStage={(stage) => this.changeStage(stage)}
         />
       )

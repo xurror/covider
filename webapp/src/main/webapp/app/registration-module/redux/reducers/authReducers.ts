@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  token: {},
+  token: '',
 };
 
 export default (state = INITIAL_STATE, action) => {

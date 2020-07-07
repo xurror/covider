@@ -24,6 +24,7 @@ class Register extends Component {
 
   render() {
     const { stage, role } = this.state;
+    const {changeRoute} = this.props;
 
     if (stage === 1) {
       return (
@@ -35,6 +36,7 @@ class Register extends Component {
       return (
         <UserBasicInfo
           role={role}
+          changeRoute={() => changeRoute('login')}
           changeStage={(stage) => this.changeStage(stage)}
         />
       )
