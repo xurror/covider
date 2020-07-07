@@ -12,7 +12,12 @@
         android:orientation="vertical"
         android:layout_margin="20dp"
         android:layout_gravity="center"
+<<<<<<< HEAD
         android:gravity="center">
+=======
+        android:gravity="center"
+        >
+>>>>>>> 5940aab... distribution module
 
         <ImageView
             android:id="@+id/logo"
