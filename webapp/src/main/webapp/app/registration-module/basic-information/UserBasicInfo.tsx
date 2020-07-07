@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FaArrowLeft } from "react-icons/fa";
 import { Form, Col, Modal, Button } from 'react-bootstrap';
+import axios from 'axios';
 
 import RegisterSuccessModal from '../registerSuccesModal/RegisterSuccessModal';
 import './UserBasicInfo.css';
@@ -15,11 +16,11 @@ class UserBasicInfo extends Component {
       password: '',
       confirmpassword: '',
       modalShow: false,
+      text: null,
     }
   }
 
   emailChange = (event) => {
-    console.log(event.target.value)
     this.setState({ email: event.target.value })
   }
   nameChange = (event) => {
@@ -36,26 +37,69 @@ class UserBasicInfo extends Component {
   }
 
   handleRegister() {
+    this.setState({ modalShow: true })
     const { email, name, idcardnumber, password, confirmpassword } = this.state;
-    const { role } = this.props;
-    var authorities;
+    const { role, changeRoute } = this.props;
+
+    let userRole;
     if (role === 'agent') {
-      authorities = ['AGENT']
+      userRole = 'AGENT'
     } else {
-      authorities = ['USER']
+      userRole = 'USER'
     }
 
-    console.log(
-      {
-        email, name, idcardnumber, password, confirmpassword, authorities
-      }
-    )
+    if (password !== confirmpassword) {
+      return this.setState({ text: 'Passwords do not match try again', modalShow: false })
+    }
 
-    this.setState({ modalShow: true })
+    const obj = {email, name, idNumber: idcardnumber, role: [userRole], password}
+    console.log(obj);
+
+    let url = 'https://covider.herokuapp.com/api/register';
+    let fetchParams = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(obj)
+    }
+    fetch(url, fetchParams)
+      .then(response => {
+        const statusCode = response.status;
+        const responseJson = response.json();
+        return Promise.all([statusCode, responseJson]);
+      })
+      .then(res => {
+        const statusCode = res[0];
+        const responseJson = res[1];
+
+        console.log('status', statusCode)
+        if (statusCode == 201) {
+          console.log(responseJson)
+          this.setState({ modalShow: false })
+          changeRoute()
+
+        } else if (statusCode == 401) {
+          console.log('responseJson')
+          this.setState({ modalShow: false })
+          // this.setState({ stage: 2 })
+        } else {
+          console.log('responseJson')
+          this.setState({ modalShow: false })
+        }
+
+
+      })
+      .catch(err => {
+        console.log(err)
+      }).finally(fin => console.log('finish'))
   }
+
   render() {
     const { role, changeStage } = this.props;
-    const { modalShow } = this.state;
+    const { modalShow, text } = this.state;
+
     return (
       <div className="wrapper shadow">
         <div>
@@ -73,7 +117,7 @@ class UserBasicInfo extends Component {
 
           <RegisterSuccessModal
             show={modalShow}
-            onHide={() => this.setState({modalShow: false})}
+            onHide={() => this.setState({ modalShow: false })}
           />
 
           <Form>
@@ -95,7 +139,7 @@ class UserBasicInfo extends Component {
                 <Form.Control onChange={this.idcardChange} type="number" placeholder="id card number" />
               </Form.Group>
             </div>
-            <div style={{ paddingTop: "1.5rem", width: '70%' }}>
+            <div style={{ paddingTop: "1rem", width: '70%' }}>
               <Form.Row>
                 <Col>
                   <Form.Label>Password</Form.Label>
@@ -107,11 +151,17 @@ class UserBasicInfo extends Component {
                 </Col>
               </Form.Row>
             </div>
+            {
+              text ?
+                <p style={{ margin: 0, color: 'red' }}>{text}</p>
+                :
+                null
+            }
           </Form>
         </div>
         {
           role === "agent" ?
-            <div style={{ display: 'flex', marginTop: "2rem", justifyContent: "space-between" }}>
+            <div style={{ display: 'flex', marginTop: "1.5rem", justifyContent: "space-between" }}>
               <div onClick={() => {
                 const stage = {
                   stage: 1,
@@ -128,7 +178,7 @@ class UserBasicInfo extends Component {
               </div>
             </div>
             :
-            <div style={{ display: 'flex', marginTop: "2rem", justifyContent: "space-between" }}>
+            <div style={{ display: 'flex', marginTop: "1.5rem", justifyContent: "space-between" }}>
               <div onClick={() => {
                 const stage = {
                   stage: 1,
