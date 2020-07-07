@@ -4,6 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import cm.ubuea.covider.registration.api.vm.KeyAndPasswordVM;
 import cm.ubuea.covider.registration.api.vm.ManagedUserVM;
@@ -19,6 +20,8 @@ import cm.ubuea.covider.security.SecurityUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.*;
 
 /**
@@ -57,21 +60,28 @@ public class AccountResource {
      * @param managedUserVM the managed user View Model.
      * @throws InvalidPasswordException {@code 400 (Bad Request)} if the password is incorrect.
      * @throws EmailAlreadyUsedException {@code 400 (Bad Request)} if the email is already used.
-     * @throws IdNumberAlreadyUsedException {@code 400 (Bad Request)} if the idNumber is already used.
+     * @return
      */
     @PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
-    public void registerAccount(@Valid @RequestBody ManagedUserVM managedUserVM) {
+    public ResponseEntity<User> registerAccount(@Valid @RequestBody ManagedUserVM managedUserVM) throws URISyntaxException {
         if (!checkPasswordLength(managedUserVM.getPassword())) {
             throw new InvalidPasswordException();
         }
         User user = userService.registerUser(managedUserVM, managedUserVM.getPassword());
-        Optional<User> activatedUser = userService.activateRegistration(user.activationKey);
+        User activatedUser = userService.activateRegistration(user.activationKey).orElseThrow(() ->
+            new AccountResourceException("User activation key not found"));
         // try {
         //     mailService.sendActivationEmail(user);
         // } catch (NullPointerException e) {
         //     throw new NullPointerException(e.getMessage());
         // }
+
+        final String credentials = activatedUser.getIdNumber() + ":" + activatedUser.getPassword();
+        final String encodedCredentials = Base64.getEncoder().encodeToString(credentials.getBytes());
+        return ResponseEntity.created(new URI("/api/authenticate"))
+            .header("Authorization", "Basic " + encodedCredentials)
+            .body(activatedUser);
     }
 
     // /**
@@ -119,19 +129,24 @@ public class AccountResource {
      * @param userDTO the current user information.
      * @throws EmailAlreadyUsedException {@code 400 (Bad Request)} if the email is already used.
      * @throws RuntimeException {@code 500 (Internal Server Error)} if the user idNumber wasn't found.
+     * @return
      */
     @PostMapping("/account")
-    public void saveAccount(@Valid @RequestBody UserDTO userDTO) {
+    public ResponseEntity<User> saveAccount(@Valid @RequestBody UserDTO userDTO) throws URISyntaxException {
         String userIdNumber = SecurityUtils.getCurrentUserIdNumber().orElseThrow(() -> new AccountResourceException("Current user idNumber not found"));
         Optional<User> existingUser = userRepository.findOneByEmailIgnoreCase(userDTO.getEmail());
         if (existingUser.isPresent() && (!existingUser.get().getIdNumber().equalsIgnoreCase(userIdNumber))) {
             throw new EmailAlreadyUsedException();
         }
-        Optional<User> user = userRepository.findOneByIdNumber(userIdNumber);
-        if (!user.isPresent()) {
-            throw new AccountResourceException("User could not be found");
-        }
+        User user = userRepository.findOneByIdNumber(userIdNumber).orElseThrow(() ->
+            new AccountResourceException("Current user idNumber not found"));
         userService.updateUser(userDTO.getName(), userDTO.getEmail(), userDTO.getLangKey());
+
+        final String credentials = user.getIdNumber() + ":" + user.getPassword();
+        final String encodedCredentials = Base64.getEncoder().encodeToString(credentials.getBytes());
+        return ResponseEntity.created(new URI("/api/authenticate"))
+            .header("Authorization", "Basic " + encodedCredentials)
+            .body(user);
     }
 
     /**
@@ -139,29 +154,34 @@ public class AccountResource {
      *
      * @param passwordChangeDto current and new password.
      * @throws InvalidPasswordException {@code 400 (Bad Request)} if the new password is incorrect.
+     * @return
      */
     @PostMapping(path = "/account/change-password")
-    public void changePassword(@RequestBody PasswordChangeDTO passwordChangeDto) {
+    public ResponseEntity<Object> changePassword(@RequestBody PasswordChangeDTO passwordChangeDto) {
         if (!checkPasswordLength(passwordChangeDto.getNewPassword())) {
             throw new InvalidPasswordException();
         }
         userService.changePassword(passwordChangeDto.getCurrentPassword(), passwordChangeDto.getNewPassword());
+        return ResponseEntity.accepted().build();
     }
 
     /**
      * {@code POST   /account/reset-password/init} : Send an email to reset the password of the user.
      *
      * @param mail the mail of the user.
+     * @return
      */
     @PostMapping(path = "/account/reset-password/init")
-    public void requestPasswordReset(@RequestBody String mail) {
+    public ResponseEntity<Object> requestPasswordReset(@RequestBody String mail) {
         Optional<User> user = userService.requestPasswordReset(mail);
         if (user.isPresent()) {
             mailService.sendPasswordResetMail(user.get());
+            return ResponseEntity.accepted().build();
         } else {
             // Pretend the request has been successful to prevent checking which emails really exist
             // but log that an invalid attempt has been made
             log.warn("Password reset requested for non existing mail");
+            return ResponseEntity.notFound().build();
         }
     }
 
@@ -171,18 +191,21 @@ public class AccountResource {
      * @param keyAndPassword the generated key and the new password.
      * @throws InvalidPasswordException {@code 400 (Bad Request)} if the password is incorrect.
      * @throws RuntimeException {@code 500 (Internal Server Error)} if the password could not be reset.
+     * @return
      */
     @PostMapping(path = "/account/reset-password/finish")
-    public void finishPasswordReset(@RequestBody KeyAndPasswordVM keyAndPassword) {
+    public ResponseEntity<User> finishPasswordReset(@RequestBody KeyAndPasswordVM keyAndPassword) throws URISyntaxException {
         if (!checkPasswordLength(keyAndPassword.getNewPassword())) {
             throw new InvalidPasswordException();
         }
-        Optional<User> user =
-            userService.completePasswordReset(keyAndPassword.getNewPassword(), keyAndPassword.getKey());
+        User user = userService.completePasswordReset(keyAndPassword.getNewPassword(), keyAndPassword.getKey()).orElseThrow(() ->
+                new AccountResourceException("No user was found for this reset key"));
 
-        if (!user.isPresent()) {
-            throw new AccountResourceException("No user was found for this reset key");
-        }
+        final String credentials = user.getIdNumber() + ":" + user.getPassword();
+        final String encodedCredentials = Base64.getEncoder().encodeToString(credentials.getBytes());
+        return ResponseEntity.created(new URI("/api/authenticate"))
+            .header("Authorization", "Basic " + encodedCredentials)
+            .body(user);
     }
 
     private static boolean checkPasswordLength(String password) {
