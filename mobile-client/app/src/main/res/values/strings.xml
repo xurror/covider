@@ -24,6 +24,7 @@
     <string name="title_activity_dmser_locaton_map">Map</string>
     <string name="title_activity_dm_user_location">Map</string>
     <string name="enter_token">Enter Token</string>
+<<<<<<< HEAD
     <string name="signs_and_symptoms">Signs and syntoms</string>
     <string name="health_information">Health Information</string>
     <string name="notification">Notifications</string>
@@ -43,4 +44,6 @@
     <string name="set">SET</string>
 =======
 >>>>>>> dd14f5e... notification screen now getting data
+=======
+>>>>>>> 0a46fbc... Deleted Location Button
 </resources>

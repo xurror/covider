@@ -4,21 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-<<<<<<< HEAD
     tools:context=".dmVerifyUser">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="20dp"
-=======
-    tools:context=".dmLogin">
-
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
->>>>>>> c425d85... Initial Commit
         android:layout_gravity="center"
         android:layout_margin="20dp"
         android:gravity="center"
@@ -29,28 +19,18 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
+            android:background="@drawable/logo"
             android:paddingTop="10dp"
-<<<<<<< HEAD
             android:contentDescription="@string/logo_icon" />
-=======
-            android:src="@drawable/logo" />
-
->>>>>>> c425d85... Initial Commit
         <TextView
             android:id="@+id/app_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
             android:text="@string/app_name"
             android:textColor="@color/colorPrimary"
             android:textSize="30sp"
-=======
->>>>>>> c425d85... Initial Commit
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:text="@string/app_name"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30sp"
             android:textStyle="bold" />
 
 
@@ -58,7 +38,6 @@
             android:id="@+id/name_p"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
             android:inputType="text"
             android:hint="@string/name_placeholder"
             android:textColor="@color/colorPrimary"
@@ -67,31 +46,17 @@
             android:paddingStart="5dp"
             android:layout_gravity="center"
             android:drawableStart="@drawable/ic_person"
-=======
-            android:layout_gravity="center"
             android:layout_margin="20dp"
             android:drawableLeft="@drawable/ic_person"
->>>>>>> c425d85... Initial Commit
             android:drawablePadding="5dp"
-            android:hint="@string/name_placeholder"
-            android:inputType="text"
             android:padding="20dp"
-<<<<<<< HEAD
-            android:layout_margin="20dp"
             tools:ignore="RtlSymmetry"
             android:importantForAutofill="no" />
-=======
-            android:paddingLeft="5dp"
-            android:textColor="@color/design_default_color_on_secondary"
-            android:textColorHint="@color/colorPrimary"
-            android:textSize="18sp" />
->>>>>>> c425d85... Initial Commit
 
         <EditText
             android:id="@+id/id_p"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
             android:inputType="text"
             android:hint="@string/id_placeholder"
             android:textColor="@color/colorPrimary"
@@ -100,26 +65,12 @@
             android:paddingStart="5dp"
             android:layout_gravity="center"
             android:drawableStart="@drawable/ic_card"
-=======
-            android:layout_gravity="center"
             android:layout_margin="20dp"
-            android:drawableLeft="@drawable/ic_card"
->>>>>>> c425d85... Initial Commit
             android:drawablePadding="5dp"
-            android:hint="@string/id_placeholder"
-            android:inputType="text"
             android:padding="20dp"
-<<<<<<< HEAD
-            android:layout_margin="20dp"
             tools:ignore="RtlSymmetry"
             android:importantForAutofill="no" />
-=======
-            android:paddingLeft="5dp"
-            android:textColor="@color/design_default_color_on_secondary"
-            android:textColorHint="@color/colorPrimary"
-            android:textSize="18sp" />
 
->>>>>>> c425d85... Initial Commit
         <Button
             android:id="@+id/verify_button"
             android:layout_width="150dp"
@@ -129,7 +80,7 @@
             android:background="@drawable/button"
             android:elevation="20pt"
             android:text="@string/verify"
-            android:textColor="@color/color"
+            android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
 
     </LinearLayout>
