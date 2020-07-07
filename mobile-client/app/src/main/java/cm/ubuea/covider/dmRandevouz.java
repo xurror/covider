@@ -15,7 +15,7 @@ public class dmRandevouz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dm_randevouz);
 
-        Button rendevouz_button = findViewById(R.id.rendevouz_button);
+        Button rendevouz_button = findViewById(R.id.rendezvous_button);
         rendevouz_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
