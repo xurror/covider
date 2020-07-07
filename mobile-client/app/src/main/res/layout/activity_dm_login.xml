@@ -14,6 +14,7 @@
             android:orientation="vertical"
             android:padding="10dp">
 
+
                 <ImageView
                     android:id="@+id/logo"
                     android:layout_width="130dp"
@@ -107,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="20dp"
-                    android:drawableStart="@drawable/ic_eye"
+                    android:drawableLeft="@drawable/ic_eye"
                     android:drawablePadding="5dp"
                     android:hint="@string/enter_token"
                     android:inputType="numberDecimal"
