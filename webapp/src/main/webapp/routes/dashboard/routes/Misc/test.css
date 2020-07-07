@@ -1,0 +1,8 @@
+.CircularProgressbar .CircularProgressbar-path {
+    stroke: url(#cpGradient);
+}
+
+.recharts-sector {
+    stroke-linejoin: round;
+    stroke-width: 7px;
+}
