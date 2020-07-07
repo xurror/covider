@@ -11,20 +11,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     />
+
     <Button
         android:id="@+id/set_button"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="@string/set"
-        android:textColor="#542F5A"
-        android:textSize="20sp"
-        android:background="@drawable/button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:layout_marginTop="70dp"
-        android:elevation="20pt"
-        android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
-        android:layout_centerInParent="true"
+        android:background="@drawable/button"
+        android:elevation="20pt"
         android:gravity="center"
         />
 </RelativeLayout>
