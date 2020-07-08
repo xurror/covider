@@ -30,13 +30,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/_3_places_you_lastly_visited"
+            android:inputType="text"
             android:textColorHint="@color/colorPrimary"
             android:textSize="25sp"
             android:paddingStart="5dp"
             android:layout_gravity="center"
             android:padding="20dp"
-            android:textStyle="bold"
-            tools:ignore="RtlSymmetry" />
+            android:textStyle="bold" />
+
         <EditText
             android:id="@+id/place1_p"
             android:layout_width="300dp"
@@ -48,11 +49,10 @@
             android:textSize="20sp"
             android:paddingStart="5dp"
             android:layout_gravity="center"
-            android:drawableStart="@drawable/ic_health_location"
             android:drawablePadding="4dp"
             android:padding="20dp"
-            tools:ignore="RtlSymmetry"
-            android:autofillHints="@string/fill_hints" />
+            tools:ignore="ExtraText,RtlSymmetry"
+            android:autofillHints="@string/fill_hints"/>
         <EditText
             android:id="@+id/place2_p"
             android:layout_width="300dp"
@@ -133,9 +133,9 @@
             android:id="@+id/submit_button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="@string/submit"
-            android:textColor="#542F5A"
+            android:textColor="@color/colorPrimary"
             android:textSize="20sp"
+            android:text="@string/submit"
             android:background="@drawable/button"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"

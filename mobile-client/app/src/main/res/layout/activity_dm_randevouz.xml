@@ -30,6 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/to_"
+            android:inputType="text"
             android:textColorHint="@color/colorPrimary"
             android:textSize="20sp"
             android:paddingStart="5dp"
@@ -52,7 +53,6 @@
             android:paddingEnd="5dp"
             android:paddingBottom="4dp"
             android:importantForAutofill="no" />
-
         <Button
             android:id="@+id/rendezvous_button"
             android:layout_width="150dp"

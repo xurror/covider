@@ -19,7 +19,6 @@ public class Notification extends AppCompatActivity {
     ListView lw_notification;
     ///String[] notifications;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

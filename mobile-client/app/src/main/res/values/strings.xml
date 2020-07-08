@@ -21,22 +21,10 @@
     <string name="title_activity_dmser_locaton_map">Map</string>
     <string name="title_activity_dm_user_location">Map</string>
     <string name="enter_token">Enter Token</string>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> f6163dffc900dceeb0e1bc62c8551e8bf488d3bb
     <string name="signs_and_symptoms">Signs and syntoms</string>
     <string name="health_information">Health Information</string>
     <string name="notification">Notifications</string>
     <string name="users">Users</string>
-<<<<<<< HEAD
-=======
-=======
-    <string name="signs_and_symptoms">Signs and syntoms</string>
-    <string name="health_information">Health Information</string>
->>>>>>> refactoring
->>>>>>> f6163dffc900dceeb0e1bc62c8551e8bf488d3bb
     <string name="_3_places_you_lastly_visited">3 places you lastly visited</string>
     <string name="fever">Fever</string>
     <string name="dry_cough">Dry Cough</string>
@@ -46,15 +34,9 @@
     <string name="contact_us">Contact us</string>
     <string name="to_">To: Covider</string>
     <string name="message">Message</string>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> f6163dffc900dceeb0e1bc62c8551e8bf488d3bb
     <string name="list_view_to_contain_username_user_location_longitude_and_latitude">List view to contain username, user location: longitude and latitude</string>
-</resources>
-=======
     <string name="signs_and_syntoms">Signs and syntoms</string>
-=======
->>>>>>> refactoring
+    <string name="registered_users">Registered Users</string>
+    <string name="select_any_user_to_upload_location">Select user to update location</string>
+    <string name="username">Username</string>
 </resources>
->>>>>>> Redefined the interface

@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     tools:context=".dmLogin">
+  
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
@@ -19,7 +20,6 @@
                     android:layout_height="130dp"
                     android:layout_gravity="center"
                     android:paddingTop="10dp"
-                    android:src="@drawable/logo"
                     android:contentDescription="@string/logo_icon" />
 
 
@@ -40,7 +40,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="20dp"
-                    android:drawableStart="@drawable/ic_person"
                     android:drawablePadding="5dp"
                     android:hint="@string/name_placeholder"
                     android:inputType="text"
@@ -58,7 +57,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="20dp"
-                    android:drawableStart="@drawable/ic_card"
                     android:drawablePadding="5dp"
                     android:hint="@string/id_placeholder"
                     android:inputType="text"
@@ -75,7 +73,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="20dp"
-                    android:drawableStart="@drawable/ic_eye"
                     android:drawablePadding="5dp"
                     android:hint="@string/enter_token"
                     android:inputType="numberDecimal"
@@ -86,7 +83,6 @@
                     android:textSize="18sp"
                     android:importantForAutofill="no"
                     tools:ignore="RtlSymmetry" />
-
 
                 <Button
                     android:id="@+id/login_button"

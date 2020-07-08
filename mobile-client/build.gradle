@@ -7,15 +7,7 @@ buildscript {
         
     }
     dependencies {
-<<<<<<< HEAD
         classpath 'com.android.tools.build:gradle:4.0.0'
-=======
-        classpath 'com.android.tools.build:gradle:3.6.1'
-
-<<<<<<< HEAD
-=======
->>>>>>> two new screens
->>>>>>> f6163dffc900dceeb0e1bc62c8551e8bf488d3bb
         
 
         // NOTE: Do not place your application dependencies here; they belong
