@@ -38,7 +38,6 @@
         -->
         <activity android:name=".dmVerifyUser" />
         <activity android:name=".dmList" />
-        <activity android:name=".dmDisTrack" />
         <activity android:name=".dmLogin" />
         <activity
             android:name=".MainActivity"
