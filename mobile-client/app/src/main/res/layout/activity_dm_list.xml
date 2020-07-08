@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_margin="10dp"
-            android:text="@string/select_any_user_to_upload_location"
+            android:text="Select any user to upload location"
             android:textColor="@color/design_default_color_on_secondary"
             android:textSize="15sp"
             android:textStyle="normal" />

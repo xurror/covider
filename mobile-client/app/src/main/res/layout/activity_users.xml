@@ -55,6 +55,7 @@
                 android:text="@string/list_view_to_contain_username_user_location_longitude_and_latitude"
                 android:textColor="#000"
                 android:textSize="18sp"
+                android:background="@drawable/notification"
                 android:paddingStart="5dp"
                 android:layout_gravity="center"
                 android:textStyle="bold"
@@ -79,6 +80,7 @@
                 app:fab_colorNormal="@color/colorPrimary"
                 app:fab_colorPressed="@color/colorAccent"
                 app:fabSize="mini"
+                app:fab_icon="@drawable/ic_fabnotification"
                 app:fab_title="Notification"
                 />
             <com.getbase.floatingactionbutton.FloatingActionButton
@@ -88,6 +90,7 @@
                 app:fab_colorNormal="@color/colorPrimary"
                 app:fab_colorPressed="@color/colorAccent"
                 app:fabSize="mini"
+                app:fab_icon="@drawable/ic_account"
                 app:fab_title="Account"
                 />
             <com.getbase.floatingactionbutton.FloatingActionButton

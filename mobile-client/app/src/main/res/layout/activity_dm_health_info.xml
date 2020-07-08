@@ -9,6 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="10dp"
         android:layout_margin="4dp"
         android:orientation="vertical"
         >
@@ -20,8 +21,9 @@
             android:textColor="@color/colorPrimary"
             android:textSize="30sp"
             android:layout_margin="10dp"
+            android:textStyle="bold"
             android:gravity="center"
-            android:textStyle="bold" />
+            />
 
         <TextView
             android:id="@+id/place_p"
@@ -34,11 +36,10 @@
             android:paddingStart="5dp"
             android:layout_gravity="center"
             android:padding="20dp"
-            android:paddingLeft="5dp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/place1_1"
+            android:id="@+id/place1_p"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:inputType="text"
@@ -52,6 +53,11 @@
             android:padding="20dp"
             tools:ignore="ExtraText,RtlSymmetry"
             android:autofillHints="@string/fill_hints"/>
+            android:drawableStart="@drawable/ic_health_location"
+            android:drawablePadding="4dp"
+            android:padding="20dp"
+            tools:ignore="RtlSymmetry"
+            android:autofillHints="@string/fill_hints" />
         <EditText
             android:id="@+id/place2_p"
             android:layout_width="300dp"
@@ -63,25 +69,27 @@
             android:textSize="20sp"
             android:paddingStart="5dp"
             android:layout_gravity="center"
+            android:drawableStart="@drawable/ic_health_location"
             android:drawablePadding="4dp"
             android:padding="20dp"
-            tools:ignore="ExtraText,RtlSymmetry"
+            tools:ignore="RtlSymmetry"
             android:autofillHints="@string/fill_hints"/>
         <EditText
             android:id="@+id/place3_p"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:autofillHints="@string/fill_hints"
-            android:drawablePadding="4dp"
-            android:hint="@string/country_region_city"
+            android:layout_height="wrap_content
             android:inputType="text"
-            android:padding="20dp"
-            android:paddingStart="5dp"
-            android:textColor="@color/colorPrimary"
+            android:hint="@string/country_region_city"
             android:textColorHint="@color/colorPrimary"
+            android:textColor="@color/colorPrimary"
             android:textSize="20sp"
-            tools:ignore="RtlSymmetry" />
+            android:paddingStart="5dp"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/ic_health_location"
+            android:drawablePadding="4dp"
+            android:padding="20dp"
+            tools:ignore="RtlSymmetry"
+            android:autofillHints="@string/fill_hints"/>
 
         <TextView
             android:id="@+id/sign"
@@ -92,7 +100,9 @@
             android:textSize="25sp"
             android:paddingStart="5dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            tools:ignore="RtlSymmetry" />
         <Switch
             android:id="@+id/fever_s"
             android:layout_width="match_parent"
@@ -100,8 +110,9 @@
             android:text="@string/fever"
             android:textSize="20sp"
             android:textColor="@color/colorPrimary"
-            android:textAppearance="?android:textAppearanceSmall" />
-
+            android:textAppearance="?android:textAppearanceSmall"
+            android:layout_margin="10dp"
+            />
         <Switch
             android:id="@+id/cough_s"
             android:layout_width="match_parent"
@@ -109,15 +120,19 @@
             android:text="@string/dry_cough"
             android:textSize="20sp"
             android:textColor="@color/colorPrimary"
-            android:textAppearance="?android:textAppearanceSmall" />
-
+            android:textAppearance="?android:textAppearanceSmall"
+            android:layout_margin="10dp"
+            />
         <Switch
             android:id="@+id/tiredness_s"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/tiredness"
             android:textSize="20sp"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/colorPrimary"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:layout_margin="10dp"
+            />
 
         <Button
             android:id="@+id/submit_button"
