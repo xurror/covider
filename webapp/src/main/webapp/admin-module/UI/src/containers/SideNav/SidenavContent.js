@@ -124,19 +124,8 @@ class SidenavContent extends Component {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="prepend-icon" to="/app/dashboard/crm">
-                  <span className="nav-text"><IntlMessages id="sidebar.dashboard.crm"/></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="prepend-icon" to="/app/dashboard/intranet">
-                  <span className="nav-text"><IntlMessages id="sidebar.dashboard.intranet"/></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="prepend-icon" to="/app/dashboard/eCommerce">
-                                    <span className="nav-text text-transform-none"><IntlMessages
-                                      id="sidebar.dashboard.ecommerce"/></span>
+                <NavLink className="prepend-icon" to="/app/dashboard/users">
+                  <span className="nav-text"><IntlMessages id="sidebar.dashboard.users"/></span>
                 </NavLink>
               </li>
               <li>
@@ -144,85 +133,9 @@ class SidenavContent extends Component {
                   <span className="nav-text"><IntlMessages id="sidebar.dashboard.news"/></span>
                 </NavLink>
               </li>
-              <li>
-                <NavLink className="prepend-icon" to="/app/dashboard/misc">
-                  <span className="nav-text"><IntlMessages id="sidebar.dashboard.misc"/></span>
-                </NavLink>
-              </li>
             </ul>
           </li>
 
-    
-
-          <li className="map_tooltip menu">
-            <Button>
-              <i className="zmdi zmdi-google-maps zmdi-hc-fw"/>
-              <span className="nav-text"><IntlMessages id="sidebar.map"/></span>
-            </Button>
-
-            <ul className="sub-menu">
-              <li>
-                <NavLink className="prepend-icon" to="/app/map/simple">
-                  <span className="nav-text"><IntlMessages id="sidebar.map.simple"/></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="prepend-icon" to="/app/map/styled">
-                  <span className="nav-text"><IntlMessages id="sidebar.map.styled"/></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="prepend-icon" to="/app/map/geo-location">
-                  <span className="nav-text"><IntlMessages id="sidebar.map.geoLocation"/></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="prepend-icon" to="/app/map/directions">
-                  <span className="nav-text"><IntlMessages id="sidebar.map.mapDirection"/></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="prepend-icon" to="/app/map/overlay">
-                  <span className="nav-text"><IntlMessages id="sidebar.map.overlay"/></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="prepend-icon" to="/app/map/kml">
-                  <span className="nav-text"><IntlMessages id="sidebar.map.kmLayer"/></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="prepend-icon" to="/app/map/popup-info">
-                  <span className="nav-text"><IntlMessages id="sidebar.map.popupInfo"/></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="prepend-icon" to="/app/map/traffic">
-                  <span className="nav-text"><IntlMessages id="sidebar.map.trafficLayer"/></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="prepend-icon" to="/app/map/street-view">
-                  <span className="nav-text"><IntlMessages id="sidebar.map.streetView"/></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="prepend-icon" to="/app/map/event">
-                  <span className="nav-text"><IntlMessages id="sidebar.map.eventListener"/></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="prepend-icon" to="/app/map/drawing">
-                  <span className="nav-text"><IntlMessages id="sidebar.map.mapDrawing"/></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="prepend-icon" to="/app/map/clustering">
-                  <span className="nav-text"><IntlMessages id="sidebar.map.mapClustering"/></span>
-                </NavLink>
-              </li>
-            </ul>
-          </li>
 
           <li className="nav-header">
             <IntlMessages id="sidebar.modules"/>
@@ -235,33 +148,6 @@ class SidenavContent extends Component {
             </Button>
 
             <ul className="sub-menu">
-              <li>
-                <NavLink className="prepend-icon" to="/app/calendar/basic">
-                  <span className="nav-text"><IntlMessages id="sidebar.calendar.basic"/></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="prepend-icon" to="/app/calendar/cultures">
-                  <span className="nav-text"><IntlMessages id="sidebar.calendar.cultures"/></span>
-                </NavLink>
-              </li>
-
-              <li>
-                <NavLink className="prepend-icon" to="/app/calendar/popup">
-                  <span className="nav-text"><IntlMessages id="sidebar.calendar.popup"/></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="prepend-icon" to="/app/calendar/rendering">
-                  <span className="nav-text"><IntlMessages id="sidebar.calendar.rendering"/></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="prepend-icon"
-                         to="/app/calendar/selectable">
-                  <span className="nav-text"><IntlMessages id="sidebar.calendar.selectable"/></span>
-                </NavLink>
-              </li>
               <li>
                 <NavLink className="prepend-icon" to="/app/calendar/timeslots">
                   <span className="nav-text"><IntlMessages id="sidebar.calendar.timeslots"/></span>

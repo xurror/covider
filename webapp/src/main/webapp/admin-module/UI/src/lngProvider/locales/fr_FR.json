@@ -557,7 +557,7 @@
   "popup.clearData": "Effacer les données",
   "component.selectionControl.radioBtnGroup": "Groupe de boutons radio",
   "component.popover.anchorPlayground": "Anchor Playground",
-  "sidebar.dashboard.crm": "Crm",
+  "sidebar.dashboard.users": "users",
   "sidebar.dashboard.crypto": "Crypto",
   "sidebar.dashboard.listing": "Liste",
   "sidebar.classic": "Classique",
