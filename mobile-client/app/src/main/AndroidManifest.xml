@@ -11,7 +11,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".dmRandevouz"></activity>
         <activity android:name=".dmHealthInfo" />
-        <activity android:name=".dmVerifyUser" />
         <activity android:name=".dmDisTrack" />
         <activity android:name=".Users">
         </activity>
@@ -45,7 +44,6 @@
         -->
         <activity android:name=".dmVerifyUser" />
         <activity android:name=".dmList" />
-        <activity android:name=".dmDisTrack" />
         <activity android:name=".dmLogin" />
         <activity
             android:name=".MainActivity"

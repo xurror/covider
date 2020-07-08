@@ -46,7 +46,7 @@
             android:textColorHint="@color/colorPrimary"
             android:textSize="20sp"
             android:paddingStart="5dp"
-            android:layout_gravity="center
+            android:layout_gravity="center"
             android:drawableStart="@drawable/ic_person"
             android:drawablePadding="5dp"
             android:padding="20dp"

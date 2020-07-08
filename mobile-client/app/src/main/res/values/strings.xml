@@ -39,5 +39,4 @@
     <string name="registered_users">Registered Users</string>
     <string name="select_any_user_to_upload_location">Select user to update location</string>
     <string name="username">Username</string>
-    <string name="list_view_to_contain_username_user_location_longitude_and_latitude">List view to contain username, user location: longitude and latitude</string>
 </resources>
