@@ -25,7 +25,7 @@
         android:elevation="20pt"
         android:gravity="center"
         android:text="@string/found"
-        android:textColor="@color/color"
+        android:textColor="@color/colorPrimary"
         android:textSize="18sp" />
 
 </RelativeLayout>

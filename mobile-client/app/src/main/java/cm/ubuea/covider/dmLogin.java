@@ -1,4 +1,4 @@
-wpackage cm.ubuea.covider;
+package cm.ubuea.covider;
 
 import androidx.appcompat.app.AppCompatActivity;
 
