@@ -26,7 +26,7 @@ class Home extends Component {
     if (route === 'home') {
       return (
         <Register
-          changeRoute={(route) => this.setState({route})}
+          changeRoute={(route) => this.setState({ route })}
           changeStage={(stage) => this.setState({ stage })}
           setRole={(role) => this.setState({ role })}
         />
@@ -34,7 +34,7 @@ class Home extends Component {
     } else {
       return (
         <Login
-          changeRoute={(route) => this.setState({route})}
+          changeRoute={(route) => this.setState({ route })}
           changeStage={(stage) => this.setState({ stage })}
           setFirstTime={(isfirstTime) => this.setState({ isfirstTime })}
         />
@@ -72,24 +72,29 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="app">
+      <div>
+        {
+        this.state.route === 'main' ?
+          <div className="app">welcome to main page </div>
+          :
+          <div className="app">
+            <Card>
+              <div className="cardstyle shadow ct">
+                <Card.Body>
+                  <div>
+                    <h4 className="text-center" style={{ marginTop: ".5rem", color: 'antiquewhite', fontSize: "2rem" }}>Covider</h4>
+                  </div>
 
-        <Card>
-          <div className="cardstyle shadow ct">
-            <Card.Body>
-              <div>
-                <h4 className="text-center" style={{ marginTop: ".5rem", color: 'antiquewhite', fontSize: "2rem" }}>Covider</h4>
+                  <div>
+                    {this.renderSideBar()}
+                  </div>
+
+                </Card.Body>
               </div>
-
-              <div>
-                {this.renderSideBar()}
-              </div>
-
-            </Card.Body>
+            </Card>
+            {this.renderElement()}
           </div>
-        </Card>
-        {this.renderElement()}
-
+        }
       </div>
     );
   }
