@@ -51,4 +51,11 @@ public class UserProfileController {
         userProfileService.updateCurrentLocation(newLocation, locID);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+    
+    @PatchMapping("/user/profile/email")
+    public ResponseEntity<?> updateUserEmail(@RequestBody String newEmail,
+    										@PathVariable("email") String currentEmail){
+    	userProfileService.updateMail(currentEmail, newEmail);
+    	return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }
