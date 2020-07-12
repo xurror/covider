@@ -18,13 +18,13 @@ public class LocationController {
     final
     UserLocationService userLocationService;
 
-    public LocationController(UserLocationService userLocationService) {
+    public LocationController(final UserLocationService userLocationService) {
         this.userLocationService = userLocationService;
     }
 
-    @PostMapping("/add")
-    public ResponseEntity<?> addLocation(@Valid @RequestBody LocationDTO locationDTO) {
+    @PostMapping("/")
+    public ResponseEntity<?> addLocation(@Valid @RequestBody final LocationDTO locationDTO) {
         userLocationService.addUserLocation(locationDTO);
-        return new ResponseEntity("User location successfully added",HttpStatus.CREATED);
+        return new ResponseEntity("User location successfully added", HttpStatus.CREATED);
     }
 }

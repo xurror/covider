@@ -35,7 +35,7 @@ public class UserLocation {
         return id;
     }
 
-    public void setLocationId(Long location_id) {
+    public void setLocationId(Long id) {
         this.id = id;
     }
 
