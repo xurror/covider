@@ -5,7 +5,6 @@ import cm.ubuea.covider.registration.repository.MedicalRecordRepository;
 import cm.ubuea.covider.registration.repository.UserRepository;
 import cm.ubuea.covider.registration.service.MedicalRecordService;
 import cm.ubuea.covider.registration.service.dto.MedicalRecordDTO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -34,7 +33,7 @@ public class MedicalRecordController {
     @PostMapping("/")
     public ResponseEntity<?> addMedicalRecord(@Valid @RequestBody MedicalRecordDTO medicalRecordDTO ) {
         medicalRecordService.addMedicalRecord(medicalRecordDTO);
-        return new ResponseEntity("Medical Record successfully added",HttpStatus.CREATED);
+        return new ResponseEntity("Medical Record successfully added", HttpStatus.CREATED);
     }
 
     @DeleteMapping("/delete/{id}")
