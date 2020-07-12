@@ -34,7 +34,7 @@ export const taskList = [
     tags: [1, 2, 3]
   }, {
     id: 4,
-    title: 'New page need to be designed for property listing',
+    title: 'New page need to be designed for property agents',
     completed: false,
     user: {
       projectName: 'Flexile',

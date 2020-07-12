@@ -6,8 +6,8 @@ import RecentActivity from "../Users/RecentActivity";
 import CurrentPlan from "./CurrentPlan";
 import DealsClosedCard from "./DealsClosedCard";
 import PropertiesCard from "./PropertiesCard";
-import Widget from "components/Widget/index";
-import ContainerHeader from "components/ContainerHeader/index";
+import Widget from "components/Widget";
+import ContainerHeader from "components/ContainerHeader";
 import IntlMessages from "util/IntlMessages";
 
 import {increamentData} from "./mdata";
@@ -44,12 +44,12 @@ const users =[
     }
 ]
 
-const Listing = ({match}) => {
+const agents = ({match}) => {
   return (
 
     <div className="dashboard animated slideInUpTiny animation-duration-3">
 
-      <ContainerHeader match={match} title={<IntlMessages id="sidebar.dashboard.listing"/>}/>
+      <ContainerHeader match={match} title={<IntlMessages id="sidebar.dashboard.agents"/>}/>
       <div className="row">
         <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
           <ChartCard chartProperties={{
@@ -190,4 +190,4 @@ const Listing = ({match}) => {
   );
 };
 
-export default Listing;
+export default agents;

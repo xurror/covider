@@ -559,7 +559,7 @@
   "component.popover.anchorPlayground": "Anchor Playground",
   "sidebar.dashboard.users": "users",
   "sidebar.dashboard.crypto": "Crypto",
-  "sidebar.dashboard.listing": "Liste",
+  "sidebar.dashboard.agents": "Liste",
   "sidebar.classic": "Classique",
   "sidebar.modern": "Moderne"
 }

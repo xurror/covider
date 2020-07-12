@@ -119,8 +119,8 @@ class SidenavContent extends Component {
             <ul className="sub-menu">
 
               <li>
-                <NavLink className="prepend-icon" to="/app/dashboard/listing">
-                  <span className="nav-text"><IntlMessages id="sidebar.dashboard.listing"/></span>
+                <NavLink className="prepend-icon" to="/app/dashboard/agents">
+                  <span className="nav-text"><IntlMessages id="sidebar.dashboard.agents"/></span>
                 </NavLink>
               </li>
               <li>

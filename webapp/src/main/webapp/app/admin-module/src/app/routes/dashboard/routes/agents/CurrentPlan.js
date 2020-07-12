@@ -12,7 +12,7 @@ const CurrentPlan = () => {
           <h2 className="text-primary jr-fs-xlxl jr-font-weight-medium mb-2">$19<sub
             className="jr-fs-md">/month</sub></h2>
           <p className="mb-1"><span className="size-8 bg-dark rounded d-inline-block mr-1"/> Max
-            listing items 2K</p>
+            agents items 2K</p>
           <p><span className="size-8 bg-dark rounded d-inline-block mr-1"/> Max agents - 10</p>
         </div>
         <div className="jr-currentplan-col jr-currentplan-right">

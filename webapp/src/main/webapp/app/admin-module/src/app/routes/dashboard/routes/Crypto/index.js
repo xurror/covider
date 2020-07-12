@@ -12,7 +12,7 @@ import CurrencyCalculator from "./CurrencyCalculator";
 import CryptoNews from "./CryptoNews";
 import DownloadMobileApps from "./DownloadMobileApps";
 import OrderHistory from "./OrderHistory";
-import {increamentData, lineData} from "../Listing/mdata";
+import {increamentData, lineData} from "../agents/mdata";
 import ContainerHeader from "components/ContainerHeader/index";
 import IntlMessages from "util/IntlMessages";
 
