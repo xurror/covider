@@ -114,6 +114,7 @@ class Login extends Component {
         <UserLocation
           user={user}
           changeStage={(stage) => this.changeStage(stage)}
+          changeRoute={() => this.changeRoute('main')}
         />
       )
     }
