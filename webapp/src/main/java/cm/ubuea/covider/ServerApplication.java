@@ -24,7 +24,7 @@ public class ServerApplication {
     private static final Logger log = LoggerFactory.getLogger(ServerApplication.class);
 
     private static class Configuration extends ServletInitializer{ }
-    
+
     private final Environment env;
 
     public ServerApplication(Environment env) {
@@ -55,13 +55,13 @@ public class ServerApplication {
      */
     public static void main(String[] args) {
         // ConfigurableApplicationContext ctx = configureApplication(new SpringApplicationBuilder(CoviderApplication.class)).run(args);
-        
+
         SpringApplication app = configureApplication(new SpringApplicationBuilder(ServerApplication.class)).build();
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         logApplicationStartup(env);
     }
-    
+
     private static void logApplicationStartup(Environment env) {
         String protocol = "http";
         if (env.getProperty("server.ssl.key-store") != null) {

@@ -15,16 +15,16 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/medical")
-public class MedicalRecordController {
-    final
-    MedicalRecordService medicalRecordService;
-    final
-    MedicalRecordRepository medicalRecordRepository;
+public class MedicalRecordResource {
+
+    final MedicalRecordService medicalRecordService;
+
+    final MedicalRecordRepository medicalRecordRepository;
 
     final
     UserRepository userRepository;
 
-    public MedicalRecordController(MedicalRecordService medicalRecordService, MedicalRecordRepository medicalRecordRepository, UserRepository userRepository) {
+    public MedicalRecordResource(MedicalRecordService medicalRecordService, MedicalRecordRepository medicalRecordRepository, UserRepository userRepository) {
         this.medicalRecordService = medicalRecordService;
         this.medicalRecordRepository = medicalRecordRepository;
         this.userRepository = userRepository;
@@ -59,7 +59,7 @@ public class MedicalRecordController {
             .map(m -> {
                 m.setCurrentStatus(medicalRecordDTO.getCurrentStatus());
                 m.setCurrentSymptoms(medicalRecordDTO.getCurrentSymptoms());
-                m.setUser(userRepository.findOneByIdNumber(medicalRecordDTO.getUserIdNumber()).get());
+                m.setUser(userRepository.findOneByIdNumber(medicalRecordDTO.getIdNumber()).get());
                 return medicalRecordRepository.save(m);
             }).orElseGet(() -> {
                return null;

@@ -1,13 +1,12 @@
 package cm.ubuea.covider.registration.service.dto;
 
-
 import java.util.List;
 
-
 public class MedicalRecordDTO {
+
+    private String idNumber;
     private boolean currentStatus;
     private List<String> currentSymptoms;
-    private String userIdNumber;
 
     public MedicalRecordDTO() {
     }
@@ -16,7 +15,7 @@ public class MedicalRecordDTO {
         return currentStatus;
     }
 
-    public void setCurrentStatus(boolean currentStatus) {
+    public void setCurrentStatus(final boolean currentStatus) {
         this.currentStatus = currentStatus;
     }
 
@@ -24,15 +23,15 @@ public class MedicalRecordDTO {
         return currentSymptoms;
     }
 
-    public void setCurrentSymptoms(List<String> currentSymptoms) {
+    public void setCurrentSymptoms(final List<String> currentSymptoms) {
         this.currentSymptoms = currentSymptoms;
     }
 
-    public String getUserIdNumber() {
-        return userIdNumber;
+    public String getIdNumber() {
+        return idNumber;
     }
 
-    public void setUserIdNumber(String userIdNumber) {
-        this.userIdNumber = userIdNumber;
+    public void setIdNumber(final String idNumber) {
+        this.idNumber = idNumber;
     }
 }

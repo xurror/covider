@@ -4,18 +4,25 @@ package cm.ubuea.covider.registration.domain;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name="c_location")
-public class UserLocation {
+public class UserLocation implements Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
     @Size(max = 20)
-    private String currentLoctaion;
+    private String currentLocation;
 
     @ElementCollection
     @CollectionTable(name = "c_previous_user_location", joinColumns = @JoinColumn(name = "id"))
@@ -39,12 +46,12 @@ public class UserLocation {
         this.id = id;
     }
 
-    public String getCurrentLoctaion() {
-        return currentLoctaion;
+    public String getCurrentLocation() {
+        return currentLocation;
     }
 
-    public void setCurrentLoctaion(String currentLoctaion) {
-        this.currentLoctaion = currentLoctaion;
+    public void setCurrentLocation(String currentLocation) {
+        this.currentLocation = currentLocation;
     }
 
     public List<String> getPreviousLocation() {

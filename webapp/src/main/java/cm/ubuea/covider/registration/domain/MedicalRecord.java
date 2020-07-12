@@ -1,16 +1,21 @@
 package cm.ubuea.covider.registration.domain;
 
-
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name="c_medical_record")
-public class MedicalRecord {
+public class MedicalRecord implements Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
