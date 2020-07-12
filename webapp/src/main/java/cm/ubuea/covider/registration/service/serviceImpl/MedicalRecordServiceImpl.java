@@ -21,11 +21,7 @@ public class MedicalRecordServiceImpl implements MedicalRecordService {
         MedicalRecord medicalRecord = new MedicalRecord();
         medicalRecord.setCurrentStatus(medicalRecordDTO.getCurrentStatus());
         medicalRecord.setCurrentSymptoms(medicalRecordDTO.getCurrentSymptoms());
-        medicalRecord.setUser(userRepository.findOneByIdNumber(medicalRecordDTO.getUserIdNumber()).orElse(null));
+        medicalRecord.setUser(userRepository.findOneByIdNumber(medicalRecordDTO.getIdNumber()).orElse(null));
         medicalRecordRepository.save(medicalRecord);
     }
-
-
-
-
 }
