@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { FaArrowLeft } from "react-icons/fa";
-import { Form, } from 'react-bootstrap';
+import { Form, Spinner} from 'react-bootstrap';
+import { connect } from 'react-redux';
 import './UserLocation.css';
+import axios from 'axios';
 
 class UserLocation extends Component {
   constructor() {
@@ -9,6 +11,7 @@ class UserLocation extends Component {
     this.state = {
       currentLocation: '',
       previousLocation: '',
+      loading: false
     }
   }
 
@@ -19,10 +22,44 @@ class UserLocation extends Component {
     this.setState({ previousLocation: event.target.value })
   }
 
+  addLocation() {
+    this.setState({loading: true})
+    const {currentLocation, previousLocation} = this.state;
+
+    const { token } = this.props
+    const { user, changeRoute } = this.props;
+
+    const obj = {
+      idNumber: user.idNumber,
+      currentLocation: currentLocation,
+      previousLocation: [
+        previousLocation
+      ],
+    }
+    
+
+    console.log(obj)
+    axios.post('https://covider.herokuapp.com/api/user-locations/', {obj}, {
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: token,
+      }
+    })
+      .then(res => {
+        this.setState({ loading: false })
+        changeRoute()
+        console.log(res.data);
+      })
+      .catch(err => {
+        this.setState({ loading: false })
+        console.log(err)
+      })
+  }
 
 
   render() {
     const { changeStage } = this.props;
+    const {loading} = this.state;
     return (
       <div className="wrapper shadow">
         <div className="d-flex justify-content-between">
@@ -38,13 +75,13 @@ class UserLocation extends Component {
         <p style={{ fontsize: ".8rem" }}>Lorem ipsum dolor sit amet </p>
 
         <div style={{ paddingTop: "3rem", width: '40%' }}>
-          <Form.Group controlId="formBasicEmail">
+          <Form.Group>
             <Form.Label>Your current address</Form.Label>
-            <Form.Control onChange={this.currentLocation} type="number" placeholder="current address" />
+            <Form.Control onChange={this.currentLocation} type="text" placeholder="current address" />
           </Form.Group>
-          <Form.Group controlId="formBasicEmail">
+          <Form.Group>
             <Form.Label>Your previous address</Form.Label>
-            <Form.Control onChange={this.previousLocation} type="number" placeholder="previouse address" />
+            <Form.Control onChange={this.previousLocation} type="text" placeholder="previouse address" />
           </Form.Group>
         </div>
 
@@ -63,10 +100,15 @@ class UserLocation extends Component {
             const stage = {
               stage: 3,
             };
-            changeStage(stage)
+            this.addLocation(stage)
           }}
             className="nextBtn link pointer ib br2 grow bw2 shadow-3">
-            <p style={{ textAlign: 'center', position: "relative", bottom: -7, color: 'white' }}>Finish</p>
+            {
+              loading ?
+                <Spinner animation="border" variant="light" className='ma1' />
+                :
+                <p style={{ textAlign: 'center', position: "relative", bottom: -7, color: 'white' }}>Finish</p>
+            }
           </div>
         </div>
 
@@ -76,4 +118,11 @@ class UserLocation extends Component {
   }
 }
 
-export default UserLocation;
+const mapStateToProps = ({ token }) => {
+
+  return {
+    token: token.token
+  }
+}
+
+export default connect(mapStateToProps, null)(UserLocation);

@@ -81,8 +81,8 @@ const RenderRegisterHome = (props) => {
               <h3 className="icon" style={{ color: "#000000a4", fontSize: "2rem", left: "1px" }}><FaUserSecret /></h3>
             </div>
             <div style={{ paddingLeft: "1rem", marginBottom: -5 }}>
-              <p style={{ marginBottom: -2 }}>Bob</p>
-              <p>Lorem ipsum</p>
+              <p style={{ marginBottom: -2 }}>Admin</p>
+              <p>Continue as admin</p>
             </div>
           </div>
 
@@ -99,7 +99,7 @@ const RenderRegisterHome = (props) => {
             </div>
             <div style={{ paddingLeft: "1rem", marginBottom: -5 }}>
               <p style={{ marginBottom: -2 }}>User</p>
-              <p>Lorem ipsum</p>
+              <p>Continue as normal user</p>
             </div>
           </div>
         </div>

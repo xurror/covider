@@ -46,9 +46,13 @@ class MedicalHistoryInfo extends Component {
     const { token } = this.props
     const { user, changeStage } = this.props;
 
-    const obj = { currentStatus: status, currentSymptoms: [medicalDetails], userIdNumber: user.idNumber, userId: `${user.id}` }
+    const obj = {
+      currentStatus: status,
+      currentSymptoms: [medicalDetails],
+      idNumber: user.idNumber,
+    }
 
-    axios.post('https://covider.herokuapp.com/api/medical/', {obj}, {
+    axios.post('https://covider.herokuapp.com/api/medical/', { obj }, {
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
