@@ -23,7 +23,7 @@ refreshes when files change on your hard drive.
 
 ## API DOCs
 You can access api docs for more infos about the API here:
-- `http://localhost:8443/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config`
+- https://covider.herokuapp.com/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#
 
 ## Mobile Client
 

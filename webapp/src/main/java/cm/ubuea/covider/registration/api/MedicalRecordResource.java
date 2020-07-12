@@ -5,7 +5,6 @@ import cm.ubuea.covider.registration.repository.MedicalRecordRepository;
 import cm.ubuea.covider.registration.repository.UserRepository;
 import cm.ubuea.covider.registration.service.MedicalRecordService;
 import cm.ubuea.covider.registration.service.dto.MedicalRecordDTO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,16 +15,16 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/medical")
-public class MedicalRecordController {
-    final
-    MedicalRecordService medicalRecordService;
-    final
-    MedicalRecordRepository medicalRecordRepository;
+public class MedicalRecordResource {
+
+    final MedicalRecordService medicalRecordService;
+
+    final MedicalRecordRepository medicalRecordRepository;
 
     final
     UserRepository userRepository;
 
-    public MedicalRecordController(MedicalRecordService medicalRecordService, MedicalRecordRepository medicalRecordRepository, UserRepository userRepository) {
+    public MedicalRecordResource(MedicalRecordService medicalRecordService, MedicalRecordRepository medicalRecordRepository, UserRepository userRepository) {
         this.medicalRecordService = medicalRecordService;
         this.medicalRecordRepository = medicalRecordRepository;
         this.userRepository = userRepository;
@@ -34,7 +33,7 @@ public class MedicalRecordController {
     @PostMapping("/")
     public ResponseEntity<?> addMedicalRecord(@Valid @RequestBody MedicalRecordDTO medicalRecordDTO ) {
         medicalRecordService.addMedicalRecord(medicalRecordDTO);
-        return new ResponseEntity("Medical Record successfully added",HttpStatus.CREATED);
+        return new ResponseEntity("Medical Record successfully added", HttpStatus.CREATED);
     }
 
     @DeleteMapping("/delete/{id}")
@@ -60,7 +59,7 @@ public class MedicalRecordController {
             .map(m -> {
                 m.setCurrentStatus(medicalRecordDTO.getCurrentStatus());
                 m.setCurrentSymptoms(medicalRecordDTO.getCurrentSymptoms());
-                m.setUser(userRepository.findOneByIdNumber(medicalRecordDTO.getUserIdNumber()).get());
+                m.setUser(userRepository.findOneByIdNumber(medicalRecordDTO.getIdNumber()).get());
                 return medicalRecordRepository.save(m);
             }).orElseGet(() -> {
                return null;
