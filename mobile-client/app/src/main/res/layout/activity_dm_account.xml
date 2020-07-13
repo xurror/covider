@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,12 +13,12 @@
         android:layout_height="150dp"
         android:src="@drawable/applogo"
         android:layout_marginBottom="10dp"
-        />
+        android:contentDescription="@string/app_logo" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name: Agent X"
-        android:textSize="25dp"
+        android:text="@string/name_agent_x"
+        android:textSize="25sp"
         android:textColor="@color/colorPrimary"
         android:layout_marginBottom="10dp"
         />
@@ -27,16 +26,16 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Phone Number:XXX-XXX-XXX"
-        android:textSize="20dp"
+        android:text="@string/phone_number_xxx_xxx_xxx"
+        android:textSize="20sp"
         android:textColor="@color/colorPrimary"
         android:layout_marginBottom="10dp"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ID Card Number: XXXXXXXXX"
-        android:textSize="20dp"
+        android:text="@string/id_card_number_xxxxxxxxx"
+        android:textSize="20sp"
         android:textColor="@color/colorPrimary"
         android:layout_marginBottom="10dp"
 
@@ -44,8 +43,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Token: ********"
-        android:textSize="25dp"
+        android:text="@string/token"
+        android:textSize="25sp"
         android:textColor="@color/colorPrimary"
         />
 

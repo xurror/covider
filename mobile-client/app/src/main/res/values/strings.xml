@@ -39,4 +39,22 @@
     <string name="registered_users">Registered Users</string>
     <string name="select_any_user_to_upload_location">Select user to update location</string>
     <string name="username">Username</string>
+    <string name="app_logo">app logo</string>
+    <string name="name_agent_x">Name: Agent X</string>
+    <string name="phone_number_xxx_xxx_xxx">Phone Number:XXX-XXX-XXX</string>
+    <string name="id_card_number_xxxxxxxxx">ID Card Number: XXXXXXXXX</string>
+    <string name="token">Token: ********</string>
+    <string name="distribution_complete">Distribution complete.</string>
+    <string name="todo">TODO</string>
+    <string name="register_new_user">Register new user</string>
+    <string name="select_preferred_language">Select Preferred Language</string>
+    <string name="s_lectionnez_la_langue_pr_f_r_e">Sélectionnez la langue préférée</string>
+    <string name="english">English</string>
+    <string name="fran_ais">français</string>
+    <string name="user_location">Select any user to upload location</string>
+    <string name="todo">TODO</string>
+    <string name="todo">TODO</string>
+    <string name="distribution_module">Distribution Module</string>
+    <string name="todo">TODO</string>
+    <string name="todo">TODO</string>
 </resources>

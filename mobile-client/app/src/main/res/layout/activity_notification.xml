@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#FFFFFF"
     tools:context=".dmHealthInfo">
 
@@ -11,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        >
+        tools:ignore="UselessParent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -28,7 +27,7 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:src="@drawable/ic_back"
-                />
+                android:contentDescription="@string/todo" />
             <TextView
                 android:id="@+id/user"
                 android:layout_width="wrap_content"
@@ -37,9 +36,9 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
 
-                />
+                tools:ignore="RelativeOverlap" />
 
         </RelativeLayout>
         <View

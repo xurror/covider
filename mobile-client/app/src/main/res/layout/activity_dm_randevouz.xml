@@ -35,7 +35,7 @@
             android:textSize="20sp"
             android:paddingStart="5dp"
             android:layout_margin="20dp"
-            tools:ignore="RtlSymmetry" />
+            tools:ignore="RtlSymmetry,TextViewEdits" />
 
         <EditText
             android:id="@+id/message_p"

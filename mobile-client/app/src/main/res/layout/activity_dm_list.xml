@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_margin="10dp"
-            android:text="Select any user to upload location"
+            android:text="@string/user_location"
             android:textColor="@color/colorPrimary"
             android:textSize="15sp"
             android:textStyle="normal" />
@@ -61,9 +61,9 @@
                 android:layout_height="53dp"
                 android:layout_marginTop="9dp"
                 android:src="@drawable/ic_notifications"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:padding="10dp"
-                />
+                android:contentDescription="@string/todo" />
 
             <com.getbase.floatingactionbutton.FloatingActionsMenu
                 android:id="@+id/actvitybutton"
@@ -73,7 +73,7 @@
                 app:fab_addButtonColorPressed="@color/colorAccent"
                 app:fab_addButtonPlusIconColor="@color/colorAccent"
                 app:fab_labelStyle="@style/fab"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_margin="5dp"
                 app:fab_labelsPosition="left">
