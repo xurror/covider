@@ -1,0 +1,13 @@
+{
+  "extends": ["jhipster-react"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "strict": "off",
+    "no-console": "off",
+    "no-shadow": "off",
+    "object-shorthand": "off",
+    "@typescript-eslint/prefer-regexp-exec": "off"
+  }
+}

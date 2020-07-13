@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaCheckCircle } from "react-icons/fa";
-import { Card } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
 
 import './SidebarCounter.css';
 
@@ -72,7 +72,7 @@ const LoginSidebarCounter = (props) => {
                 </div>
               </div>
               : null}
-            
+
             {stage === 3 ?
               <div>
                 <div style={{ textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center', }}>

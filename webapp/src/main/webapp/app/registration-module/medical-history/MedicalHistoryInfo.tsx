@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-import { Form, FormControl, Spinner } from 'react-bootstrap';
+import { FaArrowRight } from "react-icons/fa";
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
+import Spinner from 'react-bootstrap/Spinner';
 import './MedicalHistoryInfo.css';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-class MedicalHistoryInfo extends Component {
-  constructor() {
-    super();
+class MedicalHistoryInfo extends Component<any,any> {
+  constructor(props) {
+    super(props);
     this.state = {
       medicalDetails: '',
       covidStatus: '',
@@ -86,10 +88,10 @@ class MedicalHistoryInfo extends Component {
               Having trouble? <strong className="helpColor">Get Help</strong></p>
           </div>
         </div>
-        <p style={{ fontsize: ".8rem" }}>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae</p>
+        <p style={{ fontSize: ".8rem" }}>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae</p>
 
         <div style={{ width: "70%" }}>
-          <FormControl onChange={this.medicalHistory} as="textarea" aria-label="With textarea" rows="4" />
+          <FormControl onChange={this.medicalHistory} as="textarea" aria-label="With textarea" rows={ 4 } />
         </div>
 
         <div style={{ marginTop: "1rem" }}>
@@ -123,7 +125,7 @@ class MedicalHistoryInfo extends Component {
               <p>How many family members do u leave with?</p>
             </div>
             <div style={{ width: "30%", marginLeft: "1rem", flex: 1.5 }}>
-              <Form.Control onChange={this.familyNumber} as="textarea" rows="1" />
+              <Form.Control onChange={this.familyNumber} as="textarea" rows={ 1 } />
             </div>
           </div>
 

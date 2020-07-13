@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import './Home.css';
-import { Card } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
 import Register from '../registration/Register';
 import Login from '../login/Login';
 import RegisterSidebarCounter from '../component/RegisterSidebarCounter/RegisterSidebarCounter';
 import LoginSidebarCounter from '../component/LoginSidebarCounter/LoginSidebarCounter';
 
-class Home extends Component {
-  constructor() {
-    super();
+class Home extends Component<any,any> {
+  constructor(props) {
+    super(props);
     this.state = {
       route: 'home',
       stage: 1,
       role: 'agent',
       isfirstTime: false,
-    }
+    };
   }
 
   changeRoute(route) {
@@ -26,17 +26,17 @@ class Home extends Component {
     if (route === 'home') {
       return (
         <Register
-          changeRoute={(route) => this.setState({ route })}
-          changeStage={(stage) => this.setState({ stage })}
+          changeRoute = {(route) => this.setState({ route })}
+          changeStage = {(stage) => this.setState({ stage })}
           setRole={(role) => this.setState({ role })}
         />
       )
     } else {
       return (
         <Login
-          changeRoute={(route) => this.setState({ route })}
-          changeStage={(stage) => this.setState({ stage })}
-          setFirstTime={(isfirstTime) => this.setState({ isfirstTime })}
+          changeRoute = {(route) => this.setState({ route })}
+          changeStage = {(stage) => this.setState({ stage })}
+          setFirstTime = {(isfirstTime) => this.setState({ isfirstTime })}
         />
       )
     }

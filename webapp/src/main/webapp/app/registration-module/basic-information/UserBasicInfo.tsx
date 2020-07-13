@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { FaArrowLeft } from "react-icons/fa";
-import { Form, Col, Modal, Button } from 'react-bootstrap';
-import axios from 'axios';
+import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
 
 import RegisterSuccessModal from '../registerSuccesModal/RegisterSuccessModal';
 import './UserBasicInfo.css';
 
-class UserBasicInfo extends Component {
-  constructor() {
-    super();
+class UserBasicInfo extends Component<any,any> {
+  constructor(props) {
+    super(props);
     this.state = {
       email: '',
       name: '',
@@ -53,10 +53,10 @@ class UserBasicInfo extends Component {
     }
 
     const obj = {email, name, idNumber: idcardnumber, role: [userRole], password}
-    console.log(obj);
+    // console.log(obj);
 
-    let url = 'https://covider.herokuapp.com/api/register';
-    let fetchParams = {
+    const url = 'https://covider.herokuapp.com/api/register';
+    const fetchParams = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -75,12 +75,12 @@ class UserBasicInfo extends Component {
         const responseJson = res[1];
 
         console.log('status', statusCode)
-        if (statusCode == 201) {
+        if (statusCode === 201) {
           console.log(responseJson)
           this.setState({ modalShow: false })
           changeRoute()
 
-        } else if (statusCode == 401) {
+        } else if (statusCode === 401) {
           console.log('responseJson')
           this.setState({ modalShow: false })
           // this.setState({ stage: 2 })
@@ -93,7 +93,7 @@ class UserBasicInfo extends Component {
       })
       .catch(err => {
         console.log(err)
-      }).finally(fin => console.log('finish'))
+      }).finally(() => console.log('finish'))
   }
 
   render() {
