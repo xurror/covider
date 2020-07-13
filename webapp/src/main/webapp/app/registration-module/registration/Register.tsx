@@ -64,7 +64,7 @@ const RenderRegisterHome = (props) => {
 
         <div style={{ marginTop: "2rem", }}>
           <p style={{ fontSize: "1.2rem", }}>Choose your member role</p>
-          <p style={{ fontSize: ".8rem" }}>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae</p>
+          {/* <p style={{ fontSize: ".8rem" }}>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae</p> */}
         </div>
 
         <div>

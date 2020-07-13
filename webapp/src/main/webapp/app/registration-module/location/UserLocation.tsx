@@ -36,7 +36,7 @@ class UserLocation extends Component {
         previousLocation
       ],
     }
-    
+
 
     console.log(obj)
     axios.post('https://covider.herokuapp.com/api/user-locations/', {obj}, {
@@ -72,7 +72,7 @@ class UserLocation extends Component {
               Having trouble? <strong className="helpColor">Get Help</strong></p>
           </div>
         </div>
-        <p style={{ fontsize: ".8rem" }}>Lorem ipsum dolor sit amet </p>
+        <p style={{ fontsize: ".8rem" }}>Fill in details about the different areas you have visited. </p>
 
         <div style={{ paddingTop: "3rem", width: '40%' }}>
           <Form.Group>

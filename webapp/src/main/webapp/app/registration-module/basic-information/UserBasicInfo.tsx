@@ -113,7 +113,7 @@ class UserBasicInfo extends Component {
                 Having trouble? <strong className="helpColor">Get Help</strong></p>
             </div>
           </div>
-          <p style={{ fontsize: ".8rem" }}>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae</p>
+          {/* <p style={{ fontsize: ".8rem" }}>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae</p> */}
 
           <RegisterSuccessModal
             show={modalShow}
@@ -136,7 +136,7 @@ class UserBasicInfo extends Component {
             <div style={{ width: "35%", paddingTop: "2rem" }}>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Id card number</Form.Label>
-                <Form.Control onChange={this.idcardChange} type="number" placeholder="id card number" />
+                <Form.Control onChange={this.idcardChange} type="text" placeholder="id card number" />
               </Form.Group>
             </div>
             <div style={{ paddingTop: "1rem", width: '70%' }}>

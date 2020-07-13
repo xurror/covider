@@ -28,7 +28,17 @@ public class UserLocationService {
         UserLocation userLocation = new UserLocation();
         userLocation.setCurrentLocation(userLocationDTO.getCurrentLocation());
         userLocation.setPreviousLocation(userLocationDTO.getPreviousLocation());
-        userLocation.setUser(userRepository.findOneByIdNumber(userLocationDTO.getIdNumber()).orElse(null));
+        userLocation.setUser(userRepository.findOneByIdNumber(
+            userLocationDTO.getIdNumber()).orElseThrow(() ->
+                new AccountResourceException("User account not found")));
         userLocationRepository.save(userLocation);
+    }
+
+    private static class AccountResourceException extends RuntimeException {
+        private static final long serialVersionUID = 1L;
+
+        private AccountResourceException(String message) {
+            super(message);
+        }
     }
 }
