@@ -61,9 +61,9 @@ class Login extends Component {
 
         if (statusCode == 200) {
           console.log(responseJson)
-          
-          this.setState({ 
-            modalShow: false, 
+
+          this.setState({
+            modalShow: false,
             user: responseJson,
             stage: 2,
           })
@@ -77,7 +77,7 @@ class Login extends Component {
           this.setState({ modalShow: false })
         }
 
-        
+
       })
       .catch(err => {
         console.log(err)
@@ -147,7 +147,7 @@ const RenderLoginPage = (props) => {
 
         <div style={{ marginTop: "2rem" }}>
           <p style={{ fontSize: "1.2rem" }}>Welcome back, login to continue</p>
-          <p style={{ fontSize: ".8rem;" }}>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae</p>
+          {/* <p style={{ fontSize: ".8rem;" }}>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae</p> */}
         </div>
         <LoginSuccesModal
           show={modalShow}
@@ -157,8 +157,8 @@ const RenderLoginPage = (props) => {
         <div style={{ width: "40%" }}>
           <Form>
             <Form.Group controlId="formBasicEmail">
-              <Form.Label>Id card number</Form.Label>
-              <Form.Control type="email" placeholder="Id card number" onChange={idNumberChange} />
+              <Form.Label>Id card number / Email</Form.Label>
+              <Form.Control type="email" placeholder="Id card number / Email" onChange={idNumberChange} />
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
