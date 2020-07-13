@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".dmList"
-    >
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".dmList">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,11 +15,11 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="16dp">
 
+
         <TextView
             android:id="@+id/list_name"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_gravity="center"
             android:layout_margin="15dp"
             android:text="@string/registered_users"
             android:textColor="@color/colorPrimary"
@@ -31,7 +33,7 @@
             android:layout_gravity="start"
             android:layout_margin="10dp"
             android:text="Select any user to upload location"
-            android:textColor="@color/design_default_color_on_secondary"
+            android:textColor="@color/colorPrimary"
             android:textSize="15sp"
             android:textStyle="normal" />
 
@@ -51,5 +53,50 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
+
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/notifications"
+                android:layout_width="60dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="9dp"
+                android:src="@drawable/ic_notifications"
+                android:layout_alignParentRight="true"
+                android:padding="10dp"
+                />
+
+            <com.getbase.floatingactionbutton.FloatingActionsMenu
+                android:id="@+id/actvitybutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_addButtonColorNormal="@color/colorPrimary"
+                app:fab_addButtonColorPressed="@color/colorAccent"
+                app:fab_addButtonPlusIconColor="@color/colorAccent"
+                app:fab_labelStyle="@style/fab"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="5dp"
+                app:fab_labelsPosition="left">
+
+                <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/notification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:fab_colorNormal="@color/colorPrimary"
+                    app:fab_colorPressed="@color/colorAccent"
+                    app:fabSize="mini"
+                    app:fab_icon="@drawable/ic_fabnotification"
+                    app:fab_title="Notification"
+                    />
+                <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:fab_colorNormal="@color/colorPrimary"
+                    app:fab_colorPressed="@color/colorAccent"
+                    app:fabSize="mini"
+                    app:fab_icon="@drawable/ic_account"
+                    app:fab_title="Account"
+                    />
+            </com.getbase.floatingactionbutton.FloatingActionsMenu>
+</RelativeLayout>

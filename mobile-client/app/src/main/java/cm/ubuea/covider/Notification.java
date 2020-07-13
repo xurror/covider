@@ -26,19 +26,39 @@ public class Notification extends AppCompatActivity {
 
         lw_notification = findViewById(R.id.lw_notification);
         ArrayList<String> arrayList = new ArrayList<>();
-        arrayList.add("New Notification ");
-        arrayList.add("New Notification ");
-        arrayList.add("New Notification ");
-        arrayList.add("New Notification ");
-        arrayList.add("New Notification ");
-        arrayList.add("New Notification ");
-        arrayList.add("New Notification ");
-        arrayList.add("New Notification ");
-        arrayList.add("New Notification ");
-        arrayList.add("New Notification ");
-        arrayList.add("New Notification ");
-        arrayList.add("New Notification ");
-
+        arrayList.add("New user location available");
+        arrayList.add("Products running out back to base for review ");
+        arrayList.add("Agent impersonation, click to get verified ");
+        arrayList.add("Weekly updates From citizen W: \n" +
+                "Last visited location: Buea, Cameroon\n" +
+                "Signs and symptoms\n" +
+                "Cough: No\n" +
+                "Fever: No\n" +
+                "Tiredness: No ");
+        arrayList.add("General Meeting at 1pm on Sunday 03-07-2020\n" +
+                "Location: Ministry of Health, Yaounde");
+        arrayList.add("New user location available");
+        arrayList.add("Following the meeting held last week, you have been relocated to Bamenda for distribution");
+        arrayList.add("Signed in from a new device, verify it's you");
+        arrayList.add("Weekly updates From citizen X: \n" +
+                "Last visited location: Buea, Cameroon\n" +
+                "Signs and symptoms\n" +
+                "Cough: No\n" +
+                "Fever: No\n" +
+                "Tiredness: No");
+        arrayList.add("Weekly updates From citizen Y: \n" +
+                "Last visited location: Buea, Cameroon\n" +
+                "Signs and symptoms\n" +
+                "Cough: No\n" +
+                "Fever: No\n" +
+                "Tiredness: No ");
+        arrayList.add("Agent meeting");
+        arrayList.add("Weekly updates From citizen Z: \n" +
+                "Last visited location: Buea, Cameroon\n" +
+                "Signs and symptoms\n" +
+                "Cough: No\n" +
+                "Fever: No\n" +
+                "Tiredness: No ");
 
         ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,arrayList);
         lw_notification.setAdapter(arrayAdapter);
@@ -49,7 +69,7 @@ public class Notification extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Toast.makeText(getApplicationContext(), "Message sent, will be in touch", Toast.LENGTH_LONG).show();
-                Intent gotoUser = new Intent(getApplicationContext(), Users.class);
+                Intent gotoUser = new Intent(getApplicationContext(), dmList.class);
                 startActivity(gotoUser);
             }
         });

@@ -20,7 +20,7 @@ public class dmHealthInfo extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "Status recorded", Toast.LENGTH_LONG).show();
-                Intent gotoUser = new Intent(getApplicationContext(), Users.class);
+                Intent gotoUser = new Intent(getApplicationContext(), dmDistriComplete.class);
                 startActivity(gotoUser);
             }
         });
