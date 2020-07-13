@@ -2,12 +2,6 @@ dist: bionic
 matrix:
   include:
   - language: generic
-    deploy:
-      provider: heroku
-      api_key:
-        secure: RfnJcTsfcdeTGsdeZ4x/IXH2+lrhXqwgCIb03JpN1OjNrIZqo/dQMDBE5M8+XEVTTTyEJv1t6oyx3iC+XDQd+nxdGqbOsQgdi6ad1CDeZWrpxxzBz1c4BinAKgKuO+dxhbsZEw4+znh4lGcxBD8CoxOCA7WvEYH2epxyJmg7g9jvUIsNo5fD9DOxuGUbeSdDVXA8lh2U0AsedAFeo88XQVt+8zzDqpsDZC4++tBF2T/Y2pNwRvKH+370k8o0P//iBhGsmPQH6UtFELGTAz/dCKSxapEh07v4UZRGGa+kYydWDRIHBQcP0FI5BgBAjCSoT7i5qJcsZs8+/bmC8+MqNWUBt6nUCieO/bMbTaWQ8am5UXbxvf/ks+594c1yGC//77r862kfzmV703bEs8OaSDcLbasQ1XH9upMT/C0suTccu0VHRcnTQbm7QQ1VWMkCY1AzEQFKUB4xgFhq6KY1lwNMNgO2ZD7EGYAcPmHSbZOkj53RH4AW8pucy6jruOoD5s6LOHQWSq6RlTZ0HO6SVjcDgV0mvKI2Qvsgj/iASQPNobWHWyyVwVMxYVIRSTy2KzbYuGfe0Z2OpWaenxAysRSIdhH9CGGwMD3h3c9qgjoSH47UCbqPPDeKC4qHgq7UY5AA4VB5Gc30qCy18JmJPtjc1Vv1UG/jxmmFZBabBao=
-      app: covider
-      on: registration-module
     before_install:
     - echo $JAVA_HOME
     - which java
@@ -33,6 +27,7 @@ matrix:
       - "./gradlew check build -x test"
 
   - language: node_js
+    deploy:
     node_js:
       - '8'
     cache:
@@ -42,11 +37,16 @@ matrix:
       - date
       - cd webapp
       - npm install
-    deploy:
-      provider: heroku
-      api_key:
-        secure: fenLquU1So0+U+ANJW3rlReEYDPX/1qJqnV+KHrhk9TfJzoxhiXyqorLoQHoLvaFvHkBjXla+MX2tlaqp+PeaK861yKlfMbcXbAd9A3i8tUtoHS7CZcFG9T5ejDo+SaNmSjcWk0d16Ti/7AmMNtmRzdhlKMDV3TNIwX48hxaQbaeRCzQNykaFlPVDR8lJCsoVyKhFw3G1sv6266gD6/OdfY1gAPlBNgLpkfXoM5ZBV0nzdSLpkgIo9jCTLRaJ2XS+ESNsx9/2mKiPBWcI2KCwmZRw6jGYgUkb+im1SJ4nXvALbC8NMKokRSoUA9e+bRWDukuHEmlrWFVFEX3Qh9uQGeYFyT3e4Jf8fqnoRCzz7E2tJNiqzPCUbn6EojcWzYVCcKyenAbkDwSTzWX2HzH+JPtsOSwxCrYYm9yHsKVWgReSlbShn/cztk8cnQTKw2MPh4Yw6gU7Ie/vWVnXWELWGjBOdvETCQp2xqdi90dtylPDFXZKVD+XsCYBmxmIyAkCbTQN3wpW358oXPzGDgxWZRcw0wDu1m2WUai0LsAg6ClbasgAqwQq/4I8B/vzaTzOW5bGMWwj784cAEDR4EfYCE12vZkEc0gppVbsWSctstPe/Mp9nfgCEnTvd6TggVNEvqPd1hTpYYThJKZ8Dx1QZBYsFOtaKms78rSTVIf6hM=
-      app: covider-ui
-      on: registration-module
-      run:
-        - npm run build
+
+deploy:
+  - provider: heroku
+    api_key:
+      secure: RfnJcTsfcdeTGsdeZ4x/IXH2+lrhXqwgCIb03JpN1OjNrIZqo/dQMDBE5M8+XEVTTTyEJv1t6oyx3iC+XDQd+nxdGqbOsQgdi6ad1CDeZWrpxxzBz1c4BinAKgKuO+dxhbsZEw4+znh4lGcxBD8CoxOCA7WvEYH2epxyJmg7g9jvUIsNo5fD9DOxuGUbeSdDVXA8lh2U0AsedAFeo88XQVt+8zzDqpsDZC4++tBF2T/Y2pNwRvKH+370k8o0P//iBhGsmPQH6UtFELGTAz/dCKSxapEh07v4UZRGGa+kYydWDRIHBQcP0FI5BgBAjCSoT7i5qJcsZs8+/bmC8+MqNWUBt6nUCieO/bMbTaWQ8am5UXbxvf/ks+594c1yGC//77r862kfzmV703bEs8OaSDcLbasQ1XH9upMT/C0suTccu0VHRcnTQbm7QQ1VWMkCY1AzEQFKUB4xgFhq6KY1lwNMNgO2ZD7EGYAcPmHSbZOkj53RH4AW8pucy6jruOoD5s6LOHQWSq6RlTZ0HO6SVjcDgV0mvKI2Qvsgj/iASQPNobWHWyyVwVMxYVIRSTy2KzbYuGfe0Z2OpWaenxAysRSIdhH9CGGwMD3h3c9qgjoSH47UCbqPPDeKC4qHgq7UY5AA4VB5Gc30qCy18JmJPtjc1Vv1UG/jxmmFZBabBao=
+    app: covider
+    on: registration-module
+
+  - provider: heroku
+    api_key:
+      secure: fenLquU1So0+U+ANJW3rlReEYDPX/1qJqnV+KHrhk9TfJzoxhiXyqorLoQHoLvaFvHkBjXla+MX2tlaqp+PeaK861yKlfMbcXbAd9A3i8tUtoHS7CZcFG9T5ejDo+SaNmSjcWk0d16Ti/7AmMNtmRzdhlKMDV3TNIwX48hxaQbaeRCzQNykaFlPVDR8lJCsoVyKhFw3G1sv6266gD6/OdfY1gAPlBNgLpkfXoM5ZBV0nzdSLpkgIo9jCTLRaJ2XS+ESNsx9/2mKiPBWcI2KCwmZRw6jGYgUkb+im1SJ4nXvALbC8NMKokRSoUA9e+bRWDukuHEmlrWFVFEX3Qh9uQGeYFyT3e4Jf8fqnoRCzz7E2tJNiqzPCUbn6EojcWzYVCcKyenAbkDwSTzWX2HzH+JPtsOSwxCrYYm9yHsKVWgReSlbShn/cztk8cnQTKw2MPh4Yw6gU7Ie/vWVnXWELWGjBOdvETCQp2xqdi90dtylPDFXZKVD+XsCYBmxmIyAkCbTQN3wpW358oXPzGDgxWZRcw0wDu1m2WUai0LsAg6ClbasgAqwQq/4I8B/vzaTzOW5bGMWwj784cAEDR4EfYCE12vZkEc0gppVbsWSctstPe/Mp9nfgCEnTvd6TggVNEvqPd1hTpYYThJKZ8Dx1QZBYsFOtaKms78rSTVIf6hM=
+    app: covider-ui
+    on: registration-module

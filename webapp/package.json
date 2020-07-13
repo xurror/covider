@@ -71,7 +71,7 @@
   },
   "scripts": {
     "start": "npm run webpack:dev",
-    "build": "npm run webpack:build",
+    "build": "npm run webpack:dev",
     "test": "npm run lint",
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx",
     "lint:fix": "npm run lint -- --fix",
