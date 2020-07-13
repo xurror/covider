@@ -42,5 +42,11 @@ matrix:
       - date
       - cd webapp
       - npm install
+    deploy:
+      provider: heroku
+      api_key:
+        secure: fenLquU1So0+U+ANJW3rlReEYDPX/1qJqnV+KHrhk9TfJzoxhiXyqorLoQHoLvaFvHkBjXla+MX2tlaqp+PeaK861yKlfMbcXbAd9A3i8tUtoHS7CZcFG9T5ejDo+SaNmSjcWk0d16Ti/7AmMNtmRzdhlKMDV3TNIwX48hxaQbaeRCzQNykaFlPVDR8lJCsoVyKhFw3G1sv6266gD6/OdfY1gAPlBNgLpkfXoM5ZBV0nzdSLpkgIo9jCTLRaJ2XS+ESNsx9/2mKiPBWcI2KCwmZRw6jGYgUkb+im1SJ4nXvALbC8NMKokRSoUA9e+bRWDukuHEmlrWFVFEX3Qh9uQGeYFyT3e4Jf8fqnoRCzz7E2tJNiqzPCUbn6EojcWzYVCcKyenAbkDwSTzWX2HzH+JPtsOSwxCrYYm9yHsKVWgReSlbShn/cztk8cnQTKw2MPh4Yw6gU7Ie/vWVnXWELWGjBOdvETCQp2xqdi90dtylPDFXZKVD+XsCYBmxmIyAkCbTQN3wpW358oXPzGDgxWZRcw0wDu1m2WUai0LsAg6ClbasgAqwQq/4I8B/vzaTzOW5bGMWwj784cAEDR4EfYCE12vZkEc0gppVbsWSctstPe/Mp9nfgCEnTvd6TggVNEvqPd1hTpYYThJKZ8Dx1QZBYsFOtaKms78rSTVIf6hM=
+      app: covider-ui
+      on: registration-module
     run:
       - npm run build
