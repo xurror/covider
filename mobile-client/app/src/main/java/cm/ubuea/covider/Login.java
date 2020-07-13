@@ -30,7 +30,10 @@ import com.loopj.android.http.RequestParams;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+
 import cz.msebera.android.httpclient.Header;
+import cz.msebera.android.httpclient.entity.StringEntity;
 
 public class Login extends AppCompatActivity {
     EditText username, password;
@@ -39,6 +42,7 @@ public class Login extends AppCompatActivity {
     ProgressDialog pDialog;
     String fcm_id;
     SharedPreferences sharedPreferences;
+    private String token;
 
     RequestParams requestParams;
     AsyncHttpClient asyncHttpClient;
@@ -69,7 +73,7 @@ public class Login extends AppCompatActivity {
         });
 
         //Get form data
-        username = findViewById(R.id.inputEmail);
+        username = findViewById(R.id.inputUsername);
         password = findViewById(R.id.inputPassword);
         btnLogin = findViewById(R.id.btnLogin);
         gotopassword = findViewById(R.id.forgotPassword);
@@ -114,7 +118,7 @@ public class Login extends AppCompatActivity {
 
         //Login button clicked
         btnLogin.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
+            public void onClick(View v) {
 
                 pDialog = new ProgressDialog(Login.this);
                 pDialog.setCancelable(false);
@@ -131,40 +135,63 @@ public class Login extends AppCompatActivity {
                     pDialog.dismiss();
                     Toast.makeText(Login.this, "All fields are required", Toast.LENGTH_LONG).show();
                 }
-                else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(txtUserName).matches()){
+                else if (txtUserName.length() < 6){
                     pDialog.dismiss();
-                    Toast.makeText(Login.this, "Please enter a valid email", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Login.this, "Please enter a valid email or NIC number", Toast.LENGTH_LONG).show();
                 }
                 else{
-                    requestParams = new RequestParams();
-                    requestParams.put("username", txtUserName);
-                    requestParams.put("password", txtPassword);
+                    try {
+                        JSONObject requestParams = new JSONObject();
+                        requestParams.put("username", txtUserName);
+                        requestParams.put("password", txtPassword);
+                        requestParams.put("rememberMe", true);
 
-                    asyncHttpClient = new AsyncHttpClient();
-                    asyncHttpClient.get(url, requestParams, new AsyncHttpResponseHandler() {
+                        StringEntity entity = new StringEntity(requestParams.toString());
 
-                        @Override
-                        public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                            // User successfully authenticated
-                            pDialog.dismiss();
+                        AsyncHttpClient asyncHttpClient = new AsyncHttpClient();
+                        asyncHttpClient.addHeader("Accept", "application/json");
+                        asyncHttpClient.addHeader("Content-Type", "application/json");
+                        asyncHttpClient.post(getApplicationContext(), url, entity, "application/json", new JsonHttpResponseHandler() {
+                            @Override
+                            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                                super.onSuccess(statusCode, headers, response);
+                                try {
+                                    // User successfully authenticated
+                                    token = response.getString("id_token");
 
-                            Toast.makeText(Login.this, "Login Successfully", Toast.LENGTH_SHORT).show();
+                                    Log.i("TOKEN", token);
 
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putString(getResources().getString(R.string.prefLoginState), "loggedin");
-                            editor.putString(getResources().getString(R.string.prefLoginUserStatus), "Person");
-                            editor.apply();
+                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                                    editor.putString(getResources().getString(R.string.prefLoginState), "loggedin");
+                                    editor.putString(getResources().getString(R.string.prefToken), token);
+                                    editor.apply();
 
-                            startActivity(new Intent(Login.this, PersonHome.class));
-                            finish();
-                        }
+                                    startActivity(new Intent(Login.this, PersonHome.class));
+                                    finish();
 
-                        @Override
-                        public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                            pDialog.dismiss();
-                            Toast.makeText(Login.this, "Incorrect username or password, please try again later", Toast.LENGTH_LONG).show();
-                        }
-                    });
+                                } catch (JSONException e) {
+                                    pDialog.dismiss();
+                                    AlertBox.buildDialog(Login.this).show();
+                                }
+                                Toast.makeText(Login.this, "Login successful", Toast.LENGTH_SHORT).show();
+
+                                username.getText().clear();
+                                password.getText().clear();
+                            }
+
+                            @Override
+                            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                                super.onFailure(statusCode, headers, throwable, errorResponse);
+                                pDialog.dismiss();
+                                Log.d("Failed: ", ""+statusCode);
+                                Log.d("Error : ", "" + throwable);
+                                Toast.makeText(Login.this, "Incorrect username or password, please try again later", Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    } catch (JSONException | UnsupportedEncodingException e) {
+                        Log.i("ERROR", e.getLocalizedMessage());
+                    }
+                    //login(txtUserName, txtPassword, fcm_id);
                 }
             }
         });

@@ -28,7 +28,7 @@ public class ForgotPassword extends AppCompatActivity {
 
     RequestParams requestParams;
     AsyncHttpClient asyncHttpClient;
-    String url = "http://172.20.10.14:8080/CEF440/ForgotPasswordServlet";
+    String url = "https://covider.herokuapp.com/api/account";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,9 +110,9 @@ public class ForgotPassword extends AppCompatActivity {
                         }
 
                         @Override
-                        public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                            super.onFailure(statusCode, headers, throwable, errorResponse);
                             pDialog.dismiss();
-                            super.onFailure(statusCode, headers, responseString, throwable);
                             Toast.makeText(ForgotPassword.this, "There was an error resetting your password, please try again later", Toast.LENGTH_LONG).show();
                         }
                     });

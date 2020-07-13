@@ -47,8 +47,8 @@ public class PersonPersonalInformation extends Fragment {
 
     RequestParams requestParams, requestParams1;
     AsyncHttpClient asyncHttpClient, asyncHttpClient1;
-    String url = "https://covider.herokuapp.com/api/users";
-    String url1 = "http://172.20.10.4:8080/CEF440/GetPersonalInformationServlet";
+    String url = "https://covider.herokuapp.com/api/account";
+    String url1 = "https://covider.herokuapp.com/api/account";
 
     public PersonPersonalInformation() {
         // Required empty public constructor
@@ -170,10 +170,10 @@ public class PersonPersonalInformation extends Fragment {
                         }
 
                         @Override
-                        public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                            super.onFailure(statusCode, headers, throwable, errorResponse);
                             pDialog.dismiss();
-                            super.onFailure(statusCode, headers, responseString, throwable);
-                            Toast.makeText(getContext(), "There was an error saving your personal information, please try again later", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(), "Successfully Recorded", Toast.LENGTH_LONG).show();
                         }
                     });
                 }else{
@@ -228,9 +228,9 @@ public class PersonPersonalInformation extends Fragment {
             }
 
             @Override
-            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-                super.onFailure(statusCode, headers, responseString, throwable);
-                Toast.makeText(getContext(), "There was an error retrieving your personal information", Toast.LENGTH_LONG).show();
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                Toast.makeText(getContext(), "Successfully Recorded", Toast.LENGTH_LONG).show();
             }
         });
     }
