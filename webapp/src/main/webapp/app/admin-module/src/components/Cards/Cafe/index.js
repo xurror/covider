@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardBody, CardImg} from 'reactstrap';
+import {Card, CardBody, CardImg} from 'app/routes/dashboard/routes/agents/node_modules/reactstrap';
 import StarRatingComponent from 'react-star-rating-component';
 import Button from '@material-ui/core/Button';
 

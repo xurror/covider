@@ -8,8 +8,8 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 const path = require('path');
 const sass = require('sass');
 
-const utils = require('./utils.js');
-const commonConfig = require('./webpack.common.js');
+const utils = require('./utils.tsx');
+const commonConfig = require('./webpack.common.tsx');
 
 const ENV = 'development';
 
@@ -21,8 +21,8 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
   ],
   output: {
     path: utils.root('build/resources/main/static/'),
-    filename: 'app/[name].bundle.js',
-    chunkFilename: 'app/[id].chunk.js'
+    filename: 'app/[name].bundle.tsx',
+    chunkFilename: 'app/[id].chunk.tsx'
   },
   module: {
     rules: [

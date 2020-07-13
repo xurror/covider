@@ -1,6 +1,6 @@
 import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
-import {Badge} from 'reactstrap';
+import {Badge} from 'app/routes/dashboard/routes/agents/node_modules/reactstrap';
 
 const ProjectsCell = ({data}) => {
   const {id, name, date, status, color} = data;

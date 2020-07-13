@@ -4,7 +4,7 @@ const { BaseHrefWebpackPlugin } = require('base-href-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const utils = require('./utils.js');
+const utils = require('./utils.tsx');
 
 const getTsLoaderRule = env => {
   const rules = [
@@ -43,7 +43,7 @@ module.exports = options => ({
   cache: options.env !== 'production',
   resolve: {
     extensions: [
-      '.js', '.jsx', '.ts', '.tsx', '.json'
+      '.tsx', '.tsxx', '.ts', '.tsx', '.tsxon'
     ],
     modules: ['node_modules'],
     alias: utils.mapTypescriptAliasToWebpackAlias()
@@ -67,7 +67,7 @@ module.exports = options => ({
       },
       {
         enforce: 'pre',
-        test: /\.jsx?$/,
+        test: /\.tsxx?$/,
         loader: 'source-map-loader'
       },
       {

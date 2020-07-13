@@ -97,10 +97,11 @@ public class Location implements Serializable{
 		this.town = town;
 	}
 	
+	@JsonIgnore
 	public List<Users> getUsers() {
 		return users;
 	}
-
+	
 	public void setUsers(List<Users> users) {
 		this.users = users;
 	}

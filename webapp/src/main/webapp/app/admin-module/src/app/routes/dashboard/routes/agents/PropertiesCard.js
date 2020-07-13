@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Nav, NavItem, NavLink, TabContent, TabPane} from 'reactstrap';
 import classNames from 'classnames';
 
-import Widget from "components/Widget/index";
+import Widget from "components/Widget";
 import {albama, allProperties, colorado, newJercy} from "./data"
 import PropertiesItemCard from "./PropertiesItemCard";
 

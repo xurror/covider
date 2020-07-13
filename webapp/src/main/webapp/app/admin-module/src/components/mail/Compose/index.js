@@ -1,5 +1,5 @@
 import React from 'react';
-import {Modal, ModalHeader} from 'reactstrap';
+import {Modal, ModalHeader} from 'app/routes/dashboard/routes/agents/node_modules/reactstrap';
 import Moment from 'moment';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';

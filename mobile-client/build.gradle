@@ -8,8 +8,12 @@ buildscript {
         
     }
     dependencies {
+<<<<<<< HEAD
+        classpath 'com.android.tools.build:gradle:3.6.3'
+=======
         classpath 'com.android.tools.build:gradle:3.6.1'
 
+>>>>>>> 8ee69e5e3b463869ee5151e9440e42492c48b4aa
         
 
         // NOTE: Do not place your application dependencies here; they belong

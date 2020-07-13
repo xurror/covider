@@ -1,5 +1,5 @@
 import React from "react";
-import {Badge} from 'reactstrap';
+import {Badge} from 'app/routes/dashboard/routes/agents/node_modules/reactstrap';
 
 const EventItem =({data})=> {
   const {image, title, address, date} = data;

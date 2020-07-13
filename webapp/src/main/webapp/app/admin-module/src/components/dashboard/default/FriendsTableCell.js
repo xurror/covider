@@ -1,12 +1,12 @@
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
 
-const FriendsTableCell = ({data}) => {
-  const {id, name, designation, image, status} = data;
-  const style = status.includes("Followed") ? "btn-primary" : "btn-outline-secondary";
+const CustomerCell = ({data}) => {
+  const {id, name, userId, image, order} = data;
+  const style = order > 0 ? "bg-blue" : "bg-amber";
   return (
     <tr
-      style={{background: 'white'}}
       tabIndex={-1}
       key={id}>
       <td>
@@ -18,16 +18,19 @@ const FriendsTableCell = ({data}) => {
           />
           <div className="user-detail">
             <h5 className="user-name">{name} </h5>
-            <p className="user-description">{designation} </p>
+            <p className="user-description">{userId} </p>
           </div>
         </div>
       </td>
       <td className="text-right">
-        <div className={`btn btn-sm text-uppercase btn-rounded ${style}`}>{status}</div>
+        <div className={`btn btn-sm text-uppercase btn-rounded ${style}`}>{order} Order</div>
+      </td>
+      <td className="text-right">
+        <IconButton><i className="zmdi zmdi-more-vert"/></IconButton>
       </td>
     </tr>
 
   );
 };
 
-export default FriendsTableCell;
+export default CustomerCell;
