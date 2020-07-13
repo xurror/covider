@@ -37,11 +37,6 @@ const SignIn = (props) => {
       className="app-login-container d-flex justify-content-center align-items-center animated slideInUpTiny animation-duration-3">
       <div className="app-login-main-content">
 
-        <div className="app-logo-content d-flex align-items-center justify-content-center">
-          <Link className="logo-lg" to="/" title="Jambo">
-            <img src={require("assets/images/logo.png")} alt="jambo" title="jambo"/>
-          </Link>
-        </div>
 
         <div className="app-login-content">
           <div className="app-login-header mb-4">
@@ -76,10 +71,6 @@ const SignIn = (props) => {
                   }} variant="contained" color="primary">
                     <IntlMessages id="appModule.signIn"/>
                   </Button>
-
-                  <Link to="/signup">
-                    <IntlMessages id="signIn.signUp"/>
-                  </Link>
                 </div>
 
               </fieldset>
