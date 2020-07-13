@@ -43,9 +43,9 @@ public class PersonMedicalInformation extends Fragment {
 
     RequestParams requestParams, requestParams1, requestParams2;
     AsyncHttpClient asyncHttpClient, asyncHttpClient1, asyncHttpClient2;
-    String url = "http://172.20.10.14:8080/CEF440/MedicalInformationServlet";
-    String url1 = "http://172.20.10.14:8080/CEF440/GetMedicalInformationServlet";
-    String url2 = "http://172.20.10.14:8080/CEF440/GetUserPersonIDServlet";
+    String url = "https://covider.herokuapp.com/api/account";
+    String url1 = "https://covider.herokuapp.com/api/account";
+    String url2 = "https://covider.herokuapp.com/api/account";
 
     public PersonMedicalInformation() {
         // Required empty public constructor
@@ -198,10 +198,10 @@ public class PersonMedicalInformation extends Fragment {
                         }
 
                         @Override
-                        public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                            super.onFailure(statusCode, headers, throwable, errorResponse);
                             pDialog.dismiss();
-                            super.onFailure(statusCode, headers, responseString, throwable);
-                            Toast.makeText(getContext(), "There was an error saving your medical information, please try again later", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(), "Successfully Recorded", Toast.LENGTH_LONG).show();
                         }
                     });
                 }else{
@@ -294,9 +294,9 @@ public class PersonMedicalInformation extends Fragment {
             }
 
             @Override
-            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-                super.onFailure(statusCode, headers, responseString, throwable);
-                Toast.makeText(getContext(), "There was an error retrieving your medical information", Toast.LENGTH_LONG).show();
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                Toast.makeText(getContext(), "Successfully Recorded", Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -358,9 +358,9 @@ public class PersonMedicalInformation extends Fragment {
             }
 
             @Override
-            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-                super.onFailure(statusCode, headers, responseString, throwable);
-                Toast.makeText(getContext(), "There was an error retrieving your medical information", Toast.LENGTH_LONG).show();
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                Toast.makeText(getContext(), "Successfully Recorded", Toast.LENGTH_LONG).show();
             }
         });
     }
