@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 import './Login.css';
 import MedicalHistoryInfo from '../medical-history/MedicalHistoryInfo';
@@ -9,9 +10,11 @@ import LoginSuccesModal from '../loginSuccesModal/LoginSuccesModal';
 import { setToken } from '../redux/actions/authActions';
 import { connect } from 'react-redux';
 
-class Login extends Component {
-  constructor() {
-    super();
+declare const Buffer
+
+class Login extends Component<any,any> {
+  constructor(props) {
+    super(props);
     this.state = {
       stage: 1,
       role: '',
@@ -36,12 +39,12 @@ class Login extends Component {
     this.props.setFirstTime(true)
     const { password, idNumber } = this.state;
     this.setState({ modalShow: true })
-    let url = 'https://covider.herokuapp.com/api/account';
-    let auth = "Basic " + new Buffer(idNumber + ":" + password).toString("base64");
+    const url = 'https://covider.herokuapp.com/api/account';
+    const auth = "Basic " + new Buffer(idNumber + ":" + password).toString("base64");
     console.log(auth);
     this.props.setToken(auth)
 
-    let fetchParams = {
+    const fetchParams = {
       method: 'GET',
       headers: {
         Authorization: auth,
@@ -59,7 +62,7 @@ class Login extends Component {
         const statusCode = res[0];
         const responseJson = res[1];
 
-        if (statusCode == 200) {
+        if (statusCode === 200) {
           console.log(responseJson)
 
           this.setState({
@@ -68,7 +71,7 @@ class Login extends Component {
             stage: 2,
           })
 
-        } else if (statusCode == 401) {
+        } else if (statusCode === 401) {
           console.log(responseJson)
           this.setState({ modalShow: false })
           // this.setState({ stage: 2 })
@@ -81,7 +84,7 @@ class Login extends Component {
       })
       .catch(err => {
         console.log(err)
-      }).finally(fin => console.log('finish'))
+      }).finally(() => console.log('finish'))
 
   }
   changeRoute(route) {

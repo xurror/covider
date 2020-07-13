@@ -27,7 +27,7 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
   module: {
     rules: [
       {
-        test: /\.css$/i,
+        test: /\.(sa|sc|c)ss$/,
         use: ['style-loader', 'css-loader', 'postcss-loader', {
             loader: 'sass-loader',
             options: { implementation: sass }
@@ -35,6 +35,30 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
         ]
       }
     ]
+  },
+  devServer: {
+    stats: options.stats,
+    hot: true,
+    contentBase: './build/resources/main/static/',
+    proxy: [{
+      context: [
+        '/api',
+        '/services',
+        '/management',
+        '/swagger-resources',
+        '/v2/api-docs',
+        '/h2-console',
+        '/auth'
+      ],
+      target: `http${options.tls ? 's' : ''}://localhost:8080`,
+      secure: false,
+      changeOrigin: options.tls
+    }],
+    watchOptions: {
+      ignored: /node_modules/
+    },
+    https: options.tls,
+    historyApiFallback: true
   },
   stats: process.env.JHI_DISABLE_WEBPACK_LOGS ? 'none' : options.stats,
   plugins: [
@@ -47,7 +71,7 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
     new BrowserSyncPlugin({
       https: options.tls,
       host: 'localhost',
-      port: 8080,
+      port: 9000,
       proxy: {
         target: `http${options.tls ? 's' : ''}://localhost:9060`,
           proxyOptions: {
@@ -76,7 +100,7 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
       utils.root('src/test'),
     ]),
     new WebpackNotifierPlugin({
-      title: 'covider',
+      title: 'JHipster',
       contentImage: path.join(__dirname, 'logo192.png')
     })
   ].filter(Boolean)

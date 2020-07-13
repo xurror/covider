@@ -1,5 +1,7 @@
 import React from 'react';
-import { Button, Modal, Spinner } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Spinner from 'react-bootstrap/Spinner';
 
 function RegisterSuccessModal(props) {
   return (

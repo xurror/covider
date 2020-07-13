@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { FaArrowLeft } from "react-icons/fa";
-import { Form, Spinner} from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
+import Spinner from 'react-bootstrap/Spinner';
 import { connect } from 'react-redux';
 import './UserLocation.css';
 import axios from 'axios';
 
-class UserLocation extends Component {
-  constructor() {
-    super();
+class UserLocation extends Component<any,any> {
+  constructor(props) {
+    super(props);
     this.state = {
       currentLocation: '',
       previousLocation: '',
@@ -72,7 +73,7 @@ class UserLocation extends Component {
               Having trouble? <strong className="helpColor">Get Help</strong></p>
           </div>
         </div>
-        <p style={{ fontsize: ".8rem" }}>Fill in details about the different areas you have visited. </p>
+        <p style={{ fontSize: ".8rem" }}>Fill in details about the different areas you have visited. </p>
 
         <div style={{ paddingTop: "3rem", width: '40%' }}>
           <Form.Group>
@@ -100,7 +101,7 @@ class UserLocation extends Component {
             const stage = {
               stage: 3,
             };
-            this.addLocation(stage)
+            this.addLocation()
           }}
             className="nextBtn link pointer ib br2 grow bw2 shadow-3">
             {
