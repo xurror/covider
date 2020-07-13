@@ -31,7 +31,6 @@ const SignIn = (props) => {
     }
   }, [showMessage, authUser, props.history, dispatch]);
 
-
   return (
     <div
       className="app-login-container d-flex justify-content-center align-items-center animated slideInUpTiny animation-duration-3">
@@ -99,6 +98,5 @@ const SignIn = (props) => {
     </div>
   );
 };
-
 
 export default SignIn;
