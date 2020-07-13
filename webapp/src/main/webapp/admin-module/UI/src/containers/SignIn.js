@@ -14,6 +14,7 @@ import {
 } from 'actions/Auth';
 
 const SignIn = (props) => {
+
   const [email, setEmail] = useState('user@gmail.com');
   const [password, setPassword] = useState('demo#123');
   const dispatch = useDispatch();
@@ -30,11 +31,12 @@ const SignIn = (props) => {
     }
   }, [showMessage, authUser, props.history, dispatch]);
 
+
   return (
     <div
       className="app-login-container d-flex justify-content-center align-items-center animated slideInUpTiny animation-duration-3">
-     
       <div className="app-login-main-content">
+
         <div className="app-logo-content d-flex align-items-center justify-content-center">
           <Link className="logo-lg" to="/" title="Jambo">
             <img src={require("assets/images/logo.png")} alt="jambo" title="jambo"/>
@@ -86,7 +88,6 @@ const SignIn = (props) => {
         </div>
 
       </div>
-      
       {
         loader &&
         <div className="loader-view">
