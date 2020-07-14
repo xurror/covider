@@ -1,0 +1,16 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+// The reason for doing so is to solve "relative assets (images, fonts) fail to find" issue
+// The only file changed is bootstrap/_bootstrap.scss
+@import "global/variables";
+=======
+// The reason for doing so is to solve "relative assets (images, fonts) fail to find" issue
+// The only file changed is bootstrap/_bootstrap.scss
+@import "global/variables";
+>>>>>>> 4d2bbb9... backbone for the dashboard
+=======
+// The reason for doing so is to solve "relative assets (images, fonts) fail to find" issue
+// The only file changed is bootstrap/_bootstrap.scss
+@import "global/variables";
+>>>>>>> 4d2bbb99f7304fe93e114a6909260496de0e6fc0
+@import "../../node_modules/bootstrap/scss/bootstrap";
