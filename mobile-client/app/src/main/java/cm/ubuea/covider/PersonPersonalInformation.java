@@ -47,7 +47,7 @@ public class PersonPersonalInformation extends Fragment {
 
     RequestParams requestParams, requestParams1;
     AsyncHttpClient asyncHttpClient, asyncHttpClient1;
-    String url = "http://172.20.10.4:8080/CEF440/PersonalInformationServlet";
+    String url = "https://covider.herokuapp.com/api/users";
     String url1 = "http://172.20.10.4:8080/CEF440/GetPersonalInformationServlet";
 
     public PersonPersonalInformation() {

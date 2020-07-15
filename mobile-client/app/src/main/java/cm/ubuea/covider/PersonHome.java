@@ -107,7 +107,7 @@ public class PersonHome extends AppCompatActivity {
                     finish();
                     return true;
                 case R.id.navigation_notifications:
-                    startActivity(new Intent(PersonHome.this, PersonHome.class));
+                    startActivity(new Intent(PersonHome.this, PersonNotifications.class));
                     finish();
                     return true;
             }

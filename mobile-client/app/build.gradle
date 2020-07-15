@@ -64,5 +64,12 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:20.1.7'
 }
 
+/*buildscript {
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.0'
+    }
+}*/
+
+
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'

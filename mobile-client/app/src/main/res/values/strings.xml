@@ -1,10 +1,11 @@
 <resources>
-    <string name="app_name">CEFF440 PROJECT</string>
+    <string name="app_name">COVIDER</string>
     <string name="prefLoginState">loginstate</string>
     <string name="prefLoginUserName">loginusername</string>
     <string name="prefLoginUserID">loginuserid</string>
     <string name="prefLoginUserEmail">loginuseremail</string>
     <string name="prefLoginUserStatus">loginuserstatus</string>
+    <string name="prefLoginUserToken">loginusertoken</string>
     <string name="preftoken">token</string>
     <string name="approxresidence" />
 
@@ -32,4 +33,5 @@
     <string name="facebook_icon">facebook icon</string>
     <string name="new_user_register_now">New User? Register Now</string>
     <string name="alreadyhaveaccount">Already have an account? Login here</string>
+    <string name="idcard">ID Card Number</string>
 </resources>

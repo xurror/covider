@@ -12,6 +12,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +23,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
@@ -40,7 +42,7 @@ public class Login extends AppCompatActivity {
 
     RequestParams requestParams;
     AsyncHttpClient asyncHttpClient;
-    String url = "http://172.20.10.4:8080/CEF440/LoginServlet";
+    String url = "https://covider.herokuapp.com/api/authenticate";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,72 +137,34 @@ public class Login extends AppCompatActivity {
                 }
                 else{
                     requestParams = new RequestParams();
-                    requestParams.put("name", txtUserName);
-                    requestParams.put("token", fcm_id);
+                    requestParams.put("username", txtUserName);
                     requestParams.put("password", txtPassword);
 
                     asyncHttpClient = new AsyncHttpClient();
-                    asyncHttpClient.post(url, requestParams, new JsonHttpResponseHandler(){
+                    asyncHttpClient.get(url, requestParams, new AsyncHttpResponseHandler() {
+
                         @Override
-                        public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                            super.onSuccess(statusCode, headers, response);
+                        public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                            // User successfully authenticated
+                            pDialog.dismiss();
 
-                            try {
-                                String status = response.getString("status");
-                                if (status.equals("SUCCESS")) {
-                                    // User successfully authenticated
-                                    pDialog.dismiss();
-                                    String id0 = response.getString("id");
-                                    String name0 = response.getString("name");
-                                    String email0 = response.getString("email");
-                                    String status0 = response.getString("role");
+                            Toast.makeText(Login.this, "Login Successfully", Toast.LENGTH_SHORT).show();
 
-                                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    editor.putString(getResources().getString(R.string.prefLoginState), "loggedin");
-                                    editor.putString(getResources().getString(R.string.prefLoginUserID), id0);
-                                    editor.putString(getResources().getString(R.string.prefLoginUserName), name0);
-                                    editor.putString(getResources().getString(R.string.prefLoginUserEmail), email0);
-                                    editor.putString(getResources().getString(R.string.prefLoginUserStatus), status0);
-                                    editor.apply();
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString(getResources().getString(R.string.prefLoginState), "loggedin");
+                            editor.putString(getResources().getString(R.string.prefLoginUserStatus), "Person");
+                            editor.apply();
 
-                                    Toast.makeText(Login.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-
-                                    if (status0.equals("Person")) {
-                                        startActivity(new Intent(Login.this, PersonHome.class));
-                                        finish();
-                                    }else if (status0.equals("Agent")) {
-                                        startActivity(new Intent(Login.this, PersonHome.class));
-                                        finish();
-                                    }else if (status0.equals("Admin")) {
-                                        startActivity(new Intent(Login.this, PersonHome.class));
-                                        finish();
-                                    }
-
-                                } else {
-                                    // Error occurred in login. Get the error message
-                                    pDialog.dismiss();
-                                    Toast.makeText(getApplicationContext(), "Incorrect username or password, please try again later", Toast.LENGTH_LONG).show();
-                                }
-
-                            } catch (JSONException e) {
-                                pDialog.dismiss();
-                                AlertBox.buildDialog(Login.this).show();
-                            }
-
-                            Toast.makeText(Login.this, "Login successful", Toast.LENGTH_SHORT).show();
-
-                            username.getText().clear();
-                            password.getText().clear();
+                            startActivity(new Intent(Login.this, PersonHome.class));
+                            finish();
                         }
 
                         @Override
-                        public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                        public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
                             pDialog.dismiss();
-                            super.onFailure(statusCode, headers, responseString, throwable);
                             Toast.makeText(Login.this, "Incorrect username or password, please try again later", Toast.LENGTH_LONG).show();
                         }
                     });
-                    //login(txtUserName, txtPassword, fcm_id);
                 }
             }
         });
