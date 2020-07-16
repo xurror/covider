@@ -34,7 +34,7 @@ public class Location implements Serializable{
 	
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "LOCATION_ID", columnDefinition = "bigint(10)", length = 8)
 	private int locationId;
 
@@ -60,6 +60,13 @@ public class Location implements Serializable{
 	public Location(int locationId, String region, String division, String town) {
 		super();
 		this.locationId = locationId;
+		this.region = region;
+		this.division = division;
+		this.town = town;
+	}
+	
+	public Location(String region, String division, String town) {
+		super();
 		this.region = region;
 		this.division = division;
 		this.town = town;

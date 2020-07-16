@@ -52,14 +52,8 @@ public class UserController {
 		return new ResponseEntity<> (userDTO,HttpStatus.CREATED);
 		
 	}
-/*	
-	 @PostMapping("/private/category/set/{categorySetString}")
-	    public ResponseEntity<CategoryDTO> addCategory(@RequestBody CreateCategoryDTO newCategory, @PathVariable String categorySetString) {
-	        CategoryDTO categoryDTO = categoryService.saveCategory(newCategory, categorySetString);
 
-	        return new ResponseEntity<> (categoryDTO,HttpStatus.CREATED);
-	    }
-*/	
+	
 	@GetMapping("/users/nmuser")
 	public ResponseEntity<List<UserDTO>> getAllNMUsers(){ 
 		return ResponseEntity.ok().body(userService.retrieveNMUsers());
@@ -80,81 +74,20 @@ public class UserController {
 		return ResponseEntity.ok().body(userService.retrieveUser(userId));
 	}
 	
+	@DeleteMapping("/users/{userId}")
+	public ResponseEntity<Object> deleteUser(@PathVariable int userId) {
+		userService.deleteUser(userId);
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	}
+	
+	@PutMapping("/users/{userId}/location/{locationId})")
+	public ResponseEntity<Object> editUser(@PathVariable("userId") int userId, @PathVariable("locationId") int locationId, @RequestBody UserDTO newUserDTO) {
+		userService.editUser(userId, locationId, newUserDTO);
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	}
 	
 	
 	
 	
-
-	/*
-	  private CategoryService categoryService;
-
-	    @Autowired
-	    public CategoryController(CategoryService categoryService) {
-	        this.categoryService = categoryService;
-	    }
-
-	    @PostMapping("/private/category/set/{categorySetString}")
-	    public ResponseEntity<CategoryDTO> addCategory(@RequestBody CreateCategoryDTO newCategory, @PathVariable String categorySetString) {
-	        CategoryDTO categoryDTO = categoryService.saveCategory(newCategory, categorySetString);
-
-	        return new ResponseEntity<> (categoryDTO,HttpStatus.CREATED);
-	    }
-
-	    @PostMapping("/private/category/set")
-	    public ResponseEntity<CategorySetDTO> addCategorySet(@RequestBody CreateCategorySetDTO categorySet) {
-	        CategorySetDTO savedCategorySet = categoryService.saveCategorySet(categorySet);
-
-	        return new ResponseEntity<>(savedCategorySet, HttpStatus.CREATED);
-	    }
-
-	    @PutMapping("/private/category/{categoryID}")
-	    public  ResponseEntity<?> editCategory(@PathVariable("categoryID") int categoryID,
-	                                                     @RequestBody CategoryDTO newCategoryData) {
-
-	        categoryService.editCategory(categoryID, newCategoryData);
-
-	        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-	    }
-
-	    @PutMapping("/private/categories/sets/{id}")
-	    public ResponseEntity<?> editCategorySet(@PathVariable int id, @RequestBody CreateCategorySetDTO categorySet) {
-	        categoryService.editCategorySet(id, categorySet);
-
-	        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-	    }
-
-	    @DeleteMapping("/private/category/{categoryID}")
-	    public ResponseEntity<?> deleteCategory(@PathVariable int categoryID) {
-
-	        categoryService.deleteCategory(categoryID);
-	        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-	    }
-
-	    @GetMapping("/public/category")
-	    public ResponseEntity<List<CategoryDTO>> getAllCategories(){
-	        return ResponseEntity.ok(categoryService.retrieveCategories());
-	    }
-
-	    @GetMapping("/public/category/{categoryID}")
-	    public ResponseEntity<CategoryDTO> getCategory(@PathVariable int categoryID){
-	        return ResponseEntity.ok().body(categoryService.retrieveCategory(categoryID));
-	    }
-
-	    @GetMapping("/public/categories/sets")
-	    public ResponseEntity<List<EventCategorySet>> getCategorySets() {
-	        return new ResponseEntity<>(categoryService.getCategorySets(), HttpStatus.OK);
-	    }
-
-	    @GetMapping("/public/categories/{categorySet}")
-	    public ResponseEntity<List<CategoryDTO>> getCategoriesWithSet(@PathVariable String categorySet) {
-
-	        return new ResponseEntity<>(categoryService.getCategoriesBySet(categorySet), HttpStatus.OK);
-	    }
-
-	    @DeleteMapping("/private/category/set/{id}")
-	    public ResponseEntity<?> deleteCategorySet(@PathVariable int id) {
-	        categoryService.deleteCategorySet(id);
-	        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-	    }
-	    */
+	
 }

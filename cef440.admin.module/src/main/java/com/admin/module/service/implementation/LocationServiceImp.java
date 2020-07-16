@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.admin.module.dto.LocationDTO;
 import com.admin.module.model.Location;
+import com.admin.module.model.user.Users;
 import com.admin.module.repository.LocationRepository;
 import com.admin.module.service.LocationService;
 
@@ -60,8 +61,28 @@ Iterable<Location> locations = locationRepository.findAll();
 		
 		return copyLocationtoLocationDTO(location);
 	}
-
 	
+	
+	@Override
+	public void deleteLocation(int locationId) {
+		// TODO Auto-generated method stub
+		locationRepository.deleteById(locationId);
+	}
+
+	@Override
+	public void editLocation(int locationId, LocationDTO newLocationDTO) {
+		// TODO Auto-generated method stub
+		if(locationRepository.existsById(locationId)) {
+			Location locationToEdit = locationRepository.findById(locationId).get();
+			locationToEdit = copyLocationDTOtoLocation(newLocationDTO);
+			locationToEdit.setLocationId(locationId);
+			locationToEdit = locationRepository.save(locationToEdit);
+			
+		}else {
+            throw new ResourceNotFoundException("Requested Category not found");
+        }
+		
+	}
 	
 	public List<LocationDTO> loadLocationDTOS(Iterable<Location> locations) {
 		
@@ -97,5 +118,7 @@ Iterable<Location> locations = locationRepository.findAll();
 		location.setTown(newLocationDTO.getTown());       
         return location;
     }
+
+	
 	
 }

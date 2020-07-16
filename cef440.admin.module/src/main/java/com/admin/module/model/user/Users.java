@@ -28,12 +28,12 @@ public class Users implements Serializable{
 	// @Size(min = 5, max = 60, message = "Name must be between 5 to 60 characters")
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "USER_ID", columnDefinition = "bigint(10)", length = 8)
 	private int userId;
 	
 	@JsonIgnore
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="locationId", nullable=false)
 	//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Location userLocation;
@@ -185,7 +185,7 @@ public class Users implements Serializable{
 	}
 	
 	public Location getUserLocation_1() {
-		return new Location(getLocationId(), getLocationRegion(), getLocationDivision(), getLocationTown());
+		return new Location(getLocationRegion(), getLocationDivision(), getLocationTown());
 	}
 	
 	@JsonIgnore

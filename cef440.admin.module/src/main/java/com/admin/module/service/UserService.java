@@ -21,6 +21,9 @@ public interface UserService {
 	UserDTO retrieveUser(int userId);
 
 	UserDTO createUser(UserDTO newUserDTO, int userLocation);
+	void deleteUser(int userId);
+	void editUser(int userId, int locationId, UserDTO newUserDTO);
+	
 
 	
 

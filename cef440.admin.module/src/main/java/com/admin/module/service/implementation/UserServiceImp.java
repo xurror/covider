@@ -131,6 +131,34 @@ public class UserServiceImp implements UserService {
 		return copyUsertoUserDTO(user);
 	}
 
+	
+
+
+	@Override
+	public void deleteUser(int userId) {
+		// TODO Auto-generated method stub
+		usersRepository.deleteById(userId);
+	}
+
+
+
+	@Override
+	public void editUser(int userId, int locationId, UserDTO newUserDTO) {
+		// TODO Auto-generated method stub
+		
+		if(usersRepository.existsById(userId)) {
+			Users userToEdit = usersRepository.findById(userId).get();
+			userToEdit = copyUserDTOtoUser(newUserDTO, locationId);
+			userToEdit.setUserId(userId);
+			usersRepository.save(userToEdit);
+			
+		}else {
+            throw new ResourceNotFoundException("Requested Category not found");
+        }
+	}
+	
+	
+	
 	public UserDTO copyUsertoUserDTO(Users user) {
 		UserDTO userDTO = new UserDTO();
         
@@ -189,6 +217,6 @@ public class UserServiceImp implements UserService {
 		user.setUserDateOfBirthString(newUserDTO.getUserDateOfBirthString());       
         return user;
     }
-	
+
 
 }
