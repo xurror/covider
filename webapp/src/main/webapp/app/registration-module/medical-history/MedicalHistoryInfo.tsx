@@ -7,7 +7,7 @@ import './MedicalHistoryInfo.css';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-class MedicalHistoryInfo extends Component<any,any> {
+class MedicalHistoryInfo extends Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {
@@ -48,13 +48,11 @@ class MedicalHistoryInfo extends Component<any,any> {
     const { token } = this.props
     const { user, changeStage } = this.props;
 
-    const obj = {
+    axios.post('https://covider.herokuapp.com/api/medical/', {
       currentStatus: status,
       currentSymptoms: [medicalDetails],
-      idNumber: user.idNumber,
-    }
-
-    axios.post('https://covider.herokuapp.com/api/medical/', { obj }, {
+      idNumber: user.idNumber
+    }, {
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
@@ -91,7 +89,7 @@ class MedicalHistoryInfo extends Component<any,any> {
         <p style={{ fontSize: ".8rem" }}>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae</p>
 
         <div style={{ width: "70%" }}>
-          <FormControl onChange={this.medicalHistory} as="textarea" aria-label="With textarea" rows={ 4 } />
+          <FormControl onChange={this.medicalHistory} as="textarea" aria-label="With textarea" rows={4} />
         </div>
 
         <div style={{ marginTop: "1rem" }}>
@@ -125,7 +123,7 @@ class MedicalHistoryInfo extends Component<any,any> {
               <p>How many family members do u leave with?</p>
             </div>
             <div style={{ width: "30%", marginLeft: "1rem", flex: 1.5 }}>
-              <Form.Control onChange={this.familyNumber} as="textarea" rows={ 1 } />
+              <Form.Control onChange={this.familyNumber} as="textarea" rows={1} />
             </div>
           </div>
 
