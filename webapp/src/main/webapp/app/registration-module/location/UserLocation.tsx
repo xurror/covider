@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import './UserLocation.css';
 import axios from 'axios';
 
-class UserLocation extends Component<any,any> {
+class UserLocation extends Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,23 +24,19 @@ class UserLocation extends Component<any,any> {
   }
 
   addLocation() {
-    this.setState({loading: true})
-    const {currentLocation, previousLocation} = this.state;
+    this.setState({ loading: true })
+    const { currentLocation, previousLocation } = this.state;
 
     const { token } = this.props
     const { user, changeRoute } = this.props;
 
-    const obj = {
+    axios.post('https://covider.herokuapp.com/api/user-locations/', {
       idNumber: user.idNumber,
       currentLocation: currentLocation,
       previousLocation: [
         previousLocation
       ],
-    }
-
-
-    console.log(obj)
-    axios.post('https://covider.herokuapp.com/api/user-locations/', {obj}, {
+    }, {
       headers: {
         'Content-Type': 'application/json',
         authorization: token,
@@ -60,7 +56,7 @@ class UserLocation extends Component<any,any> {
 
   render() {
     const { changeStage } = this.props;
-    const {loading} = this.state;
+    const { loading } = this.state;
     return (
       <div className="wrapper shadow">
         <div className="d-flex justify-content-between">
