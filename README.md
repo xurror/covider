@@ -10,21 +10,21 @@ This contains both the Backend API and Web UI. The project follows an API based 
 
 ## Prerequisites
 Before you can build this project, you must install and configure the following dependencies on your machine: 
+Node.js: We use Node to run a development web server and build the project. Depending on your system, you can install Node
+either from source or as a pre-packaged bundle. 
+After installing Node, you should be able to run the following command to install development tools. You will only need to run this
+command when dependencies change in package.json. 
+- `cd webapp`
+- `npm install`
 
-* Node.js: We use Node to run a development web server and build the project. Depending on your system, you can install Node either from source or as a pre-packaged bundle. 
-To install follow the steps in [How to Install Node.js on windows](https://phoenixnap.com/kb/install-node-js-npm-on-windows)and [on macOS](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-and-create-a-local-development-environment-on-macos) or the Installing Using a PPA section of [How To Install Node.js on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04).
+Run the following commands in another two separate terminals to create a blissful development experience where your browser auto
+refreshes when files change on your hard drive. 
+- `./gradlew bootrun`
+- `npm start`
 
-### Developer
-It will also help to have a basic understanding of JavaScript, which you can find in the [How To Code in JavaScript series](https://www.digitalocean.com/community/tutorial_series/how-to-code-in-javascript), along with a basic knowledge of HTML and CSS.
-
-After installing Node, you should be able to run the following command to install development tools.
-* Clone the repository [COVIDER](https://github.com/xurror/covider.git) 
-* Run `cd covider/webapp` on terminal
-* `npm install`
-* Then run `npm start` to start the project
-
-You can view the project on browser on `http://localhost:9000`.
-This project  was generate using React JS
+## API DOCs
+You can access api docs for more infos about the API here:
+- `http://localhost:8443/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config`
 
 ## Mobile Client
 

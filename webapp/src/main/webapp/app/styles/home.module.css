@@ -1,0 +1,66 @@
+.home {
+    height: 100%;
+    background: linear-gradient(to top left,#ff8a00,#da1b60);
+    position: relative;
+}
+
+.bannerText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    padding: 50px
+}
+
+.jobTitle {
+    font-size: 42px;
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+
+.fullName {
+    font-size: 56px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.fullName::after {
+    content: '';
+    height: 5px;
+    width: 200px;
+    display: block;
+    background-color: yellow;
+}
+
+.disc {
+    max-width: 800px;
+    font-size: 18px;
+    font-weight: 100;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 32px;
+    margin-bottom: 30px;
+}
+
+.bannerButton {
+    background-color: #333547;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    width: 165px;
+    padding: 10px;
+    text-align: center;
+    font-size: 17px;
+    border-radius: 3px;
+    font-weight: 100;
+    transition: ease-in-out 0.5s;
+}
+
+.bannerButton:hover {
+    color: #b4c9de;
+}

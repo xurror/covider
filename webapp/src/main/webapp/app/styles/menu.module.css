@@ -1,0 +1,63 @@
+.menu {
+    background: #333547;
+    min-width: 200px;
+}
+
+.option {
+    color: black;
+}
+
+.option a {
+    display: block;
+    color: #8699ad;
+    text-decoration: none;
+    padding: 12.5px 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.option:first-child a {
+    border: none;
+}
+
+.option a:hover {
+    color: #b4c9de;
+}
+
+.option span {
+    min-width: 25px;
+    text-align: center;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.userName {
+    color: #fff;
+    text-transform: uppercase;
+    padding: 30px 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.userName img {
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.userName h3 {
+    font-weight: 100;
+    font-size: 24px;
+}
+
+.userName p {
+    font-size: 12px;
+    font-weight: 600;
+    color: #8699ad;
+    margin-top: 10px;
+}
+
+.isActive {
+    color: #b4c9de!important;
+    background-color: #383b4e;
+    border-right: 5px solid;
+}

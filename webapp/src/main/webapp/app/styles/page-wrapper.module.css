@@ -1,0 +1,20 @@
+.PageWrapper {
+    height: 100vh;
+    margin-right: 50px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.PageWrapper::-webkit-scrollbar {
+    width: 5px;
+}
+
+.PageWrapper::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+    -box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+}
+
+.PageWrapper::-webkit-scrollbar-thumb {
+  background-color: #da1b60;
+  outline: 1px solid #da1b60;
+}

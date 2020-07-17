@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "662666246878",
+    "firebase_url": "https://covider-c74e2.firebaseio.com",
+    "project_id": "covider-c74e2",
+    "storage_bucket": "covider-c74e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662666246878:android:71fb591b8c274e28b3204f",
+        "android_client_info": {
+          "package_name": "cm.ubuea.covider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "662666246878-ubq4ufs2g226miaajlaeoeoaamuefb6h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBz8lq2onC_g2yDj7Cvc12JstSbaX1G-_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "662666246878-ubq4ufs2g226miaajlaeoeoaamuefb6h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

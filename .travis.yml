@@ -1,65 +1,46 @@
 dist: bionic
+matrix:
+  include:
+  - language: generic
+    deploy:
+      provider: heroku
+      api_key:
+        secure: RfnJcTsfcdeTGsdeZ4x/IXH2+lrhXqwgCIb03JpN1OjNrIZqo/dQMDBE5M8+XEVTTTyEJv1t6oyx3iC+XDQd+nxdGqbOsQgdi6ad1CDeZWrpxxzBz1c4BinAKgKuO+dxhbsZEw4+znh4lGcxBD8CoxOCA7WvEYH2epxyJmg7g9jvUIsNo5fD9DOxuGUbeSdDVXA8lh2U0AsedAFeo88XQVt+8zzDqpsDZC4++tBF2T/Y2pNwRvKH+370k8o0P//iBhGsmPQH6UtFELGTAz/dCKSxapEh07v4UZRGGa+kYydWDRIHBQcP0FI5BgBAjCSoT7i5qJcsZs8+/bmC8+MqNWUBt6nUCieO/bMbTaWQ8am5UXbxvf/ks+594c1yGC//77r862kfzmV703bEs8OaSDcLbasQ1XH9upMT/C0suTccu0VHRcnTQbm7QQ1VWMkCY1AzEQFKUB4xgFhq6KY1lwNMNgO2ZD7EGYAcPmHSbZOkj53RH4AW8pucy6jruOoD5s6LOHQWSq6RlTZ0HO6SVjcDgV0mvKI2Qvsgj/iASQPNobWHWyyVwVMxYVIRSTy2KzbYuGfe0Z2OpWaenxAysRSIdhH9CGGwMD3h3c9qgjoSH47UCbqPPDeKC4qHgq7UY5AA4VB5Gc30qCy18JmJPtjc1Vv1UG/jxmmFZBabBao=
+      app: covider
+      on: registration-module
+    before_install:
+    - echo $JAVA_HOME
+    - which java
+    - sudo rm -rf /usr/local/lib/jvm/
+    - sudo apt-get install -y openjdk-11-jdk-headless
+    - export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
+    - which java
+    - java -version
+    - "$JAVA_HOME/bin/java -version"
+    before_cache:
+    - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+    - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+    cache:
+      directories:
+      - "$HOME/.gradle/caches/"
+      - "$HOME/.gradle/wrapper/"
+      - "$HOME/.m2"
+    before_script:
+      - cd webapp
+      - chmod +x gradlew
+    script:
+      - date
+      - "./gradlew check build -x test"
 
-language: generic
-
-node_js:
-  - '8'
-
-#env:
-  #global:
-  # for updates check developer.android.com/studio#downloads (current 26.1.1)
-  #- ANDROID_SDK_TOOLS=sdk-tools-linux-4333796.zip
-
-before_install:
-  - echo $JAVA_HOME
-  - which java
-  - sudo rm -rf /usr/local/lib/jvm/
-  - sudo apt-get install -y openjdk-11-jdk-headless
-  - export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
-  - which java
-  - java -version
-  - $JAVA_HOME/bin/java -version
-
-  # download and unzip Android SDK command line tools
-  #- wget -nv https://dl.google.com/android/repository/$ANDROID_SDK_TOOLS
-  #- unzip -q $ANDROID_SDK_TOOLS -d $HOME/sdk
-  # set SDK tools path variable and ANDROID_HOME
-  #- export PATH=$PATH:$HOME/sdk/tools/bin
-  #- export ANDROID_HOME=$HOME/sdk
-  # create empty cfg file to prevent sdkmanager warning message
-  #- mkdir -p $HOME/.android && touch $HOME/.android/repositories.cfg
-  #- export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
-
-#install:
-  # accept licenses for all available packages that have not already been accepted
-  #- yes | sdkmanager --licenses
-
-#before_script:
-  # create dir for gradle settings
-  #- mkdir -p $HOME/.gradle
-  # disable gradle daemon for current user
-  #- echo "org.gradle.daemon=false" >> $HOME/.gradle/gradle.properties
-  # set gradle log format to plain
-  #- echo "org.gradle.console=plain" >> $HOME/.gradle/gradle.properties
-
-before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-cache:
-  directories:
-    - $HOME/.npm
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
-    - $HOME/.m2
-    #- $HOME/.android/build-cache
-
-script:
-  - date
-  #- cd mobile-client
-  #- chmod +x gradlew
-  #- ./gradlew build connectedCheck
-  - cd webapp
-  - chmod +x gradlew
-  - ./gradlew check build && ./gradlew test
-  - npm install && npm run build
-  
+  - language: node_js
+    node_js:
+      - '8'
+    cache:
+      directories:
+      - "$HOME/.npm"
+    before_script:
+      - date
+      - cd webapp
+      - npm install
+    run:
+      - npm run build
