@@ -27,6 +27,11 @@ public class Users implements Serializable{
 
 	// @Size(min = 5, max = 60, message = "Name must be between 5 to 60 characters")
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "USER_ID", columnDefinition = "bigint(10)", length = 8)
@@ -185,7 +190,7 @@ public class Users implements Serializable{
 	}
 	
 	public Location getUserLocation_1() {
-		return new Location(getLocationRegion(), getLocationDivision(), getLocationTown());
+		return new Location(getLocationId(), getLocationRegion(), getLocationDivision(), getLocationTown());
 	}
 	
 	@JsonIgnore

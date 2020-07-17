@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.admin.module.dto.UserDTO;
-
+import com.admin.module.model.Item;
 import com.admin.module.model.Location;
 import com.admin.module.model.user.UserType;
 import com.admin.module.model.user.Users;
@@ -124,11 +124,16 @@ public class UserServiceImp implements UserService {
 	public UserDTO createUser(UserDTO newUserDTO, int userLocation) {
 		// TODO Auto-generated method stub
 		Users user = new Users();
-		user = copyUserDTOtoUser(newUserDTO, userLocation);
+		Optional<Location> location = locationRepository.findById(userLocation);
+		if(location.isPresent()) {
+		user = copyUserDTOtoUser(newUserDTO, location);
 
 		user = usersRepository.save(user);
 		
 		return copyUsertoUserDTO(user);
+		} else {
+			throw new ResourceNotFoundException("Could not find Location with Id "+userLocation);
+		}
 	}
 
 	
@@ -148,12 +153,24 @@ public class UserServiceImp implements UserService {
 		
 		if(usersRepository.existsById(userId)) {
 			Users userToEdit = usersRepository.findById(userId).get();
-			userToEdit = copyUserDTOtoUser(newUserDTO, locationId);
+			if(!locationRepository.existsById(locationId)) {
+				throw new ResourceNotFoundException("Could not find Location with Id "+locationId);
+			}
+			Optional<Location> locationOpt = locationRepository.findById(locationId);
+			userToEdit = copyUserDTOtoUser(newUserDTO, locationOpt);
 			userToEdit.setUserId(userId);
+			Location location = locationOpt.get();
+			Location newLocation = location;
+			newLocation.setLocationId(userToEdit.getLocationId());
+			newLocation.setDivision(userToEdit.getLocationDivision());
+			newLocation.setRegion(userToEdit.getLocationRegion());
+			newLocation.setTown(userToEdit.getLocationTown());
+			userToEdit.putUserLocation(newLocation);
+			
 			usersRepository.save(userToEdit);
 			
 		}else {
-            throw new ResourceNotFoundException("Requested Category not found");
+            throw new ResourceNotFoundException("Requested User not found: UserId--> " + userId);
         }
 	}
 	
@@ -178,7 +195,7 @@ public class UserServiceImp implements UserService {
     }
 	
 
-	public Users copyUserDTOtoUser(UserDTO newUserDTO, int locationId) {
+	public Users copyUserDTOtoUser(UserDTO newUserDTO, Optional<Location> userLocation) {
 
 		
 		String userType = newUserDTO.getUserType();
@@ -201,8 +218,12 @@ public class UserServiceImp implements UserService {
 		if(!type.equalsIgnoreCase("normal")) {
 			user.putUserLocation(new Location(99999999, "Government", "Government", "Government"));
 		} else {
-			Optional<Location> userLocation = locationRepository.findById(locationId);
-			user.putUserLocation(userLocation.get());
+			Location newLocation = userLocation.get();
+//			newLocation.setLocationId(userToEdit.getLocationId());
+//			newLocation.setDivision(userToEdit.getLocationDivision());
+//			newLocation.setRegion(userToEdit.getLocationRegion());
+//			newLocation.setTown(userToEdit.getLocationTown());
+			user.putUserLocation(newLocation);
 		}
 		
         

@@ -79,7 +79,7 @@ Iterable<Location> locations = locationRepository.findAll();
 			locationToEdit = locationRepository.save(locationToEdit);
 			
 		}else {
-            throw new ResourceNotFoundException("Requested Category not found");
+            throw new ResourceNotFoundException("Requested Location not found");
         }
 		
 	}

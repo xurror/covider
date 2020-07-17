@@ -33,6 +33,11 @@ public class Location implements Serializable{
 
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "LOCATION_ID", columnDefinition = "bigint(10)", length = 8)
@@ -50,6 +55,10 @@ public class Location implements Serializable{
 	@JsonIgnore
 	@OneToMany(mappedBy="userLocation")
 	private List<Users> users;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy="itemLocation")
+	private List<Item> item;
 	
 
 	public Location() {
@@ -111,6 +120,16 @@ public class Location implements Serializable{
 	
 	public void setUsers(List<Users> users) {
 		this.users = users;
+	}
+
+	@JsonIgnore
+	public List<Item> getItem() {
+		return item;
+	}
+
+
+	public void setItem(List<Item> item) {
+		this.item = item;
 	}
 
 

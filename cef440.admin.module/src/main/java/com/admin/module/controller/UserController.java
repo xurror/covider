@@ -34,10 +34,6 @@ public class UserController {
 		this.userService = userService;
 	}
 	
-	@GetMapping("/trial")
-	public String getUsers() {
-		return "Brice";
-	}
 	
 	@GetMapping("/users")
 	public ResponseEntity<List<UserDTO>> getAllUsers(){
@@ -69,18 +65,18 @@ public class UserController {
 		return ResponseEntity.ok(userService.retrieveAdminUsers());
 	}
 	
-	@GetMapping("/users/{userId}")
+	@GetMapping("/user/{userId}")
 	public ResponseEntity<UserDTO> getUser(@PathVariable int userId){
 		return ResponseEntity.ok().body(userService.retrieveUser(userId));
 	}
 	
-	@DeleteMapping("/users/{userId}")
+	@DeleteMapping("/user/{userId}")
 	public ResponseEntity<Object> deleteUser(@PathVariable int userId) {
 		userService.deleteUser(userId);
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 	
-	@PutMapping("/users/{userId}/location/{locationId})")
+	@PutMapping("/user/{userId}/location/{locationId})")
 	public ResponseEntity<Object> editUser(@PathVariable("userId") int userId, @PathVariable("locationId") int locationId, @RequestBody UserDTO newUserDTO) {
 		userService.editUser(userId, locationId, newUserDTO);
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
