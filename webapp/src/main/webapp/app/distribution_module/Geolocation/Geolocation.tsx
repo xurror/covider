@@ -22,13 +22,8 @@ const Geolocation = (props: any) => {
 
     return (
       <div className="App">
-        <header className="App-header">
-            <h1 className="App-title"> Users Geolocation </h1>
-            <h3>tracking Nkoa Christophe</h3>  {/* put user name */}
-        </header>
-
         <div className="Map">
-          <div style={{ height: '60vh', width: '100%' }}>
+          <div style={{ height: '80vh', width: '100%' }}>
             <GoogleMapReact
               // insert a valid API key down just after key
               bootstrapURLKeys={{ key: 'API' }}

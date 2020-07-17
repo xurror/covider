@@ -1,28 +1,45 @@
-import React from 'react';
+import React from "react";
+import {Sidebar, InputItem, DropdownItem, Icon, Item, Logo, LogoText} from 'react-sidebar-ui'
+import 'react-sidebar-ui/dist/index.css';
+import icon from './cov.gif'
+import { NavLink } from 'react-router-dom';
+import Iframe from 'react-iframe'
 import "./Home.css"
- 
-const home = () => {
-    return (       
-        <div className="container">
-                <h1>Distribution of Commodities</h1>
-                <h3>keeping every user localization during registration and make it available for
-                        agents who are in charge of distributing donations.
-                        On the field, agents are supposed to verify the authenticity of information
-                        providing by users and after verification, they will validate user profile
-                        through their interface and must signal to the system that a user has been
-                        served(the system will change user state from “no served” to “served”.
-                        Finally, our system will record some information like COVID 19 symptoms,
-                        3 last trips and maybe other information concerning each user who has
-                        been served.
-                        The project scenario of the platform is better explained with its use-case:
-                        The platform was created as an assistance measure for the Cameroonian
-                        population who was to contain, it basically helps track the inhabitants of
-                        particular areas(cities, towns and villages) place of residence as well as
-                        contact or infection with COVID-19
-                </h3>
-            </div>
-    );
-}
 
- 
-export default home;
+class Home extends React.Component {
+  render() {
+    return (
+        <div className='con'>
+        <div className='reg'>
+          <Sidebar bgColor='black' isCollapsed={false}>
+            <Logo
+              image={icon}
+              imageName='react logo'/>
+            <LogoText>COVIDER</LogoText>
+            <DropdownItem
+              values={['Jasper', 'Yoland', 'Christoph','Jasper', 'Yoland', 'Christoph','Jasper', 'Yoland', 'Christoph']}
+              bgColor={'black'}>
+              REGISTERED USERS
+            </DropdownItem>
+    
+            <Item bgColor='black'>
+              <Icon><i className="fas fa-home"/></Icon>
+              NOTIFICATIONS
+            </Item>
+            <Item bgColor='black'>
+              <Icon><i className="fas fa-info"/></Icon>
+              <NavLink to="/Geolocation">Help and Assistance</NavLink>
+            </Item>
+            <InputItem type='text' placeholder={'Search...'}/>
+          </Sidebar>
+        </div>
+        <div>
+        <Iframe url="https://www.google.com/maps/d/embed?mid=10WOXlXTbyF8q7wVHDP-xJe-Fzxla-9tT"
+        display="inline"
+        position="absolute" width="70%" height="560px"/>
+        </div>
+        </div>
+      )
+    }
+}
+export default Home;

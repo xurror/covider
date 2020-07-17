@@ -1,137 +1,19 @@
 
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
+.container {
+text-align: center;
 
-a {
-    text-decoration:  none;
-    color: #3ca9e2;
 }
-
-.container{
-    width:100%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-position: center;
-    background-color: blueviolet;
-    position: relative;
-    z-index: -1;
-}
-
-.login-box {
-    width: 420px;
-    position: absolute;
-    top: 80%;
-    left: 35%;
-    justify-content: center;
-    transform: translate(-50, -50);
-    background-color:blueviolet;
-    border-radius: 10px;
-}
-
-.top-box{
-    padding: 80px 40px;
-}
-
-.logo img {
-    display: block;
-    width: 30%;
-    margin-top: -20px;
-    align-self: center;
-    justify-content: center;
-    text-align: center;
-    border-radius: 50%;
-}
-
-.title {
-    text-align: center;
-    margin-bottom: 30px;
-    color: white;
-}
-
-title h1{
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.textbox {
-    width: 100%;
-    overflow: hidden;
-    padding: 12px 0;
-    margin: 16px 0;
-    border-radius: 5px;
-    background-color: #e3e3e3;
-}
-
-.textbox input {
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 16px;
-    font-family: sans-serif;
+.img {
     float: left;
-    width: 100%;
-    margin: 0 16px;
-    color: #171717;
 }
+.but {
+    background-color: rgb(59, 141, 141);
+    border-radius: 50px;
+    height: 50px;
+    width: 100px;
 
-.textbox input::placeholder {
-    color: violet;
 }
-
-.checkbox {
-    color: white;
-    font-size: 12px;
-}
-
-.checkbox label {
-    text-align: left;
-}
-
-.checkbox a {
-    color: white;
-    float: right;
-}
-.button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-  }
-.button1 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-    border-radius: 12px;
-    justify-content: center;
-}
-
-
-.button1:hover {
-    background-color: #4CAF50;
+.but:hover{
+    background-color: #4ead96;
     color: white;
 }
-
-
-.signup-box{
-    background-color: #e3e3e3;
-    padding: 25px;
-    font-size: 12px;
-    text-align: center;
-}
-
