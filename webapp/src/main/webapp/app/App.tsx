@@ -1,19 +1,26 @@
-import React from 'react';
-import './App.css';
-import Home from './registration-module/Home/Home';
-import { createStore, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
-import reducers from './registration-module/redux/reducers/index'
-
-const store = createStore(reducers, applyMiddleware(thunk));
-
-function App() {
-  return (
-    <Provider store={store}>
-      <Home />
-      </Provider>
-  );
+import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+ 
+import Home from './distribution_module/Home/Home';
+import Login from './distribution_module/Login/Login';
+import Geolocation from './distribution_module/Geolocation/Geolocation';
+import Error from './distribution_module/Error';
+ 
+class App extends Component {
+  render() {
+    return (      
+       <BrowserRouter>
+        <div>
+            <Switch>
+             <Route path="/" component={Login} exact/>
+             <Route path="/Home" component={Home}/>
+             <Route path="/Geolocation" component={Geolocation}/>
+            <Route component={Error}/>
+           </Switch>
+        </div> 
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
