@@ -75,6 +75,22 @@ public class UserProfileService {
         }
     }
 
+    //email should be updatable
+    public void updateMail(String currentEmail,  String newEmail) {
+    	
+    	//User email exists?
+    	Optional<User> userMail = userRepository.findOneByEmailIgnoreCase(currentEmail);
+    	
+    	if(userMail.isPresent()) { //will always be true...
+    		
+    		//get user with mail
+    		User user = userMail.get();
+    		
+    		//set user new email
+    		user.setEmail(newEmail);
+    	}
+    }
+    
     public List<UserDetailsDTO> getAll() {
         Iterable<User> iterable = userRepository.findAll();
         List<UserDetailsDTO> userDetailsDTOS = new ArrayList<>();
